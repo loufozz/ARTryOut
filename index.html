@@ -4,32 +4,11 @@
 <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
   <a-scene embedded arjs>
-    <!-- create your content here. just a box for now -->
-    <!--<a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>-->
 
-
-
-
-    <!--<a-text value="Hello, World!"></a-text>-->
-    <!-- define a camera which will move according to the marker position -->
-
-    <!--<a-marker-camera preset='custom' type='pattern' url='pattern-logoPatt.patt'></a-marker-camera>-->
-
-    <!--TRYOUT OF GPS LOCATION-->
-    <!--
-    <a-box color="yellow" gps-entity-place="latitude: <45.495831>; longitude: <-73.577652>"/>
-
-    <a-camera gps-camera rotation-reader></a-camera>
-    <a-scene gps-camera-debug embedded arjs='sourceType: webcam; debugUIEnabled: false;'></a-scene>
-    -->
     <a-marker preset='custom' type='pattern' url='pattern-logoPatt.patt'>
       <!--<a-image src="testImage2.jpg" position="0 0.5 0" rotation="90 0 0" material.transparent="false"></a-image>-->
       <a-box position='0 0.5 0' material='color: red;'></a-box>
     </a-marker>
-
-  <!--<a-marker preset='custom' type='pattern' url='pattern-markerBlackLight1.patt'>
-      <a-box position='0 0.5 0' material='color: green;'></a-box>
-    </a-marker>-->
 
     <a-marker preset='custom' type='pattern' url='pattern-markerBlackLight1_1.patt'>
       <!--<a-image src="testImage2.jpg" position="0 0.5 0" rotation="90 0 0" material.transparent="false"></a-image>-->
@@ -42,28 +21,9 @@
       <a-text value="Do you know what electronics are made of?" font="lunchds-msdf.json" color="#33C3F0" negate="false" position='1 0 1'></a-text>-->
       <a-text value="electronics manufactured" negate="false" position="-3 -3 -1" rotation="-90 0 0" scale="3 3 3" color="#33C3F0"></a-text>
       <a-text value="affected by the industry" font="lunchds-msdf.json" negate="false" position="-1 -3 1" rotation="-90 0 0" scale="2 2 2" color="#33C3F0"></a-text>
-      <a-text value="electronics made of" wrapCount="20" font="lunchds-msdf.json" negate="false" position="1 -3 0" rotation="-90 0 0" scale="2 2 2" color="#33C3F0"></a-text>
-      <!--<a-entity
-  geometry="primitive: plane; height: auto; width: auto"
-  material="color: blue; opacity: 0"
-  material.transparent="true"
-  scale="1 1 1"
-  rotation="-90 0 0"
-  position="2 2 -2"
-  text.font="lunchds-msdf.json"
-  text="width: 4; wrapCount:20; font: lunchds-msdf.json; negate: false; value: Do you own at least 2 electronic devices?; color: red"></a-entity>-->
-  <!--<a-scene>
-<a-sound src="src: url(belgianLegacy.mp3)" autoplay="true" position="0 2 5"></a-sound>
-</a-scene>-->
+      <a-text value="electronics made of" wrapCount="20" font="lunchds-msdf.json" negate="false" position="1 -3 0" rotation="-90 0 0" scale="2 2 2" color="#33C3F0"
+      animation="property: rotation; dur: 3000; to: 0 360 0; loop: true"></a-text>
 
-<!-- WORKING
-<a-entity id="river" geometry="primitive: plane" material="color: blue"
-          position="-10 0 0" sound="src: url(belgianLegacy.mp3); autoplay: true"></a-entity>-->
-
-        <!--  <a-entity cursor position="0 0 0"></a-entity>
-
-<a-entity id="elmo" geometry="primitive: box" material="src: testImage2.jpg"
-          sound="src: url(belgianLegacy.mp3); on: click"></a-entity>-->
 
   </a-marker>
 
