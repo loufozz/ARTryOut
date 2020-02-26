@@ -30,6 +30,8 @@
 <a-text value="10km away from home" negate="false" position="-3 -3 -1" rotation="-90 0 0" scale="2 2 2" color="#33C3F0">
 <a-animation attribute="rotation" dur="4000" from="-90 0 0" to="-90 0 45" direction='alternate-reverse'
 repeat="indefinite" easing="ease-in-out-circ"></a-animation>
+<a-animation attribute="components.material.material.color" from="#33C3F0" to="#003366" dur="2000"
+repeat="indefinite"></a-animation>
 </a-text>
 
 <a-text value="40 y-o miner" font="lunchds-msdf.json" negate="false" position="-1 -3 1" rotation="-90 0 0" scale="2 2 2" color="#33C3F0">
@@ -42,8 +44,7 @@ repeat="indefinite" easing="ease-in-out-circ"></a-animation>
   repeat="indefinite" easing="ease-in-out-circ"></a-animation>
   <a-animation attribute="position" dur="3000" from="1 -3 0" to="-1 0 0" direction='alternate-reverse'
   repeat="indefinite" easing="linear"></a-animation>
-  <a-animation attribute="material.color" from="#33C3F0" to="#003366" dur="2000"
-  repeat="indefinite"></a-animation>
+
 
 </a-text>
 <!--<a-box position="0 1.6 0" animation="property: position; to: 8 1.6 0; dur: 1500; easing: linear"></a-box>-->
