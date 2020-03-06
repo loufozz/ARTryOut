@@ -26,7 +26,7 @@
       <a-text value="affected by the industry" font="lunchds-msdf.json" negate="false" position="-1 -3 1" rotation="-90 0 0" scale="2 2 2" color="#33C3F0"></a-text>
       <a-text value="electronics made of" wrapCount="20" font="lunchds-msdf.json" negate="false" position="1 -3 0" rotation="-90 0 0" scale="2 2 2" color="#33C3F0"></a-text>-->
 
-<!--<a-image src="testImage2.jpg" position="0 0.5 0" rotation="90 0 0" material.transparent="false"></a-image>-->
+<!--<a-image src="testImage2.jpg" position="0 0.5 0" rotation="90 0 0" material.transparent="false"></a-image>
 <a-marker preset='hiro'>
 <a-text value="10km away from home" negate="false" position="-3 -3 -1" rotation="-90 0 0" scale="1 1 1" color="#33C3F0">
 <a-animation attribute="rotation" dur="4000" from="-90 0 0" to="-90 0 45" direction='alternate-reverse'
@@ -48,14 +48,19 @@ repeat="indefinite" easing="ease-in-out-circ"></a-animation>
 
 
 </a-text>
-<!--<a-box position="0 1.6 0" animation="property: position; to: 8 1.6 0; dur: 1500; easing: linear"></a-box>-->
+<!--<a-box position="0 1.6 0" animation="property: position; to: 8 1.6 0; dur: 1500; easing: linear"></a-box>
 </a-marker>
 
+<!-- DEBUGGING CUSTOM MARKER-->
+<a-marker preset='custom' type='pattern' url='pattern-hardDrive.patt'>
+      <!--<a-image src="testImage2.jpg" position="0 0.5 0" rotation="90 0 0" material.transparent="false"></a-image>-->
+  <!--<a-marker preset='custom' type='pattern' url='pattern-markerBlackLight1.patt'>-->
+      <a-box position='0 0.5 0' material='color: green;'></a-box>
+    </a-marker>
 
 
 
-
-<!--<a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/louisanefozin/ARTryOut/master/pattern-hardDrive.patt'>-->
+<!--<a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/louisanefozin/ARTryOut/master/pattern-hardDrive.patt'>
   <a-marker preset='kanji'>
 <a-image src="amethyst2.jpg" position="0 0.5 0" rotation="90 0 0" material.transparent="false">
 <a-animation attribute="rotation" dur="4000" from="90 0 0" to="90 45 0" direction='alternate-reverse'
@@ -72,7 +77,7 @@ repeat="indefinite" easing="linear"></a-animation>
 </a-image>
 
 
-<!--<a-box position="0 1.6 0" animation="property: position; to: 8 1.6 0; dur: 1500; easing: linear"></a-box>-->
+<!--<a-box position="0 1.6 0" animation="property: position; to: 8 1.6 0; dur: 1500; easing: linear"></a-box>
 
 </a-marker>
 
