@@ -36,7 +36,9 @@
 
     </a-text>
 
-    <a-text value="40 y-o miner" negate="false" position="-1 -3 1" rotation="-90 0 0" scale="1 1 1" color="#33C3F0">
+    <a-text value="40 y-o miner" negate="false" position="-1 -3 1" rotation="-90 0 0" scale="1 1 1" color="#33C3F0"
+    animation__fadein="property: components.material.material.opacity; dur: 100; easing: linear; from: 0; to: 1; startEvents: fadein"
+              animation__fadeout="property: components.material.material.opacity; dur: 100; easing: linear; from: 1; to: 0; startEvents: fadeout">
         <a-animation attribute="rotation" dur="6000" to="-90 270 0" direction='alternate-reverse'
         repeat="indefinite" easing="ease-in-out-circ"></a-animation>
     </a-text>
