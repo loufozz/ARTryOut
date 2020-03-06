@@ -29,22 +29,22 @@
 <!--<a-image src="testImage2.jpg" position="0 0.5 0" rotation="90 0 0" material.transparent="false"></a-image>
 <a-marker preset='hiro'>-->
 <a-marker preset='custom' type='pattern' url='pattern-ramMemory.patt'>
-    <a-text value="20km away from home" negate="false" position="-3 -3 -1" rotation="-90 0 0" scale="1 1 1" color="#33C3F0">
-        <a-animation attribute="rotation" delay="500" dur="4000" from="-90 0 0" to="-90 0 45" direction='alternate-reverse'
+    <a-text value="10km away from home" negate="false" position="-3 -3 -1" rotation="-90 0 0" scale="1 1 1" color="#33C3F0">
+        <a-animation attribute="rotation" delay="500" dur="4000" from="-90 0 0" to="-90 45 0" direction='alternate-reverse'
         repeat="indefinite" easing="ease-in-out-circ"></a-animation>
-        <a-animation attribute="text.opacity" delay="1000" dur="3000" from="1" to="0" repeat="indefinite"></a-animation>
+        <a-animation attribute="text.opacity" delay="1000" dur="3000" from="1" to="0" direction='alternate-reverse' repeat="indefinite"></a-animation>
 
     </a-text>
 
-    <a-text value="40 y-o miners" negate="false" position="-1 -3 1" rotation="-90 0 0" scale="1 1 1" color="#33C3F0"
-    animation__fadein="property: components.material.material.opacity; dur: 100; easing: linear; from: 0; to: 1; startEvents: fadein"
-              animation__fadeout="property: components.material.material.opacity; dur: 100; easing: linear; from: 1; to: 0; startEvents: fadeout">
+    <a-text value="30 y-o miners" negate="false" position="-1 -3 1" rotation="-90 0 0" scale="1 1 1" color="#33C3F0">
         <a-animation attribute="rotation" dur="6000" to="-90 270 0" direction='alternate-reverse'
         repeat="indefinite" easing="ease-in-out-circ"></a-animation>
+        <a-animation attribute="text.color" delay="2000" from="#33C3F0" to="#003366" dur="2000" direction='alternate-reverse'
+        repeat="indefinite"></a-animation>
     </a-text>
 
     <a-text value="Maurice Kamto" wrapCount="20" negate="false" position="1 -3 0" rotation="-90 0 0" scale="1 1 1" color="#33C3F0">
-        <a-animation attribute="rotation" dur="3000" from="-90 0 0" to="-90 30 60" direction='alternate-reverse'
+        <a-animation attribute="rotation" dur="3000" from="-90 0 0" to="90 30 0" direction='alternate-reverse'
         repeat="indefinite" easing="ease-in-out-circ"></a-animation>
         <a-animation attribute="position" dur="3000" from="1 -3 0" to="-1 0 0" direction='alternate-reverse'
         repeat="indefinite" easing="linear"></a-animation>
