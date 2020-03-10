@@ -5,7 +5,7 @@
 
 <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
-  <a-scene embedded arjs>
+
 
     <!--<a-marker preset='custom' type='pattern' url='pattern-logoPatt.patt'>
       <!--<a-image src="testImage2.jpg" position="0 0.5 0" rotation="90 0 0" material.transparent="false"></a-image>
@@ -27,7 +27,7 @@
       <a-text value="electronics made of" wrapCount="20" font="lunchds-msdf.json" negate="false" position="1 -3 0" rotation="-90 0 0" scale="2 2 2" color="#33C3F0"></a-text>-->
 
 <!--<a-image src="testImage2.jpg" position="0 0.5 0" rotation="90 0 0" material.transparent="false"></a-image>
-<a-marker preset='hiro'>-->
+<a-marker preset='hiro'>
 <a-marker preset='custom' type='pattern' url='pattern-ramMemory.patt'>
     <a-text value="10km away from home" negate="false" position="-3 -3 -1" rotation="-90 0 0" scale="1 1 1" color="#33C3F0">
         <a-animation attribute="rotation" delay="500" dur="4000" from="-90 0 0" to="-90 0 90" direction='alternate-reverse'
@@ -56,54 +56,113 @@
 <a-animation attribute="components.material.material.color" from="#33C3F0" to="#003366" dur="2000"
 repeat="indefinite"></a-animation>
 
-<!-- DEBUGGING CUSTOM MARKER-->
+<!-- DEBUGGING CUSTOM MARKER
 <a-marker preset='custom' type='pattern' url='pattern-hardDrive.patt'>
       <a-image src="testImage2.jpg" position="0 0.5 0" rotation="90 0 0" material.transparent="false">
       <a-animation attribute="rotation" dur="4000" from="90 0 0" to="90 45 0" direction='alternate-reverse'
       repeat="indefinite" easing="ease-in-out-circ"></a-animation>
       </a-image>
   <!--<a-marker preset='custom' type='pattern' url='pattern-markerBlackLight1.patt'>-->
-      <!--<a-box position='0 0.5 0' material='color: green;'></a-box>-->
-    </a-marker>
+      <!--<a-box position='0 0.5 0' material='color: green;'></a-box>
+    </a-marker>-->
+<a-scene embedded arjs>
+    <a-scene animation-timeline__1="timeline: #myTimeline; loop: true">
+      <a-marker preset='custom' type='pattern' url='pattern-ramMemory.patt'>
+      <a-assets timeout="15000">
+        <a-asset-item src="https://cdn.aframe.io/fonts/Exo2Bold.fnt"></a-asset-item>
 
+        <a-timeline id="myTimeline">
+          <a-timeline-animation select="#text1" name="togglevisible"></a-timeline-animation>
+          <a-timeline-animation select="#text1" name="fadein"></a-timeline-animation>
+          <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
+          <a-timeline-animation select="#text1" name="togglevisibleoff"></a-timeline-animation>
 
+          <a-timeline-group>
+            <a-timeline-animation select="a-entity[mixin~=box]" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="a-entity[mixin~=box]" name="scale"></a-timeline-animation>
+            <a-timeline-animation select="a-entity[mixin~=box]" name="color"></a-timeline-animation>
+          </a-timeline-group>
 
-<!--<a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/louisanefozin/ARTryOut/master/pattern-hardDrive.patt'>
-  <a-marker preset='kanji'>
-<a-image src="amethyst2.jpg" position="0 0.5 0" rotation="90 0 0" material.transparent="false">
-<a-animation attribute="rotation" dur="4000" from="90 0 0" to="90 45 0" direction='alternate-reverse'
-repeat="indefinite" easing="ease-in-out-circ"></a-animation>
-<a-animation attribute="components.material.material.color" from="#33C3F0" to="#003366" dur="2000"
-repeat="indefinite"></a-animation>
-</a-image>
+          <a-timeline-group>
+            <a-timeline-animation select="#text2" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#text2" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#text2" name="textcolor"></a-timeline-animation>
+          </a-timeline-group>
 
-<a-image src="cassiterite.jpg" position="-1 1 0" rotation="90 0 0" material.transparent="false">
-<a-animation attribute="rotation" dur="6000" to="90 0 90" direction='alternate-reverse'
-repeat="indefinite" easing="ease-in-out-circ"></a-animation>
-<a-animation attribute="position" dur="3000" from="-1 1 0" to="1 2 0" direction='alternate-reverse'
-repeat="indefinite" easing="linear"></a-animation>
-</a-image>
+          <a-timeline-animation select="#text2" name="fadeout"></a-timeline-animation>
+          <a-timeline-animation select="#text2" name="togglevisibleoff"></a-timeline-animation>
 
+          <a-timeline-animation select="#text3" name="togglevisible"></a-timeline-animation>
+          <a-timeline-group>
+            <a-timeline-animation select="a-entity[mixin~=box]" name="color"></a-timeline-animation>
+            <a-timeline-animation select="a-entity[mixin~=box]" name="rotate"></a-timeline-animation>
+            <a-timeline-animation select="a-entity[mixin~=box]" name="position"></a-timeline-animation>
+            <a-timeline-animation select="#text3" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#text3" name="positionin"></a-timeline-animation>
+          </a-timeline-group>
 
-<!--<a-box position="0 1.6 0" animation="property: position; to: 8 1.6 0; dur: 1500; easing: linear"></a-box>
+          <a-timeline-animation select="#text3" name="positionout"></a-timeline-animation>
+          <a-timeline-animation select="#text3" name="togglevisibleoff"></a-timeline-animation>
 
+          <a-timeline-animation select="#text4" name="togglevisible"></a-timeline-animation>
+
+          <a-timeline-group>
+            <a-timeline-animation select="#sky" name="color"></a-timeline-animation>
+            <a-timeline-animation select="#text4" name="fadein"></a-timeline-animation>
+          </a-timeline-group>
+
+          <a-timeline-animation select="#text4" name="fadeout" offset="500"></a-timeline-animation>
+          <a-timeline-group>
+            <a-timeline-animation select="#text5" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#text5" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#text5" name="textcolor"></a-timeline-animation>
+          </a-timeline-group>
+
+          <a-timeline-animation select="#text5" name="fadeout"></a-timeline-animation>
+          <a-timeline-animation select="#text5" name="togglevisibleoff"></a-timeline-animation>
+        </a-timeline>
+
+        <a-mixin id="box"
+          geometry="primitive: box"
+          material="color: #AAA; opacity: 0"
+          animation__fadein="property: material.opacity; dur: 2000; from: 0; to: 1; autoplay: false"
+          animation__scale="property: scale; to: 2 20 2; dur: 2000; easing: easeInOutElastic; autoplay: false"
+          animation__position="property: position; to: 0 30 -3; dur: 2000; autoplay: false"
+          animation__color="property: material.color; from: #AAA; to: #222; dur: 2500; autoplay: false"
+          animation__rotate="property: rotation; to: 0 360; dur: 1000; easing: easeInQuad; autoplay: false"
+          scale="0.0001 0.0001 0.0001"
+        ></a-mixin>
+
+        <a-mixin id="text"
+          text="align: center; color: #333; width: 6; opacity: 0"
+          animation__fadein="property: text.opacity; from: 0; to: 1; dur: 3000; easing: linear; autoplay: false"
+          animation__fadeout="property: text.opacity; from: 1; to: 0; dur: 3000; easing: linear; autoplay: false"
+          animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
+          animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
+          position="0 2 -3"
+          visible="false"></a-mixin>
+      </a-assets>
+
+      <a-entity id="text1" mixin="text" text="value: Would you walk from Laval"></a-entity>
+      <a-entity id="text2" mixin="text" text="value: to Brossard; opacity: 0"
+                animation__textcolor="property: text.color; from: #FAFAFA; to: #8C200E; dur: 2500; autoplay: false"></a-entity>
+      <a-entity id="text3" mixin="text" text="value: for your job?"></a-entity>
+      <a-entity id="text4" mixin="text" text="value: The cassiterite porter Prince" position="0 -10 0"
+                animation__positionin="property: position; to: 0 2 -3; dur: 2500; autoplay: false"
+                animation__positionout="property: position; from: 0 2 -3; to: -10 2 -3; dur: 3500; autoplay: false"></a-entity>
+      <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>
+
+      <a-entity position="0 -0.5 -10">
+        <a-entity id="box1" mixin="box" position="-4 0 0"></a-entity>
+        <a-entity mixin="box"></a-entity>
+        <a-entity mixin="box" position="4 0 0"></a-entity>
+      </a-entity>
+
+      <a-sky id="sky" color="#FAFAFA" animation__color="property: material.color; from: #FAFAFA; to: #111; dur: 2000; autoplay: false"></a-sky>
 </a-marker>
 
 
-<!--<a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/louisanefozin/ARTryOut/master/pattern-rawMemory.patt'>-->
-<!--<a-marker preset='barcode' value='5'>
-<a-video src="permit.mov" position="0 1 0" rotation="90 0 0" material.transparent="false" autoplay loop="true"></a-video>
-
-<!--<a-box position="0 1.6 0" animation="property: position; to: 8 1.6 0; dur: 1500; easing: linear"></a-box>
-
-</a-marker>-->
-
-
-<!--animation="property: rotation; dur: 3000; to: 0 360 0; loop: true"
-    <a-marker preset='kanji'>
-      <a-box position='0 0.5 0' material='color: red;'></a-box>
-    </a-marker>
-    <!--<a-marker-camera preset='custom' type='pattern' url='https://raw.githubusercontent.com/louisanefozin/ARTryOut/master/assets/pattern-marker.patt'></a-marker-camera>-->
     <a-entity camera></a-entity>
+  </a-scene>
   </a-scene>
 </body>
