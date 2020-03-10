@@ -72,7 +72,7 @@ repeat="indefinite"></a-animation>
 
     <a-scene animation-timeline__1="timeline: #myTimeline; loop: true">
         <!--<a-marker preset='custom' type='pattern' url='pattern-ramMemory.patt'>-->
-      <a-assets timeout="15000">
+      <a-assets timeout="10000">
         <a-asset-item src="https://cdn.aframe.io/fonts/Exo2Bold.fnt"></a-asset-item>
 
         <a-timeline id="myTimeline">
@@ -116,7 +116,7 @@ repeat="indefinite"></a-animation>
           </a-timeline-group>
 
           <a-timeline-animation select="#text4" name="fadeout" offset="500"></a-timeline-animation>
-          <a-timeline-group>
+        <!--  <a-timeline-group>
             <a-timeline-animation select="#text5" name="togglevisible"></a-timeline-animation>
             <a-timeline-animation select="#text5" name="fadein"></a-timeline-animation>
             <a-timeline-animation select="#text5" name="textcolor"></a-timeline-animation>
@@ -124,7 +124,7 @@ repeat="indefinite"></a-animation>
 
           <a-timeline-animation select="#text5" name="fadeout"></a-timeline-animation>
           <a-timeline-animation select="#text5" name="togglevisibleoff"></a-timeline-animation>
-        </a-timeline>
+        </a-timeline> -->
 
         <a-mixin id="box"
           geometry="primitive: box"
@@ -154,7 +154,7 @@ repeat="indefinite"></a-animation>
       <a-entity id="text4" mixin="text" text="value: The cassiterite porter Prince" position="0 -10 0"
                 animation__positionin="property: position; to: 0 2 -3; dur: 2500; autoplay: false"
                 animation__positionout="property: position; from: 0 2 -3; to: -10 2 -3; dur: 3500; autoplay: false"></a-entity>
-      <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>
+    <!--  <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity> -->
 
       <a-entity position="0 -0.5 -10">
         <a-entity id="box1" mixin="box" position="-4 0 0"></a-entity>
