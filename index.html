@@ -109,9 +109,9 @@ m.addEventListener("markerFound", (e)=>{
    console.log("found");
    console.log(m);
    if(firstTime === false){
-        //el.emit("beginAni");
-      //  firstTime =true;
-      el
+      el.emit("beginAni");
+       firstTime =true;
+
    }
    /*else{
      el.emit("againAni");
@@ -123,7 +123,7 @@ m.addEventListener("markerFound", (e)=>{
 
 m.addEventListener("markerLost", (e)=>{
    console.log("lost");
-  console.log(this);
+  console.log(el.pauseAnimation());
    el.emit("pauseAni");
    console.log(el);
 })
