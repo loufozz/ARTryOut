@@ -9,29 +9,7 @@
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <script src="dist/aframe-animation-timeline-component.min.js"></script>
     <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-    <script>
-    AFRAME.registerComponent("marking", {
-    init: function() {
-   this.marker = document.querySelector("ani1")
-   this.markerVisible = false
-},
-tick: function() {
-   if (!this.marker) return
-   if (this.marker.object3D.visible) {
-      if (!this.markerVisible) {
-         // marker detected
-         this.markerVisible = true
-         console.log("marker is showing")
-      }
-   } else {
-      if (this.markerVisbile) {
-         // lost sight of the marker
-         this.markerVisible = false
-      }
-   }
-}
-})
-</script>
+
   </head>
   <body>
     <!-- <audio src="bohemian.mp3" autoplay></audio> -->
@@ -100,5 +78,30 @@ tick: function() {
     <!--<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
     </style>-->
     <!--endgithubcorner-->
+
+    <script>
+    AFRAME.registerComponent("marking", {
+    init: function() {
+      console.log("Initializing");
+   this.marker = document.getElementById("ani1");
+   this.markerVisible = false
+},
+tick: function() {
+   if (!this.marker) return
+   if (this.marker.object3D.visible) {
+      if (!this.markerVisible) {
+         // marker detected
+         this.markerVisible = true
+         console.log("marker is showing")
+      }
+   } else {
+      if (this.markerVisbile) {
+         // lost sight of the marker
+         this.markerVisible = false
+      }
+   }
+}
+})
+</script>
   </body>
 </html>
