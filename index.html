@@ -38,7 +38,7 @@
           geometry="primitive: box"
           material="color: #AAA; opacity: 0"
           animation__fadein="property: components.material.material.opacity; dur: 2000; from: 0; to: 1; autoplay: false"
-          animation__scale="property: scale; to: 2 20 2; dur: 2000; easing: easeInOutElastic; autoplay: false"
+          animation__scale="property: scale; to: 2 20 2; dur: 2000; easing: easeInOutElastic; autoplay: false; pauseEvents:pauseAni"
           animation__position="property: position; to: 0 30 -3; dur: 2000; autoplay: false"
           animation__color="property: components.material.material.color; type: color; from: #AAA; to: #222; dur: 2500; autoplay: false"
           animation__rotate="property: rotation; to: 0 360; dur: 1000; easing: easeInQuad; autoplay: false"
@@ -104,6 +104,7 @@
 // })
 var m = document.querySelector("a-marker");
 var el = document.getElementById("receiver");
+var elAni = document.getElementById("box");
 var firstTime = false;
 m.addEventListener("markerFound", (e)=>{
    console.log("found");
@@ -123,8 +124,8 @@ m.addEventListener("markerFound", (e)=>{
 
 m.addEventListener("markerLost", (e)=>{
    console.log("lost");
-  console.log(el.pauseAnimation());
-   el.emit("pauseAni");
+  //console.log(el.pauseAnimation());
+   elAni.emit("pauseAni");
    console.log(el);
 })
 
