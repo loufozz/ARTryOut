@@ -80,27 +80,35 @@
     <!--endgithubcorner-->
 
     <script>
-    AFRAME.registerComponent("marking", {
-    init: function() {
-      console.log("Initializing");
-   this.marker = document.getElementById("ani1");
-   this.markerVisible = false
-},
-tick: function() {
-   if (!this.marker) return
-   if (this.marker.object3D.visible) {
-      if (!this.markerVisible) {
-         // marker detected
-         this.markerVisible = true
-         console.log("marker is showing")
-      }
-   } else {
-      if (this.markerVisbile) {
-         // lost sight of the marker
-         this.markerVisible = false
-      }
-   }
-}
+//     AFRAME.registerComponent("marking", {
+//     init: function() {
+//       console.log("Initializing");
+//    this.marker = document.getElementById("ani1");
+//    this.markerVisible = false
+// },
+// tick: function() {
+//    if (!this.marker) return
+//    if (this.marker.object3D.visible) {
+//       if (!this.markerVisible) {
+//          // marker detected
+//          this.markerVisible = true
+//          console.log("marker is showing")
+//       }
+//    } else {
+//       if (this.markerVisbile) {
+//          // lost sight of the marker
+//          this.markerVisible = false
+//       }
+//    }
+// }
+// })
+var m = document.querySelector("a-marker")
+m.addEventListener("markerFound", (e)=>{
+   console.log("found")
+})
+
+m.addEventListener("markerLost", (e)=>{
+   console.log("lost")
 })
 </script>
   </body>
