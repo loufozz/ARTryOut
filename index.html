@@ -105,6 +105,7 @@
 var m = document.querySelector("a-marker")
 m.addEventListener("markerFound", (e)=>{
    console.log("found")
+   console.log(m);
    m.emit("triggerA")
 })
 
