@@ -15,7 +15,7 @@
     <!-- <audio src="bohemian.mp3" autoplay></audio> -->
 <a-scene embedded arjs>
   <a-marker id="ani1" preset='custom' type='pattern' url='pattern-ramMemory.patt'>
-    <a-scene id = "receiver" animation-timeline__1="timeline: #myTimeline; loop: true; startEvents:triggerA">
+    <a-scene id = "receiver" animation-timeline__1="timeline: #myTimeline; loop: true; startEvents: beginAni; pauseEvents: pauseAni; resumeEvents: againAni">
 
       <a-assets timeout="10000">
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
@@ -104,14 +104,23 @@
 // })
 var m = document.querySelector("a-marker")
 var el = document.getElementById("receiver");
+var firstTime =false;
 m.addEventListener("markerFound", (e)=>{
    console.log("found")
    console.log(m);
-   el.emit("triggerA");
+   if(firstTime ===false){
+        el.emit("beginAni");
+        firstTime =true;
+   }
+   else{
+    /* el.emit("againAni");*/
+   }
+
 })
 
 m.addEventListener("markerLost", (e)=>{
    console.log("lost")
+   el.emit("pauseAni");
 })
 
 /*console.log(el);
