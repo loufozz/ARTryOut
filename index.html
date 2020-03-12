@@ -8,6 +8,7 @@
      <!-- does not seem to work with the version above -->
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <script src="dist/aframe-animation-timeline-component.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
   </head>
   <body>
     <!-- <audio src="bohemian.mp3" autoplay></audio> -->
@@ -93,7 +94,8 @@
         <a-entity mixin="box"></a-entity>
         <a-entity mixin="box" position="4 0 0"></a-entity>
       </a-entity>
-
+      
+      <a-entity camera></a-entity>
       <!--<a-sky id="sky" color="#FAFAFA" animation__color="property: components.material.material.color; type: color; from: #FAFAFA; to: #111; dur: 2000; autoplay: false"></a-sky>-->
     </a-scene>
 
