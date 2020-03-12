@@ -102,13 +102,13 @@
 //    }
 // }
 // })
-var m = document.querySelector("a-marker")
+var m = document.querySelector("a-marker");
 var el = document.getElementById("receiver");
-var firstTime =false;
+var firstTime = false;
 m.addEventListener("markerFound", (e)=>{
-   console.log("found")
+   console.log("found");
    console.log(m);
-   if(firstTime ===false){
+   if(firstTime === false){
         el.emit("beginAni");
         firstTime =true;
    }
@@ -119,7 +119,7 @@ m.addEventListener("markerFound", (e)=>{
 })
 
 m.addEventListener("markerLost", (e)=>{
-   console.log("lost")
+   console.log("lost");
    el.emit("pauseAni");
 })
 
