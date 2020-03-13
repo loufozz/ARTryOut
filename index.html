@@ -14,8 +14,9 @@
   <body>
     <!-- <audio src="bohemian.mp3" autoplay></audio> -->
 <a-scene embedded arjs>
-  <a-marker id="ani1" preset='custom' type='pattern' url='pattern-ramMemory.patt'>
+
     <a-scene id = "receiver" animation-timeline__1="timeline: #myTimeline; loop: true; startEvents: beginAni">
+      <a-marker id="ani1" preset='custom' type='pattern' url='pattern-ramMemory.patt'>
 
       <a-assets timeout="15000">
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
@@ -102,8 +103,9 @@
 
       <a-entity camera></a-entity>
       <!--<a-sky id="sky" color="#FAFAFA" animation__color="property: components.material.material.color; type: color; from: #FAFAFA; to: #111; dur: 2000; autoplay: false"></a-sky>-->
+      </a-marker>
     </a-scene>
-    </a-marker>
+
     </a-scene>
 
     <!--githubcorner
