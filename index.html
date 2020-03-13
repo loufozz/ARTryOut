@@ -27,11 +27,11 @@
           <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
           <a-timeline-animation select="#text1" name="togglevisibleoff"></a-timeline-animation>
 
-          <a-timeline-group>
+        <!--  <a-timeline-group>
             <a-timeline-animation select="a-entity[mixin~=box]" name="fadein"></a-timeline-animation>
             <a-timeline-animation select="a-entity[mixin~=box]" name="scale"></a-timeline-animation>
             <a-timeline-animation select="a-entity[mixin~=box]" name="color"></a-timeline-animation>
-          </a-timeline-group>
+          </a-timeline-group>  -->
 
           <a-timeline-group>
             <a-timeline-animation select="#text2" name="togglevisible"></a-timeline-animation>
@@ -65,7 +65,7 @@
 
         </a-timeline>
 
-        <a-mixin id="box"
+    <!--    <a-mixin id="box"
           geometry="primitive: box"
           material="color: #AAA; opacity: 0"
           animation__fadein="property: components.material.material.opacity; dur: 2000; from: 0; to: 1; autoplay: false"
@@ -74,7 +74,7 @@
           animation__color="property: components.material.material.color; type: color; from: #AAA; to: #222; dur: 2500; autoplay: false"
           animation__rotate="property: rotation; to: 0 360; dur: 1000; easing: easeInQuad; autoplay: false"
           scale="0.0001 0.0001 0.0001"
-        ></a-mixin>
+        ></a-mixin> -->
 
         <a-mixin id="text"
           text="align: center; color: #333; width: 6; opacity: 0"
