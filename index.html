@@ -18,7 +18,7 @@
     <a-scene id = "receiver" animation-timeline__1="timeline: #myTimeline; loop: true; startEvents: beginAni">
       <a-marker id="ani1" preset='custom' type='pattern' url='pattern-ramMemory.patt'>
 
-      <a-assets timeout="15000">
+      <a-assets timeout="10000">
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 
         <a-timeline id="myTimeline">
@@ -90,10 +90,10 @@
       <a-entity id="text2" mixin="text" text="value: to Brossard; opacity: 0"
                 animation__textcolor="property: text.color; from: #FAFAFA; to: #8C200E; dur: 2500; autoplay: false"></a-entity>
       <a-entity id="text3" mixin="text" text="value: for your job?"></a-entity>
-      <a-entity id="text4" mixin="text" text="value: The cassiterite porter Prince"></a-entity>
-      <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days" position="0 -10 0"
+      <a-entity id="text4" mixin="text" text="value: The cassiterite porter Prince" position="0 -10 0"
                 animation__positionin="property: position; to: 0 2 -3; dur: 2500; autoplay: false"
                 animation__positionout="property: position; from: 0 2 -3; to: -10 2 -3; dur: 3500; autoplay: false"></a-entity>
+      <!-- <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>-->
 
       <a-entity position="0 -0.5 -10">
         <a-entity id="box1" mixin="box" position="-4 0 0"></a-entity>
