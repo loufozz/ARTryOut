@@ -77,7 +77,7 @@
         ></a-mixin> -->
 
         <a-mixin id="text"
-          text="align: center; color: #333; width: 6; opacity: 0"
+          text="align: center; color: white; width: 6; opacity: 0"
           animation__fadein="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 3000; easing: linear; autoplay: false"
           animation__fadeout="property: components.text.material.uniforms.opacity.value; from: 1; to: 0; dur: 3000; easing: linear; autoplay: false"
           animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
@@ -88,9 +88,9 @@
       </a-assets>
 
       <a-entity id="text1" mixin="text" text="value: Would you walk from Laval"></a-entity>
-      <a-entity id="text2" mixin="text" text="value: to Brossard; opacity: 0"
+      <a-entity id="text2" mixin="text" text="value: to Brossard for your job?; opacity: 0"
                 animation__textcolor="property: text.color; from: #FAFAFA; to: #8C200E; dur: 2500; autoplay: false"></a-entity>
-      <a-entity id="text3" mixin="text" text="value: for your job?"></a-entity>
+      <a-entity id="text3" mixin="text" text="value: The porter Prince walks 35 km in 2 days"></a-entity>
       <a-entity id="text4" mixin="text" text="value: The cassiterite porter Prince" position="0 0 0"
                 animation__positionin="property: position; to: 0 2 -3; dur: 2500; autoplay: false"
                 animation__positionout="property: position; from: 0 2 -3; to: -10 2 -3; dur: 3500; autoplay: false"></a-entity>
