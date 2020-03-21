@@ -18,7 +18,7 @@
     <a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true; startEvents: myAni; pauseEvents: myPause; resumeEvents: myResume">
 
 
-      <a-assets timeout="15000">
+      <a-assets timeout="20000">
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 
         <a-timeline id="myTimeline">
@@ -42,27 +42,28 @@
           <a-timeline-animation select="#text2" name="fadeout"></a-timeline-animation>
           <a-timeline-animation select="#text2" name="togglevisibleoff"></a-timeline-animation>
 
-          <a-timeline-animation select="#text3" name="togglevisible"></a-timeline-animation>
+
           <a-timeline-group>
+            <a-timeline-animation select="#text3" name="togglevisible"></a-timeline-animation>
           <!--  <a-timeline-animation select="a-entity[mixin~=box]" name="color"></a-timeline-animation>
             <a-timeline-animation select="a-entity[mixin~=box]" name="rotate"></a-timeline-animation>
             <a-timeline-animation select="a-entity[mixin~=box]" name="position"></a-timeline-animation> -->
             <a-timeline-animation select="#text3" name="fadein"></a-timeline-animation>
-            <a-timeline-animation select="#text3" name="positionin"></a-timeline-animation>
+          <!--  <a-timeline-animation select="#text3" name="positionin"></a-timeline-animation>-->
           </a-timeline-group>
 
-          <a-timeline-animation select="#text3" name="positionout"></a-timeline-animation>
+          <!--<a-timeline-animation select="#text3" name="positionout"></a-timeline-animation> -->
           <a-timeline-animation select="#text3" name="fadeout"></a-timeline-animation>
           <a-timeline-animation select="#text3" name="togglevisibleoff"></a-timeline-animation>
 
-          <a-timeline-animation select="#text4" name="togglevisible"></a-timeline-animation>
+        <!--  <a-timeline-animation select="#text4" name="togglevisible"></a-timeline-animation>
 
-          <a-timeline-group>
+          <a-timeline-group>-->
             <!--<a-timeline-animation select="#sky" name="color"></a-timeline-animation>-->
-            <a-timeline-animation select="#text4" name="fadein"></a-timeline-animation>
+          <!--  <a-timeline-animation select="#text4" name="fadein"></a-timeline-animation>
           </a-timeline-group>
 
-          <a-timeline-animation select="#text4" name="fadeout" offset="500"></a-timeline-animation>
+          <a-timeline-animation select="#text4" name="fadeout" offset="500"></a-timeline-animation>-->
 
         </a-timeline>
 
