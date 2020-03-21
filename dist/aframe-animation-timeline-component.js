@@ -62,7 +62,8 @@
 	    },
 	    pauseEvents: {type: 'array'},
 	    startEvents: {type: 'array'},
-	    timeline: {type: 'string'}
+	    timeline: {type: 'string'},
+			resumeEvents:{type:'array'}
 	  },
 
 	  multiple: true,
@@ -73,18 +74,34 @@
 
 	    this.animationIsPlaying = false;
 	    this.beginAnimation = this.beginAnimation.bind(this);
+			this.pauseAnimation = this.pauseAnimation.bind(this);
+			this.resumeAnimation = this.resumeAnimation.bind(this);
 	    this.eventDetail = {name: this.id}
 	    this.time = 0;
 	    this.timeline = null;
 
 	    // Wait for start events.
 	    for (i = 0; i < data.startEvents.length; i++) {
+			//	console.log(data.startEvents[i]);
+			//	console.log(this);
 	      this.el.addEventListener(data.startEvents[i], this.beginAnimation);
 	    }
 
 	    for (i = 0; i < data.pauseEvents.length; i++) {
+				console.log(data.pauseEvents[i]);
+				//console.log("hee");
+			//	console.log(this);
+
 	      this.el.addEventListener(data.pauseEvents[i], this.pauseAnimation);
 	    }
+
+			for (i = 0; i < data.resumeEvents.length; i++) {
+			 console.log(data.resumeEvents[i]);
+			 //console.log("hee");
+		  // console.log(this);
+
+			 this.el.addEventListener(data.resumeEvents[i], this.resumeAnimation);
+		 }
 	  },
 
 	  play: function () {
@@ -198,7 +215,15 @@
 	  },
 
 	  pauseAnimation: function () {
+			console.log("pause here");
+			console.log(this);
 	    this.animationIsPlaying = false;
+	  },
+
+		resumeAnimation: function () {
+			console.log("running here");
+			console.log(this);
+	    this.animationIsPlaying = true;
 	  }
 	});
 
