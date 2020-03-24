@@ -119,7 +119,7 @@
 
       <a-assets timeout="60000"> -->
       <a-assets>
-          <video id="mine1" preload="auto" autoplay loop="true" src="miningIndustry480.mov" width="0.5"></video>
+          <video id="mine1" preload="auto" autoplay loop="true" src="miningIndustry480.mov" width="0.5" height="0.28"></video>
         </a-assets>
   <!--       <a-assets>
           <video id="mine2" preload="auto" loop="true" src="bisie480.mov" width="0.5"></video>
@@ -184,18 +184,15 @@
           scale="0.0001 0.0001 0.0001"
         ></a-mixin> -->
 
-        <a-mixin id="vid"
 
-          position="-3 -3 1"
-          rotation="-90 0 0"
-          ></a-mixin>
 
           <!-- animation__fadein="property: material.opacity; from: 0; to: 1; dur: 6000; easing: linear; autoplay: false"
           animation__fadeout="property: material.opacity; from: 1; to: 0; dur: 6000; easing: linear; autoplay: false"
       </a-assets>-->
 
-      <a-entity id="vid1" mixin="vid" material="shader: flat; src: #mine1"
-                geometry="primitive: plane; width: 0.5;"></a-entity>
+      <a-entity id="vid1" material="shader: flat; src: #mine1"
+                geometry="primitive: plane; width: 0.5; height: 0.28" position="-3 -3 1"
+                rotation="-90 0 0"></a-entity>
     <!--  <a-entity id="vid2" mixin="vid" material="shader: flat; src: #mine2"
                 geometry="primitive: plane; width: 0.5;"></a-entity>
       <a-entity id="vid3" mixin="vid" material="shader: flat; src: #mine3"
@@ -255,7 +252,8 @@
 //    }
 // }
 // })-->
-var m = document.querySelector("a-marker");
+// var m = document.querySelector("a-marker");
+var m = document.getElementById("ani1");
 var el = document.getElementById("receiver");
 
 var firstTime = false;
