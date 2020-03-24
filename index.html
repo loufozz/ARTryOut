@@ -114,10 +114,10 @@
 </a-marker>
 
 <a-marker id="ani2" preset='custom' type='pattern' url='pattern-ramMemory.patt'>
-    <a-scene id="receiver2" animation-timeline__1="timeline: #myTimeline2; loop: true; startEvents: myAni2; pauseEvents: myPause2; resumeEvents: myResume2">
+  <!--  <a-scene id="receiver2" animation-timeline__1="timeline: #myTimeline2; loop: true; startEvents: myAni2; pauseEvents: myPause2; resumeEvents: myResume2">
 
 
-      <a-assets timeout="60000">
+      <a-assets timeout="60000"> -->
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
         <a-assets>
           <video id="mine1" preload="auto" loop="true" src="miningIndustry480.mov" width="0.5"></video>
@@ -129,17 +129,17 @@
           <video id="mine3" preload="auto" loop="true" src="permit480.mov" width="0.5"></video>
         </a-assets>
 
-        <a-timeline id="myTimeline2">
+      <!--    <a-timeline id="myTimeline2">
 
           <a-timeline-animation select="#vid1" name="fadein"></a-timeline-animation>
           <a-timeline-animation select="#vid1" name="fadeout"></a-timeline-animation>
 
 
-        <!--  <a-timeline-group>
+        <a-timeline-group>
             <a-timeline-animation select="a-entity[mixin~=box]" name="fadein"></a-timeline-animation>
             <a-timeline-animation select="a-entity[mixin~=box]" name="scale"></a-timeline-animation>
             <a-timeline-animation select="a-entity[mixin~=box]" name="color"></a-timeline-animation>
-          </a-timeline-group>  -->
+          </a-timeline-group>
 
           <a-timeline-group>
 
@@ -150,17 +150,17 @@
 
 
 
-          <a-timeline-group>
+          <a-timeline-group>-->
 
           <!--  <a-timeline-animation select="a-entity[mixin~=box]" name="color"></a-timeline-animation>
             <a-timeline-animation select="a-entity[mixin~=box]" name="rotate"></a-timeline-animation>
-            <a-timeline-animation select="a-entity[mixin~=box]" name="position"></a-timeline-animation> -->
-            <a-timeline-animation select="#vid3" name="fadein"></a-timeline-animation>
-          <!--  <a-timeline-animation select="#text3" name="positionin"></a-timeline-animation>-->
-          </a-timeline-group>
+            <a-timeline-animation select="a-entity[mixin~=box]" name="position"></a-timeline-animation>
+            <a-timeline-animation select="#vid3" name="fadein"></a-timeline-animation>-->
+          <!--  <a-timeline-animation select="#text3" name="positionin"></a-timeline-animation>
+          </a-timeline-group>-->
 
-          <!--<a-timeline-animation select="#text3" name="positionout"></a-timeline-animation> -->
-          <a-timeline-animation select="#vid3" name="fadeout"></a-timeline-animation>
+          <!--<a-timeline-animation select="#text3" name="positionout"></a-timeline-animation>
+          <a-timeline-animation select="#vid3" name="fadeout"></a-timeline-animation>-->
 
 
         <!--  <a-timeline-animation select="#text4" name="togglevisible"></a-timeline-animation>
@@ -170,9 +170,9 @@
           <!--  <a-timeline-animation select="#text4" name="fadein"></a-timeline-animation>
           </a-timeline-group>
 
-          <a-timeline-animation select="#text4" name="fadeout" offset="500"></a-timeline-animation>-->
+          <a-timeline-animation select="#text4" name="fadeout" offset="500"></a-timeline-animation>
 
-        </a-timeline>
+        </a-timeline>-->
 
     <!--    <a-mixin id="box"
           geometry="primitive: box"
@@ -186,11 +186,13 @@
         ></a-mixin> -->
 
         <a-mixin id="vid"
-          animation__fadein="property: material.opacity; from: 0; to: 1; dur: 6000; easing: linear; autoplay: false"
-          animation__fadeout="property: material.opacity; from: 1; to: 0; dur: 6000; easing: linear; autoplay: false"
+
           position="-3 -3 1"
           rotation="-90 0 0"
-          visible="false"></a-mixin>
+          ></a-mixin>
+
+          <!-- animation__fadein="property: material.opacity; from: 0; to: 1; dur: 6000; easing: linear; autoplay: false"
+          animation__fadeout="property: material.opacity; from: 1; to: 0; dur: 6000; easing: linear; autoplay: false" -->
       </a-assets>
 
       <a-entity id="vid1" mixin="vid" material="shader: flat; src: #mine1"
