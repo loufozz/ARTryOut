@@ -118,18 +118,17 @@
 
 
       <a-assets timeout="60000"> -->
-        <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
-        <a-assets>
-          <video id="mine1" preload="auto" loop="true" src="miningIndustry480.mov" width="0.5"></video>
+      <a-assets>
+          <video id="mine1" preload="auto" autoplay loop="true" src="miningIndustry480.mov" width="0.5"></video>
         </a-assets>
-        <a-assets>
+  <!--       <a-assets>
           <video id="mine2" preload="auto" loop="true" src="bisie480.mov" width="0.5"></video>
         </a-assets>
         <a-assets>
           <video id="mine3" preload="auto" loop="true" src="permit480.mov" width="0.5"></video>
         </a-assets>
 
-      <!--    <a-timeline id="myTimeline2">
+         <a-timeline id="myTimeline2">
 
           <a-timeline-animation select="#vid1" name="fadein"></a-timeline-animation>
           <a-timeline-animation select="#vid1" name="fadeout"></a-timeline-animation>
@@ -197,12 +196,12 @@
 
       <a-entity id="vid1" mixin="vid" material="shader: flat; src: #mine1"
                 geometry="primitive: plane; width: 0.5;"></a-entity>
-      <a-entity id="vid2" mixin="vid" material="shader: flat; src: #mine2"
+    <!--  <a-entity id="vid2" mixin="vid" material="shader: flat; src: #mine2"
                 geometry="primitive: plane; width: 0.5;"></a-entity>
       <a-entity id="vid3" mixin="vid" material="shader: flat; src: #mine3"
                 geometry="primitive: plane; width: 0.5;"></a-entity>
 
-      <!-- <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>
+       <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>
 
       <a-entity position="0 -0.5 -10">
         <a-entity id="box1" mixin="box" position="-4 0 0"></a-entity>
