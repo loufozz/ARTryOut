@@ -188,8 +188,8 @@
 
         <a-mixin id="vid"
           scale="2 2 2"
-          animation__fadein="property: material.opacity; from: 0; to: 1; dur: 9000; easing: linear; autoplay: false"
-          animation__fadeout="property: material.opacity; from: 1; to: 0; dur: 9000; easing: linear; autoplay: false"
+          animation__fadein="property: material.opacity; from: 0; to: 1; dur: 6000; easing: linear; autoplay: false"
+          animation__fadeout="property: material.opacity; from: 1; to: 0; dur: 6000; easing: linear; autoplay: false"
           animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
           animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
           position="0 0 0"
@@ -198,13 +198,13 @@
       </a-assets>
 
       <a-entity id="vid1" mixin="vid" material="shader: flat; src: #mine1"
-                geometry="primitive: plane; width: 16; height: 9"></a-entity>
+                geometry="primitive: plane"></a-entity>
       <a-entity id="vid2" mixin="vid" material="shader: flat; src: #mine2"
-                geometry="primitive: plane; width: 16; height: 9"></a-entity>
+                geometry="primitive: plane"></a-entity>
       <a-entity id="vid3" mixin="vid" material="shader: flat; src: #mine3"
-                geometry="primitive: plane; width: 16; height: 9"></a-entity>
+                geometry="primitive: plane"></a-entity>
       <a-entity id="vid4" mixin="vid" material="shader: flat; src: #mine4"
-                geometry="primitive: plane; width: 16; height: 9"></a-entity>
+                geometry="primitive: plane"></a-entity>
       <!-- <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>
 
       <a-entity position="0 -0.5 -10">
@@ -259,13 +259,13 @@
 //    }
 // }
 // })
-var m2 = document.querySelector("a-marker");
+var m = document.querySelector("a-marker");
 var el2 = document.getElementById("receiver2");
 
 var firstTime = false;
-m2.addEventListener("markerFound", (e)=>{
+m.addEventListener("markerFound", (e)=>{
    console.log("found");
-   console.log(m2);
+   console.log(m);
    if(firstTime === false){
       el2.emit("myAni2");
        firstTime =true;
@@ -279,7 +279,7 @@ m2.addEventListener("markerFound", (e)=>{
 
 
 
-m2.addEventListener("markerLost", (e)=>{
+m.addEventListener("markerLost", (e)=>{
    console.log("lost");
   //console.log(el.pauseAnimation());
    el2.emit("myPause2");
