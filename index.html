@@ -232,7 +232,7 @@
     </style>-->
     <!--endgithubcorner-->
 
-<!--  <script>
+ <script>
 //     AFRAME.registerComponent("marking", {
 //     init: function() {
 //       console.log("Initializing");
@@ -254,33 +254,32 @@
 //       }
 //    }
 // }
-// })
-// var m = document.querySelector("a-marker");
-var m2 = document.getElementById("ani2");
-var el2 = document.getElementById("receiver2");
+// })-->
+var m = document.querySelector("a-marker");
+var el = document.getElementById("receiver");
 
 var firstTime = false;
-m2.addEventListener("markerFound", (e)=>{
+m.addEventListener("markerFound", (e)=>{
    console.log("found");
-   console.log(m2);
+   console.log(m);
    if(firstTime === false){
-      el2.emit("myAni2");
+      el.emit("myAni");
        firstTime =true;
 
    }
    else{
-     el2.emit("myResume2");
+     el.emit("myResume");
    }
 
 })
 
 
 
-m2.addEventListener("markerLost", (e)=>{
+m.addEventListener("markerLost", (e)=>{
    console.log("lost");
   //console.log(el.pauseAnimation());
-   el2.emit("myPause2");
-   console.log(el2);
+   el.emit("myPause");
+   console.log(el);
 })
 
 /*console.log(el);
@@ -288,7 +287,7 @@ el.addEventListener('triggerA', function (event) {
   console.log("EMIT RECEIVED");
   console.log(el);
   //console.log('Entity collided with', event.detail.collidingEntity);
-});*/
-</script>-->
+});*/-->
+</script>
   </body>
 </html>
