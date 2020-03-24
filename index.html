@@ -120,13 +120,13 @@
       <a-assets timeout="60000">
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
         <a-assets>
-          <video id="mine1" preload="auto" autoplay loop="true" src="miningIndustry480.mov" width="4"></video>
+          <video id="mine1" preload="auto" autoplay loop="true" src="miningIndustry480.mov" width="0.5"></video>
         </a-assets>
         <a-assets>
-          <video id="mine2" preload="auto" autoplay loop="true" src="bisie480.mov" width="4"></video>
+          <video id="mine2" preload="auto" autoplay loop="true" src="bisie480.mov" width="0.5"></video>
         </a-assets>
         <a-assets>
-          <video id="mine3" preload="auto" autoplay loop="true" src="permit480.mov" width="4"></video>
+          <video id="mine3" preload="auto" autoplay loop="true" src="permit480.mov" width="0.5"></video>
         </a-assets>
 
         <a-timeline id="myTimeline2">
@@ -194,13 +194,12 @@
       </a-assets>
 
       <a-entity id="vid1" mixin="vid" material="shader: flat; src: #mine1"
-                geometry="primitive: plane"></a-entity>
+                geometry="primitive: plane; width: 0.5;"></a-entity>
       <a-entity id="vid2" mixin="vid" material="shader: flat; src: #mine2"
-                geometry="primitive: plane"></a-entity>
+                geometry="primitive: plane; width: 0.5;"></a-entity>
       <a-entity id="vid3" mixin="vid" material="shader: flat; src: #mine3"
-                geometry="primitive: plane"></a-entity>
-      <a-entity id="vid4" mixin="vid" material="shader: flat; src: #mine4"
-                geometry="primitive: plane; width"></a-entity>
+                geometry="primitive: plane; width: 0.5;"></a-entity>
+
       <!-- <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>
 
       <a-entity position="0 -0.5 -10">
@@ -255,13 +254,14 @@
 //    }
 // }
 // })
-var m = document.querySelector("a-marker");
+// var m = document.querySelector("a-marker");
+var m2 = document.getElementById("ani2");
 var el2 = document.getElementById("receiver2");
 
 var firstTime = false;
-m.addEventListener("markerFound", (e)=>{
+m2.addEventListener("markerFound", (e)=>{
    console.log("found");
-   console.log(m);
+   console.log(m2);
    if(firstTime === false){
       el2.emit("myAni2");
        firstTime =true;
@@ -275,7 +275,7 @@ m.addEventListener("markerFound", (e)=>{
 
 
 
-m.addEventListener("markerLost", (e)=>{
+m2.addEventListener("markerLost", (e)=>{
    console.log("lost");
   //console.log(el.pauseAnimation());
    el2.emit("myPause2");
