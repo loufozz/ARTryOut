@@ -68,13 +68,16 @@
            ></a-mixin> -->
 
            <a-mixin id="vid"
-             animation__fadein="property: components.material.material.opacity; dur: 6000; from: 0; to: 1; autoplay: false"
-             animation__fadeout="property: components.material.material.opacity; dur: 6000; from: 1; to: 0; autoplay: false"
-             animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: true"
+             animation__fadein="property: material.opacity; dur: 6000; from: 0; to: 0.8; autoplay: false"
+             animation__fadeout="property: material.opacity; dur: 6000; from: 0.8; to: 0; autoplay: false"
+             animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
              animation__togglestay="property: visible; from: true; to: true; dur: 23000; autoplay: false"
              animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
              position="-1 -1 0"
              rotation="-90 0 0"
+             width="4"
+             height="2.25"
+             opacity="0.8"
 
              ></a-mixin>
 
@@ -82,16 +85,16 @@
              animation__fadeout="property: material.opacity; from: 1; to: 0; dur: 6000; easing: linear; autoplay: false" -->
          </a-assets>
 
-      <!--   <a-entity id="vid1" mixin="vid" material="shader: flat; src: #mine1"
-                   geometry="primitive: plane; width: 0.5;"></a-entity>
-         <a-entity id="vid2" mixin="vid" material="shader: flat; src: #mine2"
-                   geometry="primitive: plane; width: 0.5;"></a-entity>
-         <a-entity id="vid3" mixin="vid" material="shader: flat; src: #mine3"
-                   geometry="primitive: plane; width: 0.5;"></a-entity>-->
+         <a-entity id="vid1" mixin="vid" material="shader: flat; src: #testVid"
+                   geometry="primitive: plane"></a-entity>
+         <a-entity id="vid2" mixin="vid" material="shader: flat; src: #testVid2"
+                   geometry="primitive: plane"></a-entity>
+         <a-entity id="vid3" mixin="vid" material="shader: flat; src: #testVid3"
+                   geometry="primitive: plane"></a-entity>
 
-    <a-video id="vid1" mixin="vid" src="#testVid" width="4" height="2.25" opacity="0.8"></a-video>
-    <a-video id="vid2" mixin="vid" src="#testVid2" width="4" height="2.25" opacity="0.8"></a-video>
-    <a-video id="vid3" mixin="vid" src="#testVid3" width="4" height="2.25" opacity="0.8"></a-video>
+  <!--  <a-video id="vid1" mixin="vid" src="#testVid"></a-video>
+    <a-video id="vid2" mixin="vid" src="#testVid2"></a-video>
+    <a-video id="vid3" mixin="vid" src="#testVid3"></a-video>-->
 
 </a-scene>
     		</a-marker>
@@ -221,7 +224,7 @@ window.onload = function(){
 let el0 = document.getElementById("receiver0");
 let el = document.getElementById("receiver");
 let m = document.getElementsByTagName("a-marker");
-let mv = document.getElementsByTagName("a-video");
+let mv = document.getElementsByTagName("video");
 console.log("markers:: ");
 console.log(m);
 
