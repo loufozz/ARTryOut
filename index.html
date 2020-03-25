@@ -99,7 +99,7 @@
 <a-marker id="ani1" preset='custom' type='pattern' url='pattern-markerBlackLight1.patt'>
   <!-- <a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true"> -->
 
-<a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true; startEvents: myAni; pauseEvents: myPause; resumeEvents: myResume">
+<a-scene id="receiver" animation-timeline__2="timeline: #myTimeline; loop: true; startEvents: myAni; pauseEvents: myPause; resumeEvents: myResume">
 
 
       <a-assets timeout="2000">
@@ -221,6 +221,7 @@ window.onload = function(){
 let el0 = document.getElementById("receiver0");
 let el = document.getElementById("receiver");
 let m = document.getElementsByTagName("a-marker");
+let mv = document.getElementsByTagName("a-video");
 console.log("markers:: ");
 console.log(m);
 
@@ -233,16 +234,25 @@ m[0].addEventListener("markerFound0", (e)=>{
    console.log("found ani 0");
    console.log(m[0]);
    //play the video
-
+console.log(mv);
   if(firstTime0 === false){
+    console.log("firstTime0");
+    if(mv[0].currentTime === 0){
+      for(i = 0; i < mv.length; i++){
+    mv[i].play();
     console.log("play");
+  }
+  }
    el0.emit("myAni0");
      firstTime0 =true;
    }
   else{
     el0.emit("myResume0");
+    for(i = 0; i < mv.length; i++){
+  mv[i].play();
+  console.log("resume0");
+}
   }
-
 
 });
 
@@ -295,8 +305,11 @@ m[0].addEventListener("markerLost0", (e)=>{
    console.log("lost0");
   //console.log(el.pauseAnimation());
    el0.emit("myPause0");
+   for(i = 0; i < mv.length; i++){
+ mv[i].pause();
+}
    console.log(el0);
-})
+});
 
 m[1].addEventListener("markerLost", (e)=>{
    console.log("lost");
