@@ -27,7 +27,7 @@
   <!-- second-->
 
   <a-marker id="ani0" preset='custom' type='pattern' url='pattern-ramMemory.patt'>
-    <a-scene id="receiver0" animation-timeline__1="timeline: #myTimeline0; loop: true; startEvents: myAni0; pauseEvents: myPause0; resumeEvents: myResume0">
+  <!--  <a-scene id="receiver0" animation-timeline__1="timeline: #myTimeline0; loop: true; startEvents: myAni0; pauseEvents: myPause0; resumeEvents: myResume0">
 
         <a-assets timeout="120000">
           <a-timeline id="myTimeline0">
@@ -54,7 +54,7 @@
 
              </a-timeline-group>
 
-           </a-timeline>
+           </a-timeline>-->
 
        <!--    <a-mixin id="box"
              geometry="primitive: box"
@@ -65,7 +65,7 @@
              animation__color="property: components.material.material.color; type: color; from: #AAA; to: #222; dur: 2500; autoplay: false"
              animation__rotate="property: rotation; to: 0 360; dur: 1000; easing: easeInQuad; autoplay: false"
              scale="0.0001 0.0001 0.0001"
-           ></a-mixin> -->
+           ></a-mixin>
 
            <a-mixin id="vid"
              animation__fadein="property: material.opacity; dur: 6000; from: 0; to: 0.8; autoplay: false"
@@ -79,24 +79,24 @@
              height="2.25"
              opacity="0.8"
 
-             ></a-mixin>
+             ></a-mixin>-->
 
              <!-- animation__fadein="property: material.opacity; from: 0; to: 1; dur: 6000; easing: linear; autoplay: false"
              animation__fadeout="property: material.opacity; from: 1; to: 0; dur: 6000; easing: linear; autoplay: false" -->
-         </a-assets>
+      <!--    </a-assets>
 
          <a-entity id="vid1" mixin="vid" material="shader: flat; src: #testVid"
                    geometry="primitive: plane"></a-entity>
          <a-entity id="vid2" mixin="vid" material="shader: flat; src: #testVid2"
                    geometry="primitive: plane"></a-entity>
          <a-entity id="vid3" mixin="vid" material="shader: flat; src: #testVid3"
-                   geometry="primitive: plane"></a-entity>
+                   geometry="primitive: plane"></a-entity>-->
 
-  <!--  <a-video id="vid1" mixin="vid" src="#testVid"></a-video>
-    <a-video id="vid2" mixin="vid" src="#testVid2"></a-video>
-    <a-video id="vid3" mixin="vid" src="#testVid3"></a-video>-->
+   <a-video id="vid1" src="#testVid" width="4" height="2.25" position="-1 -1 0" rotation="-90 0 0" opacity="0.8"></a-video>
+    <a-video id="vid2" src="#testVid2" width="4" height="2.25" position="-1 -1 0" rotation="-90 0 0" opacity="0.8"></a-video>
+    <a-video id="vid3" src="#testVid3" width="4" height="2.25" position="-1 -1 0" rotation="-90 0 0" opacity="0.8"></a-video>
 
-</a-scene>
+<!--</a-scene>-->
     		</a-marker>
 
 <a-marker id="ani1" preset='custom' type='pattern' url='pattern-markerBlackLight1.patt'>
@@ -221,7 +221,7 @@
 window.onload = function(){
   console.log("ready for debug");
 //let m = document.getElementById("ani1");
-let el0 = document.getElementById("receiver0");
+//let el0 = document.getElementById("receiver0");
 let el = document.getElementById("receiver");
 let m = document.getElementsByTagName("a-marker");
 let mv = document.getElementsByTagName("video");
@@ -238,19 +238,16 @@ m[0].addEventListener("markerFound0", (e)=>{
    console.log(m[0]);
    //play the video
 console.log(mv);
-  if(firstTime0 === false){
-    console.log("firstTime0");
+
     if(mv[0].currentTime === 0){
       for(i = 0; i < mv.length; i++){
     mv[i].play();
-    console.log("play");
+    console.log("play0");
   }
   }
-   el0.emit("myAni0");
-     firstTime0 =true;
-   }
+
+
   else{
-    el0.emit("myResume0");
     for(i = 0; i < mv.length; i++){
   mv[i].play();
   console.log("resume0");
