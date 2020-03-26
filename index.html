@@ -225,10 +225,7 @@ window.onload = function(){
 let el = document.getElementById("receiver");
 let m = document.getElementsByTagName("a-marker");
 let mv = document.getElementsByTagName("a-video");
-console.log("markers:: ");
-console.log(m);
 
-let firstTime0 = false;
 let firstTime = false;
 m[0].addEventListener("markerFound", (e)=>{
   // ensure that the animation element is not visible...
@@ -297,7 +294,7 @@ m[1].addEventListener("markerFound", (e)=>{
 
    el.style.display = "block";
    //reset currentTime of the video
-   document.getElementById("testVid").currentTime =0;
+
    if(firstTime === false){
 
     el.emit("myAni");
@@ -323,7 +320,7 @@ m[1].addEventListener("markerLost", (e)=>{
    console.log("lost");
   //console.log(el.pauseAnimation());
    el.emit("myPause");
-   console.log(el);
+
 })
 
 /*console.log(el);
