@@ -230,7 +230,7 @@ console.log(m);
 
 let firstTime0 = false;
 let firstTime = false;
-m[0].addEventListener("markerFound0", (e)=>{
+m[0].addEventListener("markerFound", (e)=>{
   // ensure that the animation element is not visible...
   el.style.display = "none";
   m[1].style.display = "none";
@@ -309,7 +309,7 @@ m[1].addEventListener("markerFound", (e)=>{
 
 });
 
-m[0].addEventListener("markerLost0", (e)=>{
+m[0].addEventListener("markerLost", (e)=>{
    console.log("lost0");
   //console.log(el.pauseAnimation());
    el0.emit("myPause0");
