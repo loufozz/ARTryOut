@@ -312,12 +312,11 @@ m[1].addEventListener("markerFound", (e)=>{
 m[0].addEventListener("markerLost", (e)=>{
    console.log("lost0");
   //console.log(el.pauseAnimation());
-   
+
    for(i = 0; i < mv.length; i++){
  mv[i].pause();
- console.log(in0);
+ console.log("in0");
 }
-   console.log(el0);
 });
 
 m[1].addEventListener("markerLost", (e)=>{
