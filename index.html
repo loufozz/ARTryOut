@@ -16,13 +16,13 @@
 <a-scene embedded arjs>
   <a-assets>
     <!-- sabineTest.mp4 -->
-  <video id="testVid" autoplay="false" loop="true" muted playsinline src="miningIndustry480.mov"></video>
+  <video id="testVid" autoplay="false" loop="false" muted playsinline src="miningIndustry480.mov"></video>
 </a-assets>
 <a-assets>
-  <video id="testVid2" autoplay="false" loop="true" muted playsinline src="bisie480.mov"></video>
+  <video id="testVid2" autoplay="false" loop="false" muted playsinline src="bisie480.mov"></video>
 </a-assets>
 <a-assets>
-  <video id="testVid3" autoplay="false" loop="true" muted playsinline src="permit480.mov"></video>
+  <video id="testVid3" autoplay="false" loop="false" muted playsinline src="permit480.mov"></video>
 </a-assets>
   <!-- second-->
 
@@ -240,19 +240,26 @@ m[0].addEventListener("markerFound0", (e)=>{
 console.log(mv);
 
     if(mv[0].currentTime === 0){
-      for(i = 0; i < mv.length; i++){
-    mv[i].play();
+      mv[1].style.display = "none";
+      mv[2].style.display = "none";
+      mv[0].play();
+      console.log("preplay0");
+  }
+  mv[0].onended = function (){
+    mv[0].style.display = "none";
+    mv[1].style.display = "block";
+    mv[1].play();
     console.log("play0");
   }
+  mv[1].onended = function (){
+    mv[1].style.display = "none";
+    mv[2].style.display = "block";
+    mv[2].play();
   }
-
-
-  else{
-    for(i = 0; i < mv.length; i++){
-  mv[i].play();
-  console.log("resume0");
-}
-  }
+  mv[2].onended = function (){
+    mv[2].style.display = "none";
+    mv[0].style.display = "block";
+    mv[0].play();
 
 });
 
@@ -307,6 +314,7 @@ m[0].addEventListener("markerLost0", (e)=>{
    el0.emit("myPause0");
    for(i = 0; i < mv.length; i++){
  mv[i].pause();
+ console.log(in0);
 }
    console.log(el0);
 });
