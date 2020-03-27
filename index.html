@@ -230,6 +230,8 @@ let mv0 = document.getElementById("testVid");
 let mv1 = document.getElementById("testVid2");
 let mv2 = document.getElementById("testVid3");
 
+//var videoEl = document.querySelector('#video');
+
 let firstTime = false;
 m[0].addEventListener("markerFound", (e)=>{
   // ensure that the animation element is not visible...
@@ -239,8 +241,15 @@ m[0].addEventListener("markerFound", (e)=>{
    console.log(m[0]);
    //play the video
 console.log(mv0);
-mv0.play();
+mv0.style.display = "block";
+//mv0.play();
+
+
+
+
+
     if(mv0.currentTime === 0){
+      mv0.setAttribute("visible", true);
       mv1.style.display = "none";
       mv2.style.display = "none";
       mv0.play();
