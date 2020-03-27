@@ -233,15 +233,15 @@ let m = document.getElementsByTagName("a-marker");
 let firstTime = false;
 m[0].addEventListener("markerFound", (e)=>{
   // ensure that the animation element is not visible...
-  let mv0 = document.getElementById("testVid");
-  let mv1 = document.getElementById("testVid2");
-  let mv2 = document.getElementById("testVid3");
+  // let mv0 = document.getElementById("testVid");
+  // let mv1 = document.getElementById("testVid2");
+  // let mv2 = document.getElementById("testVid3");
   el.style.display = "none";
 
    console.log("found ani 0");
    console.log(m[0]);
    //play the video
-console.log(mv0);
+//console.log(mv0);
 
 //mv0.play();
 
@@ -249,12 +249,12 @@ console.log(mv0);
 
 
 
-    if(mv0.currentTime === 0){
-      mv0.style.display = "block";
-      mv0.setAttribute("visible", true);
-      mv1.style.display = "none";
-      mv2.style.display = "none";
-      mv0.play();
+    if(document.getElementById("testVid").currentTime === 0){
+      document.getElementById("testVid").style.display = "block";
+      document.getElementById("testVid").setAttribute("visible", true);
+      //mv1.style.display = "none";
+      //mv2.style.display = "none";
+      document.getElementById("testVid").play();
       console.log("preplay0");
   }
   // mv0.onended = function (){
@@ -326,9 +326,7 @@ m[0].addEventListener("markerLost", (e)=>{
   //console.log(el.pauseAnimation());
 
 
- mv0.pause();
-  mv1.pause();
-   mv2.pause();
+ document.getElementById("testVid").pause();
  console.log("in0");
 
 });
