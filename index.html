@@ -224,7 +224,11 @@ window.onload = function(){
 //let el0 = document.getElementById("receiver0");
 let el = document.getElementById("receiver");
 let m = document.getElementsByTagName("a-marker");
-let mv = document.getElementsByTagName("a-video");
+
+
+let mv0 = document.getElementById("testVid");
+let mv1 = document.getElementById("testVid2");
+let mv2 = document.getElementById("testVid3");
 
 let firstTime = false;
 m[0].addEventListener("markerFound", (e)=>{
@@ -236,27 +240,27 @@ m[0].addEventListener("markerFound", (e)=>{
    //play the video
 console.log(mv);
 
-    if(mv[0].currentTime === 0){
-      mv[1].style.display = "none";
-      mv[2].style.display = "none";
-      mv[0].play();
+    if(mv0.currentTime === 0){
+      mv1.style.display = "none";
+      mv2.style.display = "none";
+      mv0.play();
       console.log("preplay0");
   }
-  mv[0].onended = function (){
-    mv[0].style.display = "none";
-    mv[1].style.display = "block";
-    mv[1].play();
+  mv0.onended = function (){
+    mv0.style.display = "none";
+    mv1.style.display = "block";
+    mv1.play();
     console.log("play0");
   }
-  mv[1].onended = function (){
-    mv[1].style.display = "none";
-    mv[2].style.display = "block";
-    mv[2].play();
+  mv1.onended = function (){
+    mv1.style.display = "none";
+    mv2.style.display = "block";
+    mv2.play();
   }
-  mv[2].onended = function (){
-    mv[2].style.display = "none";
-    mv[0].style.display = "block";
-    mv[0].play();
+  mv2.onended = function (){
+    mv2.style.display = "none";
+    mv0.style.display = "block";
+    mv0.play();
   }
 
 });
@@ -310,10 +314,12 @@ m[0].addEventListener("markerLost", (e)=>{
    console.log("lost0");
   //console.log(el.pauseAnimation());
 
-   for(i = 0; i < mv.length; i++){
- mv[i].pause();
+
+ mv0.pause();
+  mv1.pause();
+   mv2.pause();
  console.log("in0");
-}
+
 });
 
 m[1].addEventListener("markerLost", (e)=>{
