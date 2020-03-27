@@ -226,15 +226,16 @@ let el = document.getElementById("receiver");
 let m = document.getElementsByTagName("a-marker");
 
 
-let mv0 = document.getElementById("testVid");
-let mv1 = document.getElementById("testVid2");
-let mv2 = document.getElementById("testVid3");
+
 
 //var videoEl = document.querySelector('#video');
 
 let firstTime = false;
 m[0].addEventListener("markerFound", (e)=>{
   // ensure that the animation element is not visible...
+  let mv0 = document.getElementById("testVid");
+  let mv1 = document.getElementById("testVid2");
+  let mv2 = document.getElementById("testVid3");
   el.style.display = "none";
 
    console.log("found ani 0");
