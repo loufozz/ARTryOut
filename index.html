@@ -236,12 +236,12 @@ let firstTime = false;
 m[0].addEventListener("markerFound", (e)=>{
   // ensure that the animation element is not visible...
   el.style.display = "none";
-  m[1].style.display = "none";
+
    console.log("found ani 0");
    console.log(m[0]);
    //play the video
 console.log(mv0);
-mv0.style.display = "block";
+
 //mv0.play();
 
 
@@ -249,6 +249,7 @@ mv0.style.display = "block";
 
 
     if(mv0.currentTime === 0){
+      mv0.style.display = "block";
       mv0.setAttribute("visible", true);
       mv1.style.display = "none";
       mv2.style.display = "none";
