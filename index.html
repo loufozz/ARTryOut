@@ -245,10 +245,6 @@ m[0].addEventListener("markerFound", (e)=>{
 
 //mv0.play();
 
-
-
-
-
     if(document.getElementById("testVid").currentTime === 0){
       //document.getElementById("testVid").style.display = "block";
       //document.getElementById("testVid").setAttribute("visible", true);
@@ -257,6 +253,10 @@ m[0].addEventListener("markerFound", (e)=>{
       document.getElementById("testVid").play();
       console.log("preplay0");
   }
+
+  else{
+      document.getElementById("testVid").play();
+    }
   // mv0.onended = function (){
   //   mv0.style.display = "none";
   //   mv1.style.display = "block";
@@ -301,6 +301,15 @@ m[0].addEventListener("markerFound", (e)=>{
 //    document.getElementById("testVid").pause();
 //    console.log(m[0]);
 // });
+m[0].addEventListener("markerLost", (e)=>{
+   console.log("lost0");
+  //console.log(el.pauseAnimation());
+
+
+ document.getElementById("testVid").pause();
+ console.log("in0");
+
+});
 
 m[1].addEventListener("markerFound", (e)=>{
    console.log("found ani 1");
@@ -318,16 +327,6 @@ m[1].addEventListener("markerFound", (e)=>{
    else{
      el.emit("myResume");
    }
-
-});
-
-m[0].addEventListener("markerLost", (e)=>{
-   console.log("lost0");
-  //console.log(el.pauseAnimation());
-
-
- document.getElementById("testVid").pause();
- console.log("in0");
 
 });
 
