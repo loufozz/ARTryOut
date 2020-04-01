@@ -224,7 +224,7 @@ window.onload = function(){
 //let el0 = document.getElementById("receiver0");
 let el = document.getElementById("receiver");
 let m = document.getElementsByTagName("a-marker");
-
+let vidd = document.getElementById("testVid");
 
 
 
@@ -245,17 +245,17 @@ m[0].addEventListener("markerFound", (e)=>{
 
 //mv0.play();
 
-    if(document.getElementById("testVid").currentTime === 0){
+    if(vidd.currentTime === 0){
       //document.getElementById("testVid").style.display = "block";
       //document.getElementById("testVid").setAttribute("visible", true);
       //mv1.style.display = "none";
       //mv2.style.display = "none";
-      document.getElementById("testVid").play();
+      vidd.play();
       console.log("preplay0");
   }
 
   else{
-      document.getElementById("testVid").play();
+      vidd.play();
     }
   // mv0.onended = function (){
   //   mv0.style.display = "none";
@@ -306,7 +306,7 @@ m[0].addEventListener("markerLost", (e)=>{
   //console.log(el.pauseAnimation());
 
 
- document.getElementById("testVid").pause();
+ vidd.pause();
  console.log("in0");
 
 });
@@ -317,7 +317,7 @@ m[1].addEventListener("markerFound", (e)=>{
    m[0].style.display = "none";
    el.style.display = "block";
    //reset currentTime of the video
-   document.getElementById("testVid").currentTime =0;
+   vidd.currentTime =0;
    if(firstTime === false){
 
     el.emit("myAni");
