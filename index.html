@@ -18,10 +18,10 @@
     <!-- sabineTest.mp4 -->
   <video id="testVid" autoplay="false" loop="false" src="miningIndustry480.mov"></video>
 </a-assets>
-<!-- <a-assets>
+<a-assets>
   <video id="testVid2" autoplay="false" loop="false" src="bisie480.mov"></video>
 </a-assets>
-<a-assets>
+<!-- <a-assets>
   <video id="testVid3" autoplay="false" loop="false" src="permit480.mov"></video>
 </a-assets> -->
   <!-- second-->
@@ -93,8 +93,8 @@
                    geometry="primitive: plane"></a-entity>-->
 
    <a-video id="vid1" src="#testVid" width="4" height="2.25" position="-1 -1 0" rotation="-90 0 0" opacity="0.8"></a-video>
-    <!-- <a-video id="vid2" src="#testVid2" width="4" height="2.25" position="-1 -1 0" rotation="-90 0 0" opacity="0.8"></a-video>
-    <a-video id="vid3" src="#testVid3" width="4" height="2.25" position="-1 -1 0" rotation="-90 0 0" opacity="0.8"></a-video> -->
+    <a-video id="vid2" src="#testVid2" width="4" height="2.25" position="-1 -1 0" rotation="-90 0 0" opacity="0.8"></a-video>
+    <!-- <a-video id="vid3" src="#testVid3" width="4" height="2.25" position="-1 -1 0" rotation="-90 0 0" opacity="0.8"></a-video> -->
 
 <!--</a-scene>-->
     		</a-marker>
@@ -225,7 +225,7 @@ window.onload = function(){
 let el = document.getElementById("receiver");
 let m = document.getElementsByTagName("a-marker");
 let vidd = document.getElementById("testVid");
-
+let vidd1 = document.getElementById("testVid2");
 
 
 //var videoEl = document.querySelector('#video');
@@ -251,12 +251,22 @@ m[0].addEventListener("markerFound", (e)=>{
       //mv1.style.display = "none";
       //mv2.style.display = "none";
       vidd.play();
-      console.log("preplay0");
+      console.log("PLAY");
   }
 
   else{
       vidd.play();
     }
+    else if(vidd.currentTime === 15000){
+      vidd.pause();
+      vidd.style.display = "none";
+      vidd2.style.display = "block";
+      vidd2.play();
+      console.log("2ND_VIDEO");
+    }
+    else{
+        vidd2.play();
+      }
   // mv0.onended = function (){
   //   mv0.style.display = "none";
   //   mv1.style.display = "block";
@@ -307,6 +317,7 @@ m[0].addEventListener("markerLost", (e)=>{
 
 
  vidd.pause();
+ vidd2.pause();
  console.log("in0");
 
 });
@@ -317,7 +328,9 @@ m[1].addEventListener("markerFound", (e)=>{
    m[0].style.display = "none";
    el.style.display = "block";
    //reset currentTime of the video
-   vidd.currentTime =0;
+   vidd.currentTime = 0;
+   vidd2.currentTime = 0;
+
    if(firstTime === false){
 
     el.emit("myAni");
