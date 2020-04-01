@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>A-Frame Animation Timeline Component - Bohemian</title>
+    <meta name="description" content="Basic example for Animation Timeline component."></meta>
+    <!--<script src="lib/aframe-v0.3.0.min.js"></script> -->
+     <!-- does not seem to work with the version above -->
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="dist/aframe-animation-timeline-component.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+
+  </head>
+  <body>
+    <!-- <audio src="bohemian.mp3" autoplay></audio> -->
+<a-scene embedded arjs>
+  <a-assets>
+    <!-- sabineTest.mp4 -->
+  <video id="testVid" autoplay="false" loop="false" src="miningIndustry480.mov"></video>
+</a-assets>
+<!-- <a-assets>
+  <video id="testVid2" autoplay="false" loop="false" src="bisie480.mov"></video>
+</a-assets>
+<a-assets>
+  <video id="testVid3" autoplay="false" loop="false" src="permit480.mov"></video>
+</a-assets> -->
+  <!-- second-->
+
+  <a-marker id="ani0" preset='custom' type='pattern' url='pattern-ramMemory.patt'>
+  <!--  <a-scene id="receiver0" animation-timeline__1="timeline: #myTimeline0; loop: true; startEvents: myAni0; pauseEvents: myPause0; resumeEvents: myResume0">
+
+        <a-assets timeout="120000">
+          <a-timeline id="myTimeline0">
+             <a-timeline-animation select="#vid1" name="togglevisible"></a-timeline-animation>
+             <a-timeline-animation select="#vid1" name="fadein"></a-timeline-animation>
+             <a-timeline-animation select="#vid1" name="togglestay"></a-timeline-animation>
+             <a-timeline-animation select="#vid1" name="fadeout"></a-timeline-animation>
+             <a-timeline-animation select="#vid1" name="togglevisibleoff"></a-timeline-animation>
+             <a-timeline-group>
+
+               <a-timeline-animation select="#vid2" name="togglevisible"></a-timeline-animation>
+               <a-timeline-animation select="#vid2" name="fadein"></a-timeline-animation>
+               <a-timeline-animation select="#vid2" name="togglestay"></a-timeline-animation>
+               <a-timeline-animation select="#vid2" name="fadeout"></a-timeline-animation>
+               <a-timeline-animation select="#vid2" name="togglevisibleoff"></a-timeline-animation>
+
+             <a-timeline-group>
+
+               <a-timeline-animation select="#vid3" name="togglevisible"></a-timeline-animation>
+               <a-timeline-animation select="#vid3" name="fadein"></a-timeline-animation>
+               <a-timeline-animation select="#vid3" name="togglestay"></a-timeline-animation>
+               <a-timeline-animation select="#vid3" name="fadeout"></a-timeline-animation>
+               <a-timeline-animation select="#vid3" name="togglevisibleoff"></a-timeline-animation>
+
+             </a-timeline-group>
+
+           </a-timeline>-->
+
+       <!--    <a-mixin id="box"
+             geometry="primitive: box"
+             material="color: #AAA; opacity: 0"
+             animation__fadein="property: components.material.material.opacity; dur: 2000; from: 0; to: 1; autoplay: false"
+             animation__scale="property: scale; to: 2 20 2; dur: 2000; easing: easeInOutElastic; autoplay: false"
+             animation__position="property: position; to: 0 30 -3; dur: 2000; autoplay: false"
+             animation__color="property: components.material.material.color; type: color; from: #AAA; to: #222; dur: 2500; autoplay: false"
+             animation__rotate="property: rotation; to: 0 360; dur: 1000; easing: easeInQuad; autoplay: false"
+             scale="0.0001 0.0001 0.0001"
+           ></a-mixin>
+
+           <a-mixin id="vid"
+             animation__fadein="property: material.opacity; dur: 6000; from: 0; to: 0.8; autoplay: false"
+             animation__fadeout="property: material.opacity; dur: 6000; from: 0.8; to: 0; autoplay: false"
+             animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
+             animation__togglestay="property: visible; from: true; to: true; dur: 23000; autoplay: false"
+             animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
+             position="-1 -1 0"
+             rotation="-90 0 0"
+             width="4"
+             height="2.25"
+             opacity="0.8"
+
+             ></a-mixin>-->
+
+             <!-- animation__fadein="property: material.opacity; from: 0; to: 1; dur: 6000; easing: linear; autoplay: false"
+             animation__fadeout="property: material.opacity; from: 1; to: 0; dur: 6000; easing: linear; autoplay: false" -->
+      <!--    </a-assets>
+
+         <a-entity id="vid1" mixin="vid" material="shader: flat; src: #testVid"
+                   geometry="primitive: plane"></a-entity>
+         <a-entity id="vid2" mixin="vid" material="shader: flat; src: #testVid2"
+                   geometry="primitive: plane"></a-entity>
+         <a-entity id="vid3" mixin="vid" material="shader: flat; src: #testVid3"
+                   geometry="primitive: plane"></a-entity>-->
+
+   <a-video id="vid1" src="#testVid" width="4" height="2.25" position="-1 -1 0" rotation="-90 0 0" opacity="0.8"></a-video>
+    <!-- <a-video id="vid2" src="#testVid2" width="4" height="2.25" position="-1 -1 0" rotation="-90 0 0" opacity="0.8"></a-video>
+    <a-video id="vid3" src="#testVid3" width="4" height="2.25" position="-1 -1 0" rotation="-90 0 0" opacity="0.8"></a-video> -->
+
+<!--</a-scene>-->
+    		</a-marker>
+
+<a-marker id="ani1" preset='custom' type='pattern' url='pattern-markerBlackLight1.patt'>
+  <!-- <a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true"> -->
+
+<a-scene id="receiver" animation-timeline__2="timeline: #myTimeline; loop: true; startEvents: myAni; pauseEvents: myPause; resumeEvents: myResume">
+
+
+      <a-assets timeout="2000">
+        <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
+
+        <a-timeline id="myTimeline">
+          <a-timeline-animation select="#text1" name="togglevisible"></a-timeline-animation>
+          <a-timeline-animation select="#text1" name="fadein"></a-timeline-animation>
+          <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
+          <a-timeline-animation select="#text1" name="togglevisibleoff"></a-timeline-animation>
+
+        <!--  <a-timeline-group>
+            <a-timeline-animation select="a-entity[mixin~=box]" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="a-entity[mixin~=box]" name="scale"></a-timeline-animation>
+            <a-timeline-animation select="a-entity[mixin~=box]" name="color"></a-timeline-animation>
+          </a-timeline-group>  -->
+
+          <a-timeline-group>
+            <a-timeline-animation select="#text2" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#text2" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#text2" name="textcolor"></a-timeline-animation>
+          </a-timeline-group>
+
+          <a-timeline-animation select="#text2" name="fadeout"></a-timeline-animation>
+          <a-timeline-animation select="#text2" name="togglevisibleoff"></a-timeline-animation>
+
+
+          <a-timeline-group>
+            <a-timeline-animation select="#text3" name="togglevisible"></a-timeline-animation>
+          <!--  <a-timeline-animation select="a-entity[mixin~=box]" name="color"></a-timeline-animation>
+            <a-timeline-animation select="a-entity[mixin~=box]" name="rotate"></a-timeline-animation>
+            <a-timeline-animation select="a-entity[mixin~=box]" name="position"></a-timeline-animation> -->
+            <a-timeline-animation select="#text3" name="fadein"></a-timeline-animation>
+          <!--  <a-timeline-animation select="#text3" name="positionin"></a-timeline-animation>-->
+          </a-timeline-group>
+
+          <!--<a-timeline-animation select="#text3" name="positionout"></a-timeline-animation> -->
+          <a-timeline-animation select="#text3" name="fadeout"></a-timeline-animation>
+          <a-timeline-animation select="#text3" name="togglevisibleoff"></a-timeline-animation>
+
+        <!--  <a-timeline-animation select="#text4" name="togglevisible"></a-timeline-animation>
+
+          <a-timeline-group>-->
+            <!--<a-timeline-animation select="#sky" name="color"></a-timeline-animation>-->
+          <!--  <a-timeline-animation select="#text4" name="fadein"></a-timeline-animation>
+          </a-timeline-group>
+
+          <a-timeline-animation select="#text4" name="fadeout" offset="500"></a-timeline-animation>-->
+
+        </a-timeline>
+
+    <!--    <a-mixin id="box"
+          geometry="primitive: box"
+          material="color: #AAA; opacity: 0"
+          animation__fadein="property: components.material.material.opacity; dur: 2000; from: 0; to: 1; autoplay: false"
+          animation__scale="property: scale; to: 2 20 2; dur: 2000; easing: easeInOutElastic; autoplay: false"
+          animation__position="property: position; to: 0 30 -3; dur: 2000; autoplay: false"
+          animation__color="property: components.material.material.color; type: color; from: #AAA; to: #222; dur: 2500; autoplay: false"
+          animation__rotate="property: rotation; to: 0 360; dur: 1000; easing: easeInQuad; autoplay: false"
+          scale="0.0001 0.0001 0.0001"
+        ></a-mixin> -->
+
+        <a-mixin id="text"
+          text="align: center; color: white; width: 6; opacity: 0; wrap-count: 20"
+          animation__fadein="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 3000; easing: linear; autoplay: false"
+          animation__fadeout="property: components.text.material.uniforms.opacity.value; from: 1; to: 0; dur: 3000; easing: linear; autoplay: false"
+          animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
+          animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
+          position="0 0 0"
+          rotation="-90 0 0"
+          visible="false"></a-mixin>
+      </a-assets>
+
+      <a-entity id="text1" mixin="text" text="value: Would you walk from Laval"></a-entity>
+      <a-entity id="text2" mixin="text" text="value: to Brossard for your job?; opacity: 1"
+                animation__textcolor="property: text.color; from: #FAFAFA; to: #8C200E; dur: 2500; autoplay: false"></a-entity>
+      <a-entity id="text3" mixin="text" text="value: The porter Prince walks 35 km in 2 days"></a-entity>
+      <a-entity id="text4" mixin="text" text="value: The cassiterite porter Prince" position="0 0 0"
+                animation__positionin="property: position; to: 0 2 -3; dur: 2500; autoplay: false"
+                animation__positionout="property: position; from: 0 2 -3; to: -10 2 -3; dur: 5500; autoplay: false"></a-entity>
+      <!-- <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>
+
+      <a-entity position="0 -0.5 -10">
+        <a-entity id="box1" mixin="box" position="-4 0 0"></a-entity>
+        <a-entity mixin="box"></a-entity>
+        <a-entity mixin="box" position="4 0 0"></a-entity>
+0 -10 0
+        0 2 -3
+      </a-entity>-->
+
+
+      <!--<a-sky id="sky" color="#FAFAFA" animation__color="property: components.material.material.color; type: color; from: #FAFAFA; to: #111; dur: 2000; autoplay: false"></a-sky>-->
+
+
+</a-scene>
+</a-marker>
+
+
+<a-entity camera></a-entity>
+
+    </a-scene>
+
+    <!--githubcorner
+    <a href="https://github.com/supermedium/superframe/tree/master/components/animation-timeline/examples/basic/" class="github-corner">
+      <svg width="80" height="80" viewBox="0 0 250 250" style="fill: #111; color: #EFEFEF; position: fixed; bottom: 0; border: 0; left: 0; transform: rotate(180deg); opacity: 0.8">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+      </svg>
+    </a> -->
+    <!--<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
+    </style>-->
+    <!--endgithubcorner-->
+
+ <script>
+
+
+window.onload = function(){
+  console.log("ready for debug");
+//let m = document.getElementById("ani1");
+//let el0 = document.getElementById("receiver0");
+let el = document.getElementById("receiver");
+let m = document.getElementsByTagName("a-marker");
+
+
+
+
+//var videoEl = document.querySelector('#video');
+
+let firstTime = false;
+m[0].addEventListener("markerFound", (e)=>{
+  // ensure that the animation element is not visible...
+  // let mv0 = document.getElementById("testVid");
+  // let mv1 = document.getElementById("testVid2");
+  // let mv2 = document.getElementById("testVid3");
+  el.style.display = "none";
+
+   console.log("found ani 0");
+   console.log(m[0]);
+   //play the video
+//console.log(mv0);
+
+//mv0.play();
+
+    if(document.getElementById("testVid").currentTime === 0){
+      //document.getElementById("testVid").style.display = "block";
+      //document.getElementById("testVid").setAttribute("visible", true);
+      //mv1.style.display = "none";
+      //mv2.style.display = "none";
+      document.getElementById("testVid").play();
+      console.log("preplay0");
+  }
+
+  else{
+      document.getElementById("testVid").play();
+    }
+  // mv0.onended = function (){
+  //   mv0.style.display = "none";
+  //   mv1.style.display = "block";
+  //   mv1.play();
+  //   console.log("play0");
+  // }
+  // mv1.onended = function (){
+  //   mv1.style.display = "none";
+  //   mv2.style.display = "block";
+  //   mv2.play();
+  // }
+  // mv2.onended = function (){
+  //   mv2.style.display = "none";
+  //   mv0.style.display = "block";
+  //   mv0.play();
+  // }
+
+});
+
+// let firstTime = false;
+// m[0].addEventListener("markerFound", (e)=>{
+//   // ensure that the animation element is not visible...
+//   el.style.display = "none";
+//    console.log("found ani 0");
+//    console.log(m[0]);
+//    //play the video
+//    console.log( document.getElementById("testVid"));
+//    if(document.getElementById("testVid").currentTime === 0){
+//    document.getElementById("testVid").play();
+//    console.log("play");
+//  }
+//   else{
+//     document.getElementById("testVid").play();
+//   }
+//
+//
+// });
+
+// m[0].addEventListener("markerLost", (e)=>{
+//    console.log("lost 0");
+//   //console.log(el.pauseAnimation());
+//    document.getElementById("testVid").pause();
+//    console.log(m[0]);
+// });
+m[0].addEventListener("markerLost", (e)=>{
+   console.log("lost0");
+  //console.log(el.pauseAnimation());
+
+
+ document.getElementById("testVid").pause();
+ console.log("in0");
+
+});
+
+m[1].addEventListener("markerFound", (e)=>{
+   console.log("found ani 1");
+   console.log(m[1]);
+   m[0].style.display = "none";
+   el.style.display = "block";
+   //reset currentTime of the video
+   document.getElementById("testVid").currentTime =0;
+   if(firstTime === false){
+
+    el.emit("myAni");
+      firstTime =true;
+    }
+   else{
+     el.emit("myResume");
+   }
+
+});
+
+m[1].addEventListener("markerLost", (e)=>{
+   console.log("lost");
+  //console.log(el.pauseAnimation());
+   el.emit("myPause");
+
+})
+
+/*console.log(el);
+el.addEventListener('triggerA', function (event) {
+  console.log("EMIT RECEIVED");
+  console.log(el);
+  //console.log('Entity collided with', event.detail.collidingEntity);
+});*/-->
+}
+</script>
+  </body>
+</html>
