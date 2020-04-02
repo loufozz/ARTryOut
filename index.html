@@ -15,7 +15,7 @@
     <!-- <audio src="bohemian.mp3" autoplay></audio> -->
 <a-scene embedded arjs>
   <a-assets>
-    <video id="testVid" muted playsinline controls src="bisieMining480.mov"></video>
+    <video id="testVid" muted playsinline src="bisieMining480.mov"></video>
 
 </a-assets>
   <!-- second-->
@@ -168,6 +168,12 @@
 window.onload = function(){
   let videoNumToPlay =0;
   console.log("ready for debug");
+  window.addEventListener("click", function(){
+  console.log("clicked");
+  document.getElementById("testVid").muted =false;
+
+});
+
 //let m = document.getElementById("ani1");
 let el = document.getElementById("receiver");
 let m = document.getElementsByTagName("a-marker");
