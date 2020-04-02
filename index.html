@@ -15,14 +15,14 @@
     <!-- <audio src="bohemian.mp3" autoplay></audio> -->
 <a-scene embedded arjs>
   <a-assets>
-    <video id="testVid" muted playsinline src="bisieMining480.mov"></video>
+    <video id="testVid" autoplay="false" loop="false" muted playsinline src="bisieMining480.mov"></video>
 
 </a-assets>
   <!-- second-->
 
   <a-marker id="ani0" preset='custom' type='pattern' url='pattern-ramMemory.patt'>
 
-    <a-video src="#testVid" width="16" height="9" position="-3 -3 1"></a-video>
+    <a-video src="#testVid" width="4" height="2.25" position="-1 -1 0" rotation="-90 0 0" opacity="0.8"></a-video>
  </a-marker>
 
 <a-marker id="ani1" preset='custom' type='pattern' url='pattern-markerBlackLight1.patt'>
@@ -214,7 +214,7 @@ m[0].addEventListener("markerFound", (e)=>{
    }
 
    if(videoNumToPlay ===2){
-      document.getElementById("testVid").src = "bisie480.mov";
+      document.getElementById("testVid").src = "permit480.mov";
 
    }
    else if(videoNumToPlay ===0){
