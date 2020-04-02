@@ -229,7 +229,7 @@ m[0].addEventListener("markerFound", (e)=>{
 m[0].addEventListener("markerLost", (e)=>{
    console.log("lost video marker");
   console.log(document.getElementById("testVid").currentTime);
-
+  document.getElementById("testVid").pause();
 })
 
 
