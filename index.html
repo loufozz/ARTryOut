@@ -19,11 +19,21 @@
 
 </a-assets>
   <!-- second-->
+  <a-assets>
+    <audio id="soundTelling" src="belgianLegacy.mp3" preload="auto"></audio>
+  </a-assets>
+
+
 
   <a-marker id="ani0" preset='custom' type='pattern' url='pattern-ramMemory.patt'>
 
     <a-video src="#testVid" width="4" height="2.25" position="-1 -1 0" rotation="-90 0 0" opacity="0.8"></a-video>
  </a-marker>
+
+ <a-marker id="ani0" preset='custom' type='pattern' url='pattern-hardDrive.patt'>
+
+   <a-entity sound="src: #soundTelling" autoplay="false"></a-entity>
+</a-marker>
 
 <a-marker id="ani1" preset='custom' type='pattern' url='pattern-markerBlackLight1.patt'>
   <!-- <a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true"> -->
@@ -167,6 +177,7 @@
 
 window.onload = function(){
   let videoNumToPlay =0;
+  let soundNumToPlay =0;
   console.log("ready for debug");
   window.addEventListener("click", function(){
   console.log("clicked");
@@ -265,6 +276,57 @@ m[1].addEventListener("markerLost", (e)=>{
   //console.log(el.pauseAnimation());
    el.emit("myPause");
    console.log(el);
+})
+
+m[2].addEventListener("markerFound", (e)=>{
+  // ensure that the animation element is not visible...
+  el.style.display = "none";
+   console.log("found sound");
+   console.log(m[2]);
+   //play the video
+   console.log(document.getElementById("soundTelling"));
+   document.getElementById("soundTelling").components.sound.playSound();
+
+
+});
+
+/*function testFunc(){
+  console.log("dur:: "+document.getElementById("testVid").duration);
+  console.log("curr:: "+document.getElementById("testVid").currentTime );
+}*/
+
+ document.getElementById("soundTelling").addEventListener('sound-ended', function(){
+   console.log("sound ended");
+
+   if(soundNumToPlay <1){
+     soundNumToPlay +=1;
+   }
+   //reset
+   else{
+      soundNumToPlay =0;
+   }
+
+   if(soundNumToPlay ===1){
+       document.getElementById("soundTelling").src = "bl11.mp3";
+   }
+
+   // if(soundNumToPlay ===2){
+   //    document.getElementById("soundTelling").src = "permit480.mov";
+   //
+   // }
+   else if(soundNumToPlay ===0){
+     document.getElementById("soundTelling").src = "belgianLegacy.mp3";
+
+   }
+
+  console.log("and now ... "+  document.getElementById("soundTelling"));
+   document.getElementById("soundTelling").components.sound.playSound();
+
+ }
+m[2].addEventListener("markerLost", (e)=>{
+   console.log("lost video marker");
+  console.log(document.getElementById("testVid").currentTime);
+  document.getElementById("soundTelling").components.sound.pauseSound();
 })
 
 /*console.log(el);
