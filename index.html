@@ -287,7 +287,7 @@ m[2].addEventListener("markerFound", (e)=>{
    console.log(m[2]);
    //play the video
    console.log(document.getElementById("soundTelling"));
-   document.getElementById("soundTelling").components.sound.playSound();
+   document.getElementById("soundTelling").components.sound.play();
 
 
 });
@@ -327,9 +327,9 @@ m[2].addEventListener("markerFound", (e)=>{
  // });
 
 m[2].addEventListener("markerLost", (e)=>{
-   console.log("lost video marker");
-  console.log(document.getElementById("testVid").currentTime);
-  document.getElementById("soundTelling").components.sound.pauseSound();
+   console.log("lost sound marker");
+  console.log(document.getElementById("soundTelling").currentTime);
+  document.getElementById("soundTelling").components.sound.pause();
 })
 
 /*console.log(el);
