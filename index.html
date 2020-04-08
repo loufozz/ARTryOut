@@ -186,7 +186,6 @@ window.onload = function(){
   window.addEventListener("click", function(){
   console.log("clicked");
   document.getElementById("testVid").muted =false;
-  sample.play();
 });
 
 //let m = document.getElementById("ani1");
@@ -198,6 +197,7 @@ console.log(m);
 
 
 let firstTime = false;
+let firstSound = false;
 m[0].addEventListener("markerFound", (e)=>{
   // ensure that the animation element is not visible...
   el.style.display = "none";
@@ -290,8 +290,16 @@ m[2].addEventListener("markerFound", (e)=>{
    console.log(m[2]);
    //play the video
    console.log(sample);
+   if (firstSound === false){
+     firstSound = true;
+     window.addEventListener("click", function(){
+     console.log("sound clicked");
+     sample.play();
+   }
+   }
+   else{
    sample.play();
-
+}
 
 });
 
