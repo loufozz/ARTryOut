@@ -181,11 +181,12 @@
 window.onload = function(){
   let videoNumToPlay =0;
   let soundNumToPlay =0;
+  let sample = document.getElementById("soundTelling");
   console.log("ready for debug");
   window.addEventListener("click", function(){
   console.log("clicked");
   document.getElementById("testVid").muted =false;
-  document.getElementById("soundTelling").components.sound.playSound();
+  sample.components.sound.playSound();
 });
 
 //let m = document.getElementById("ani1");
@@ -288,8 +289,8 @@ m[2].addEventListener("markerFound", (e)=>{
    console.log("found sound");
    console.log(m[2]);
    //play the video
-   console.log(document.getElementById("soundTelling"));
-   document.getElementById("soundTelling").components.sound.playSound();
+   console.log(sample);
+   sample.components.sound.playSound();
 
 
 });
@@ -330,8 +331,8 @@ m[2].addEventListener("markerFound", (e)=>{
 
 m[2].addEventListener("markerLost", (e)=>{
    console.log("lost sound marker");
-  console.log(document.getElementById("soundTelling").currentTime);
-  document.getElementById("soundTelling").components.sound.pauseSound();
+  console.log(sample);
+  sample.components.sound.pauseSound();
 })
 
 /*console.log(el);
