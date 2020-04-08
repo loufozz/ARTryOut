@@ -296,34 +296,34 @@ m[2].addEventListener("markerFound", (e)=>{
   console.log("curr:: "+document.getElementById("testVid").currentTime );
 }*/
 
- document.getElementById("soundTelling").addEventListener('sound-ended', function(){
-   console.log("sound ended");
-
-   if(soundNumToPlay <1){
-     soundNumToPlay +=1;
-   }
-   //reset
-   else{
-      soundNumToPlay =0;
-   }
-
-   if(soundNumToPlay ===1){
-       document.getElementById("soundTelling").src = "bl11.mp3";
-   }
-
-   // if(soundNumToPlay ===2){
-   //    document.getElementById("soundTelling").src = "permit480.mov";
-   //
-   // }
-   else if(soundNumToPlay ===0){
-     document.getElementById("soundTelling").src = "belgianLegacy.mp3";
-
-   }
-
-  console.log("and now ... "+  document.getElementById("soundTelling"));
-   document.getElementById("soundTelling").components.sound.playSound();
-
- });
+ // document.getElementById("soundTelling").addEventListener('sound-ended', function(){
+ //   console.log("sound ended");
+ //
+ //   if(soundNumToPlay <1){
+ //     soundNumToPlay +=1;
+ //   }
+ //   //reset
+ //   else{
+ //      soundNumToPlay =0;
+ //   }
+ //
+ //   if(soundNumToPlay ===1){
+ //       document.getElementById("soundTelling").src = "bl11.mp3";
+ //   }
+ //
+ //   // if(soundNumToPlay ===2){
+ //   //    document.getElementById("soundTelling").src = "permit480.mov";
+ //   //
+ //   // }
+ //   else if(soundNumToPlay ===0){
+ //     document.getElementById("soundTelling").src = "belgianLegacy.mp3";
+ //
+ //   }
+ //
+ //  console.log("and now ... "+  document.getElementById("soundTelling"));
+ //   document.getElementById("soundTelling").components.sound.playSound();
+ //
+ // });
 
 m[2].addEventListener("markerLost", (e)=>{
    console.log("lost video marker");
