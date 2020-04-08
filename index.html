@@ -186,7 +186,7 @@ window.onload = function(){
   window.addEventListener("click", function(){
   console.log("clicked");
   document.getElementById("testVid").muted =false;
-  sample.components.sound.playSound();
+  sample.play();
 });
 
 //let m = document.getElementById("ani1");
@@ -290,7 +290,7 @@ m[2].addEventListener("markerFound", (e)=>{
    console.log(m[2]);
    //play the video
    console.log(sample);
-   sample.components.sound.playSound();
+   sample.play();
 
 
 });
@@ -332,7 +332,7 @@ m[2].addEventListener("markerFound", (e)=>{
 m[2].addEventListener("markerLost", (e)=>{
    console.log("lost sound marker");
   console.log(sample);
-  sample.components.sound.pauseSound();
+  sample.pause();
 })
 
 /*console.log(el);
