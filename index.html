@@ -183,7 +183,7 @@ window.onload = function(){
   window.addEventListener("click", function(){
   console.log("clicked");
   document.getElementById("testVid").muted =false;
-  document.getElementById("soundTelling").components.sound.play();
+  document.getElementById("soundTelling").components.sound.playSound();
 });
 
 //let m = document.getElementById("ani1");
@@ -287,7 +287,7 @@ m[2].addEventListener("markerFound", (e)=>{
    console.log(m[2]);
    //play the video
    console.log(document.getElementById("soundTelling"));
-   document.getElementById("soundTelling").components.sound.play();
+   document.getElementById("soundTelling").components.sound.playSound();
 
 
 });
@@ -329,7 +329,7 @@ m[2].addEventListener("markerFound", (e)=>{
 m[2].addEventListener("markerLost", (e)=>{
    console.log("lost sound marker");
   console.log(document.getElementById("soundTelling").currentTime);
-  document.getElementById("soundTelling").components.sound.pause();
+  document.getElementById("soundTelling").components.sound.pauseSound();
 })
 
 /*console.log(el);
