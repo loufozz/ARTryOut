@@ -276,7 +276,7 @@ m[1].addEventListener("markerLost", (e)=>{
   //console.log(el.pauseAnimation());
    el.emit("myPause");
    console.log(el);
-})
+});
 
 m[2].addEventListener("markerFound", (e)=>{
   // ensure that the animation element is not visible...
@@ -322,7 +322,7 @@ m[2].addEventListener("markerFound", (e)=>{
   console.log("and now ... "+  document.getElementById("soundTelling"));
    document.getElementById("soundTelling").components.sound.playSound();
 
- }
+ });
 m[2].addEventListener("markerLost", (e)=>{
    console.log("lost video marker");
   console.log(document.getElementById("testVid").currentTime);
