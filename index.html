@@ -30,7 +30,7 @@
     <a-video src="#testVid" width="4" height="2.25" position="-1 -1 0" rotation="-90 0 0" opacity="0.8"></a-video>
  </a-marker>
 
- <a-marker id="ani0" preset='custom' type='pattern' url='pattern-hardDrive.patt'>
+ <a-marker id="ani3" preset='custom' type='pattern' url='pattern-hardDrive.patt'>
 
    <a-entity sound="src: #soundTelling" autoplay="false"></a-entity>
 </a-marker>
@@ -245,12 +245,13 @@ m[0].addEventListener("markerFound", (e)=>{
   console.log("and now ... "+  document.getElementById("testVid"));
    document.getElementById("testVid").play();
 
- }
+ });
+
 m[0].addEventListener("markerLost", (e)=>{
    console.log("lost video marker");
   console.log(document.getElementById("testVid").currentTime);
   document.getElementById("testVid").pause();
-})
+});
 
 
 m[1].addEventListener("markerFound", (e)=>{
@@ -323,6 +324,7 @@ m[2].addEventListener("markerFound", (e)=>{
    document.getElementById("soundTelling").components.sound.playSound();
 
  });
+
 m[2].addEventListener("markerLost", (e)=>{
    console.log("lost video marker");
   console.log(document.getElementById("testVid").currentTime);
