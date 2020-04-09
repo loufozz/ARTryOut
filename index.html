@@ -135,8 +135,8 @@
 <a-marker id="ani2" preset='custom' type='pattern' url='pattern-hardDrive.patt'>
 
   <!-- <a-sound src="#soundTelling" autoplay="false" position="0 0 0"></a-sound> -->
-  <a-sound src="#soundTelling" autoplay="false" geometry="primitive: box"
-  position="0 0 0" color="red"></a-sound>
+  <a-sound src="#soundTelling" material="opacity:0.5" autoplay="false" geometry="primitive: box"
+  position="0 0 0" scale="1 1 1" color="red" on="click"></a-sound>
 </a-marker>
 
 
@@ -294,14 +294,9 @@ m[2].addEventListener("markerFound", (e)=>{
  //   console.log("sound clicked");
  //   sample.components.sound.playSound();
  // })
-   if (firstSound === false){
 
-     sample.components.sound.playSound();
-     firstSound = true;
-   }
-   else{
    sample.components.sound.playSound();
-}
+
 
 });
 
