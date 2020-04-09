@@ -291,8 +291,8 @@ m[1].addEventListener("markerLost", (e)=>{
 
 document.getElementById("soundStart").onclick = function(){
   console.log("sound clicked");
-
-  document.getElementById("soundTelling").components.sound.playSound();
+  document.querySelector('#soundTelling').components.sound.playSound();
+//  document.getElementById("soundTelling").components.sound.playSound();
 }
 
 m[2].addEventListener("markerFound", (e)=>{
