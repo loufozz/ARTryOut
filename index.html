@@ -290,16 +290,17 @@ m[2].addEventListener("markerFound", (e)=>{
    console.log(m[2]);
    //play the video
    console.log(sample);
-   window.addEventListener("click", function(){
-   console.log("sound clicked");
-   sample.play();
- })
+ //   window.addEventListener("click", function(){
+ //   console.log("sound clicked");
+ //   sample.components.sound.playSound();
+ // })
    if (firstSound === false){
+
+     sample.components.sound.playSound();
      firstSound = true;
-     sample.play();
    }
    else{
-   sample.play();
+   sample.components.sound.playSound();
 }
 
 });
@@ -341,7 +342,7 @@ m[2].addEventListener("markerFound", (e)=>{
 m[2].addEventListener("markerLost", (e)=>{
    console.log("lost sound marker");
   console.log(sample);
-  sample.pause();
+  sample.components.sound.pauseSound();
 })
 
 /*console.log(el);
