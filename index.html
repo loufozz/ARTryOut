@@ -292,11 +292,15 @@ m[2].addEventListener("markerFound", (e)=>{
    console.log(m[2]);
    //play the sound
    console.log(sample);
-   addEventListener("click", function(){
-   console.log("sound clicked");
-   document.querySelector('#soundTelling').components.sound.playSound();
- })
-})
+
+
+
+});
+
+m[2].addEventListener("click", function(){
+  console.log("sound clicked");
+  document.querySelector('#soundTelling').components.sound.playSound();
+});
    //sample.emit("samplePlay");
 //    document.getElementById("soundTelling").components.sound.playSound();
 //
