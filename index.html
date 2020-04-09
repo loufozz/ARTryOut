@@ -198,10 +198,10 @@ console.log(m);
 let firstTime = false;
 let firstSound = false;
 
-document.getElementById("vidStart").addEventListener("click", function(){
+document.getElementById("vidStart").onclick = function(){
 console.log("video loaded");
 document.getElementById("testVid").muted =false;
-});
+}
 
 m[0].addEventListener("markerFound", (e)=>{
   // ensure that the animation element is not visible...
@@ -289,11 +289,11 @@ m[1].addEventListener("markerLost", (e)=>{
    console.log(el);
 });
 
-document.getElementById("soundStart").addEventListener("click", function(){
+document.getElementById("soundStart").onclick = function(){
   console.log("sound clicked");
 
   document.getElementById("soundTelling").components.sound.playSound();
-});
+}
 
 m[2].addEventListener("markerFound", (e)=>{
   //ensure that the animation element is not visible...
