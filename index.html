@@ -181,7 +181,7 @@
 window.onload = function(){
   let videoNumToPlay =0;
   let soundNumToPlay =0;
-  let sample = document.getElementById("soundTelling");
+
   console.log("ready for debug");
 
 
@@ -194,7 +194,7 @@ console.log(m);
 window.addEventListener("click", function(){
 console.log("clicked");
 document.getElementById("testVid").muted =false;
-sample.muted =false;
+document.getElementById("soundTelling").muted =false;
 });
 
 
@@ -298,7 +298,7 @@ m[2].addEventListener("markerFound", (e)=>{
  // })
 
    //sample.emit("samplePlay");
-   sample.components.sound.playSound();
+   document.getElementById("soundTelling").components.sound.playSound();
 
 
 });
@@ -340,7 +340,7 @@ m[2].addEventListener("markerFound", (e)=>{
 // m[2].addEventListener("markerLost", (e)=>{
 //    console.log("lost sound marker");
 //   console.log(sample);
-//   sample.components.sound.pauseSound();
+//   document.getElementById("soundTelling").components.sound.pauseSound();
 // })
 
 /*console.log(el);
