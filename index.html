@@ -189,8 +189,8 @@ window.onload = function(){
 //let m = document.getElementById("ani1");
 let el = document.getElementById("receiver");
 let m = document.getElementsByTagName("a-marker");
-let tVid = document.getElementById("vidStart");
-let tSound = document.getElementById("soundStart");
+// let tVid = document.getElementById("vidStart");
+// let tSound = document.getElementById("soundStart");
 
 console.log("markers:: ");
 console.log(m);
@@ -198,7 +198,7 @@ console.log(m);
 let firstTime = false;
 let firstSound = false;
 
-tVid.addEventListener("click", function(){
+document.getElementById("vidStart").addEventListener("click", function(){
 console.log("video loaded");
 document.getElementById("testVid").muted =false;
 });
@@ -289,7 +289,7 @@ m[1].addEventListener("markerLost", (e)=>{
    console.log(el);
 });
 
-tSound.addEventListener("click", function(){
+document.getElementById("soundStart").addEventListener("click", function(){
   console.log("sound clicked");
 
   document.getElementById("soundTelling").components.sound.playSound();
