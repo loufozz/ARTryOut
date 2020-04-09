@@ -288,6 +288,11 @@ m[1].addEventListener("markerLost", (e)=>{
    console.log(el);
 });
 
+document.getElementById("soundStart").addEventListener("click", function(){
+  console.log("sound clicked");
+  document.getElementById("soundTelling").components.sound.playSound();
+});
+
 m[2].addEventListener("markerFound", (e)=>{
   //ensure that the animation element is not visible...
   el.style.display = "none";
@@ -300,10 +305,7 @@ m[2].addEventListener("markerFound", (e)=>{
 
 });
 
-document.getElementById("soundStart").addEventListener("click", function(){
-  console.log("sound clicked");
-  document.querySelector('#soundTelling').components.sound.playSound();
-});
+
    //sample.emit("samplePlay");
 //    document.getElementById("soundTelling").components.sound.playSound();
 //
@@ -385,7 +387,7 @@ document.getElementById("soundStart").addEventListener("click", function(){
 m[2].addEventListener("markerLost", (e)=>{
    console.log("lost sound marker");
   console.log(sample);
-  document.querySelector('#soundTelling').components.sound.pauseSound();
+  document.getElementById("soundTelling").components.sound.pauseSound();
 })
 
 /*console.log(el);
