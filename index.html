@@ -290,6 +290,7 @@ m[1].addEventListener("markerLost", (e)=>{
 
 document.getElementById("soundStart").addEventListener("click", function(){
   console.log("sound clicked");
+  firstSound = true;
   document.getElementById("soundTelling").components.sound.playSound();
 });
 
@@ -300,8 +301,12 @@ m[2].addEventListener("markerFound", (e)=>{
    console.log(m[2]);
    //play the sound
    console.log(sample);
+   if(firstSound === true){
+     firstSound = false;
 document.getElementById("soundTelling").components.sound.playSound();
-
+} else{
+  document.getElementById("soundTelling").components.sound.playSound();
+}
 
 });
 
