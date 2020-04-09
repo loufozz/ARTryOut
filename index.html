@@ -196,6 +196,12 @@ console.log(m);
 
 let firstTime = false;
 let firstSound = false;
+
+document.getElementById("vidStart").addEventListener("click", function(){
+console.log("video loaded");
+document.getElementById("testVid").muted =false;
+});
+
 m[0].addEventListener("markerFound", (e)=>{
   // ensure that the animation element is not visible...
   el.style.display = "none";
@@ -249,10 +255,6 @@ m[0].addEventListener("markerFound", (e)=>{
 
  }
 
- document.getElementById("vidStart").addEventListener("click", function(){
- console.log("video loaded");
- document.getElementById("testVid").muted =false;
- });
 
 m[0].addEventListener("markerLost", (e)=>{
    console.log("lost video marker");
