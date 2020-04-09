@@ -135,8 +135,9 @@
 <a-marker id="ani2" preset='custom' type='pattern' url='pattern-hardDrive.patt'>
 
   <!-- <a-sound src="#soundTelling" autoplay="false" position="0 0 0"></a-sound> -->
-  <a-sound src="#soundTelling" material="opacity:0.5" autoplay="false" geometry="primitive: box"
-  position="0 0 0" scale="1 1 1" color="#FF0000"></a-sound>
+  <a-entity sound="src: #soundTelling; volume: 0.75; loop: false" material="opacity:0.5"
+  autoplay="false" geometry="primitive: box"
+  position="0 0 0" scale="1 1 1" color="#FF0000" audio-toggle="playing: false"></a-entity>
 </a-marker>
 
 
@@ -194,7 +195,6 @@ console.log(m);
 window.addEventListener("click", function(){
 console.log("clicked");
 document.getElementById("testVid").muted =false;
-document.getElementById("soundTelling").muted =false;
 });
 
 
@@ -285,23 +285,61 @@ m[1].addEventListener("markerLost", (e)=>{
    console.log(el);
 });
 
-m[2].addEventListener("markerFound", (e)=>{
+// m[2].addEventListener("markerFound", (e)=>{
   // ensure that the animation element is not visible...
-  el.style.display = "none";
-   console.log("found sound");
-   console.log(m[2]);
+  // el.style.display = "none";
+  //  console.log("found sound");
+  //  console.log(m[2]);
    //play the video
-   console.log(sample);
+   //console.log(sample);
  //   window.addEventListener("click", function(){
  //   console.log("sound clicked");
  //   sample.components.sound.playSound();
  // })
 
    //sample.emit("samplePlay");
-   document.getElementById("soundTelling").components.sound.playSound();
+//    document.getElementById("soundTelling").components.sound.playSound();
+//
+//
+// });
 
 
-});
+
+
+AFRAME.registerComponent('audio-toggle', {
+  schema: {
+    playing: {
+      type: 'boolean',
+      default: false
+    }
+  },
+  update: function() {
+    let data = this.data
+    let el = this.el
+    let playing = data.playing
+
+    m[2].addEventListener("markerFound", (e)=>{
+    if (playing === true) {
+      el.components.sound.playSound()
+    }
+
+    el.addEventListener('click', () => {
+      if (playing) {
+        el.components.sound.pauseSound()
+        playing = false
+      } else {
+        el.components.sound.playSound()
+        playing = true
+      }
+    })
+   })
+   m[2].addEventListener("markerLost", (e)=>{
+     console.log("lost sound marker");
+     el.components.sound.pauseSound()
+    })
+  }
+})
+
 
 /*function testFunc(){
   console.log("dur:: "+document.getElementById("testVid").duration);
@@ -337,11 +375,11 @@ m[2].addEventListener("markerFound", (e)=>{
  //
  // });
 
-m[2].addEventListener("markerLost", (e)=>{
-   console.log("lost sound marker");
-  console.log(sample);
-  document.getElementById("soundTelling").components.sound.pauseSound();
-})
+// m[2].addEventListener("markerLost", (e)=>{
+//    console.log("lost sound marker");
+//   console.log(sample);
+//   document.getElementById("soundTelling").components.sound.pauseSound();
+// })
 
 /*console.log(el);
 el.addEventListener('triggerA', function (event) {
