@@ -192,8 +192,8 @@ let m = document.getElementsByTagName("a-marker");
 console.log("markers:: ");
 console.log(m);
 
-m[0].addEventListener("click", function(){
-console.log("clicked");
+window.addEventListener("loaded", function(){
+console.log("video loaded");
 document.getElementById("testVid").muted =false;
 });
 
