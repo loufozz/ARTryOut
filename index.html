@@ -20,7 +20,7 @@
 </a-assets>
   <!-- second-->
   <a-assets>
-    <audio id="soundTelling" src="belgianLegacy.mp3" preload="auto"></audio>
+    <audio id="soundTelling" muted playsinline src="belgianLegacy.mp3" preload="auto"></audio>
   </a-assets>
 
 
@@ -136,7 +136,7 @@
 
   <!-- <a-sound src="#soundTelling" autoplay="false" position="0 0 0"></a-sound> -->
   <a-sound src="#soundTelling" material="opacity:0.5" autoplay="false" geometry="primitive: box"
-  position="0 0 0" scale="1 1 1" color="red" on="click"></a-sound>
+  position="0 0 0" scale="1 1 1" color="#FF0000" on="samplePlay"></a-sound>
 </a-marker>
 
 
@@ -183,10 +183,7 @@ window.onload = function(){
   let soundNumToPlay =0;
   let sample = document.getElementById("soundTelling");
   console.log("ready for debug");
-  window.addEventListener("click", function(){
-  console.log("clicked");
-  document.getElementById("testVid").muted =false;
-});
+
 
 //let m = document.getElementById("ani1");
 let el = document.getElementById("receiver");
@@ -194,7 +191,15 @@ let m = document.getElementsByTagName("a-marker");
 console.log("markers:: ");
 console.log(m);
 
+m[0].addEventListener("click", function(){
+console.log("clicked");
+document.getElementById("testVid").muted =false;
+});
 
+m[2].addEventListener("click", function(){
+console.log("ssss clicked");
+sample.muted =false;
+});
 
 let firstTime = false;
 let firstSound = false;
@@ -295,7 +300,7 @@ m[2].addEventListener("markerFound", (e)=>{
  //   sample.components.sound.playSound();
  // })
 
-   sample.components.sound.playSound();
+   sample.emit("samplePlay");
 
 
 });
@@ -334,11 +339,11 @@ m[2].addEventListener("markerFound", (e)=>{
  //
  // });
 
-m[2].addEventListener("markerLost", (e)=>{
-   console.log("lost sound marker");
-  console.log(sample);
-  sample.components.sound.pauseSound();
-})
+// m[2].addEventListener("markerLost", (e)=>{
+//    console.log("lost sound marker");
+//   console.log(sample);
+//   sample.components.sound.pauseSound();
+// })
 
 /*console.log(el);
 el.addEventListener('triggerA', function (event) {
