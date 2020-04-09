@@ -134,10 +134,10 @@
 
 <a-marker id="ani2" preset='custom' type='pattern' url='pattern-hardDrive.patt'>
 
-  <!-- <a-sound src="#soundTelling" autoplay="false" position="0 0 0"></a-sound> -->
-  <a-entity sound="src: #soundTelling; volume: 0.75; loop: false" material="opacity:0.5"
+  <a-sound src="#soundTelling" autoplay="false" loop="false" position="0 0 0"></a-sound>
+  <!-- <a-entity sound="src: #soundTelling; volume: 0.75; loop: false" material="opacity:0.5"
   autoplay="false" geometry="primitive: box"
-  position="0 0 0" scale="1 1 1" color="#FF0000" audio-toggle="playing: false"></a-entity>
+  position="0 0 0" scale="1 1 1" color="#FF0000" audio-toggle="playing: false"></a-entity> -->
 </a-marker>
 
 
@@ -285,18 +285,18 @@ m[1].addEventListener("markerLost", (e)=>{
    console.log(el);
 });
 
-// m[2].addEventListener("markerFound", (e)=>{
-  // ensure that the animation element is not visible...
-  // el.style.display = "none";
-  //  console.log("found sound");
-  //  console.log(m[2]);
-   //play the video
-   //console.log(sample);
- //   window.addEventListener("click", function(){
- //   console.log("sound clicked");
- //   sample.components.sound.playSound();
- // })
-
+m[2].addEventListener("markerFound", (e)=>{
+  //ensure that the animation element is not visible...
+  el.style.display = "none";
+   console.log("found sound");
+   console.log(m[2]);
+   //play the sound
+   console.log(sample);
+   m[2].addEventListener("click", function(){
+   console.log("sound clicked");
+   document.querySelector('#soundTelling').components.sound.playSound();
+ })
+})
    //sample.emit("samplePlay");
 //    document.getElementById("soundTelling").components.sound.playSound();
 //
@@ -306,39 +306,39 @@ m[1].addEventListener("markerLost", (e)=>{
 
 
 // FROM WEBSITE: https://glitch.com/~a-frame-audio-tutorial-complete
-AFRAME.registerComponent('audio-toggle', {
-  schema: {
-    playing: {
-      type: 'boolean',
-      default: false
-    }
-  },
-  update: function() {
-    let data = this.data
-    let el = this.el
-    let playing = data.playing
-
-    m[2].addEventListener("markerFound", (e)=>{
-    if (playing === true) {
-      el.components.sound.playSound()
-    }
-
-    el.addEventListener('click', () => {
-      if (playing) {
-        el.components.sound.pauseSound()
-        playing = false
-      } else {
-        el.components.sound.playSound()
-        playing = true
-      }
-    })
-   })
-   m[2].addEventListener("markerLost", (e)=>{
-     console.log("lost sound marker");
-     el.components.sound.pauseSound()
-    })
-  }
-})
+// AFRAME.registerComponent('audio-toggle', {
+//   schema: {
+//     playing: {
+//       type: 'boolean',
+//       default: false
+//     }
+//   },
+//   update: function() {
+//     let data = this.data
+//     let el = this.el
+//     let playing = data.playing
+//
+//     m[2].addEventListener("markerFound", (e)=>{
+//     if (playing === true) {
+//       el.components.sound.playSound()
+//     }
+//
+//     el.addEventListener('click', () => {
+//       if (playing) {
+//         el.components.sound.pauseSound()
+//         playing = false
+//       } else {
+//         el.components.sound.playSound()
+//         playing = true
+//       }
+//     })
+//    })
+//    m[2].addEventListener("markerLost", (e)=>{
+//      console.log("lost sound marker");
+//      el.components.sound.pauseSound()
+//     })
+//   }
+// })
 
 
 /*function testFunc(){
@@ -375,11 +375,11 @@ AFRAME.registerComponent('audio-toggle', {
  //
  // });
 
-// m[2].addEventListener("markerLost", (e)=>{
-//    console.log("lost sound marker");
-//   console.log(sample);
-//   document.getElementById("soundTelling").components.sound.pauseSound();
-// })
+m[2].addEventListener("markerLost", (e)=>{
+   console.log("lost sound marker");
+  console.log(sample);
+  document.querySelector('#soundTelling').components.sound.pauseSound();
+})
 
 /*console.log(el);
 el.addEventListener('triggerA', function (event) {
