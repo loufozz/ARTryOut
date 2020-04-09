@@ -136,7 +136,7 @@
 
   <!-- <a-sound src="#soundTelling" autoplay="false" position="0 0 0"></a-sound> -->
   <a-sound src="#soundTelling" material="opacity:0.5" autoplay="false" geometry="primitive: box"
-  position="0 0 0" scale="1 1 1" color="#FF0000" on="samplePlay"></a-sound>
+  position="0 0 0" scale="1 1 1" color="#FF0000"></a-sound>
 </a-marker>
 
 
@@ -300,7 +300,8 @@ m[2].addEventListener("markerFound", (e)=>{
  //   sample.components.sound.playSound();
  // })
 
-   sample.emit("samplePlay");
+   //sample.emit("samplePlay");
+   sample.components.sound.playSound();
 
 
 });
