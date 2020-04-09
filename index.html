@@ -301,8 +301,8 @@ m[2].addEventListener("markerFound", (e)=>{
    console.log(m[2]);
    //play the sound
    console.log(sample);
-   if(firstSound === true){
-     firstSound = false;
+   if(firstSound === false){
+     firstSound = true;
 document.getElementById("soundTelling").components.sound.playSound();
 } else{
   document.getElementById("soundTelling").components.sound.playSound();
