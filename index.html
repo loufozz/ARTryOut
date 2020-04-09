@@ -191,15 +191,12 @@ let m = document.getElementsByTagName("a-marker");
 console.log("markers:: ");
 console.log(m);
 
-m[0].addEventListener("click", function(){
+window.addEventListener("click", function(){
 console.log("clicked");
 document.getElementById("testVid").muted =false;
-});
-
-m[2].addEventListener("click", function(){
-console.log("ssss clicked");
 sample.muted =false;
 });
+
 
 let firstTime = false;
 let firstSound = false;
