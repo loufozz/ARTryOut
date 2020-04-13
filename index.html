@@ -16,17 +16,20 @@
 <a-scene embedded arjs>
   <a-assets>
     <video id="testVid" muted playsinline src="bisieMining480.mov"></video>
+    <!-- https://aframe.io/docs/1.0.0/components/sound.html -->
+   <audio id="soundTelling" src="belgianLegacy.mp3" preload="auto"></audio>
+
 
 </a-assets>
   <!-- second-->
-  <a-assets>
+  <!-- <a-assets>
     <audio id="soundTelling" src="belgianLegacy.mp3" preload="auto"></audio>
-  </a-assets>
+  </a-assets> -->
 
 
 
   <a-marker id="ani0" preset='custom' type='pattern' url='pattern-ramMemory.patt'>
-    <a-sphere id="vidStart" color="green" radius="0.2" position="0 2 1"></a-sphere>
+    <!-- <a-sphere id="vidStart" color="green" radius="0.2" position="0 2 1"></a-sphere> -->
     <a-video src="#testVid" width="4" height="2.25" position="-1 -1 0" rotation="-90 0 0" opacity="0.8"></a-video>
  </a-marker>
 
@@ -134,7 +137,7 @@
 
 <a-marker id="ani2" preset='custom' type='pattern' url='pattern-hardDrive.patt'>
   <a-box id="soundStart" color="blue" depth="0.2" height="0.2" width="0.2" position="0 2 1"></a-box>
-  <a-sound src="#soundTelling" autoplay="false" loop="false" position="0 0 0"></a-sound>
+  <a-entity looop: true sound="src: #soundTelling"></a-entity>
   <!-- <a-entity sound="src: #soundTelling; volume: 0.75; loop: false" material="opacity:0.5"
   autoplay="false" geometry="primitive: box"
   position="0 0 0" scale="1 1 1" color="#FF0000" audio-toggle="playing: false"></a-entity> -->
@@ -197,8 +200,8 @@ console.log(m);
 
 let firstTime = false;
 let firstSound = false;
-
-document.getElementById("vidStart").onclick = function(){
+//document.getElementById("vidStart")
+window.onclick = function(){
 console.log("video loaded");
 document.getElementById("testVid").muted =false;
 }
@@ -259,7 +262,7 @@ m[0].addEventListener("markerFound", (e)=>{
 
 m[0].addEventListener("markerLost", (e)=>{
    console.log("lost video marker");
-  console.log(document.getElementById("testVid").currentTime);
+  //console.log(document.getElementById("testVid").currentTime);
   document.getElementById("testVid").pause();
 });
 
@@ -289,20 +292,26 @@ m[1].addEventListener("markerLost", (e)=>{
    console.log(el);
 });
 
-document.getElementById("soundStart").onclick = function(){
-  console.log("sound clicked");
-  document.querySelector('#soundTelling').components.sound.playSound();
-//  document.getElementById("soundTelling").components.sound.playSound();
-}
+// document.getElementById("soundStart").onclick = function(){
+//   console.log("sound clicked");
+//   document.querySelector('#soundTelling').components.sound.playSound();
+// //  document.getElementById("soundTelling").components.sound.playSound();
+// }
 
 m[2].addEventListener("markerFound", (e)=>{
-  //ensure that the animation element is not visible...
-  el.style.display = "none";
-   console.log("found sound");
-   console.log(m[2]);
-   //play the sound
-   console.log(sample);
 
+
+   console.log("ani 2 launched");
+   let entity = document.querySelector('[sound]');
+   //console.log(entity);
+   entity.components.sound.playSound();
+});
+
+m[2].addEventListener("markerLost", (e)=>{
+//pause
+ console.log("sound pause");
+  let entity = document.querySelector('[sound]');
+   entity.components.sound.pauseSound();
 });
 
 
@@ -384,11 +393,11 @@ m[2].addEventListener("markerFound", (e)=>{
  //
  // });
 
-m[2].addEventListener("markerLost", (e)=>{
-   console.log("lost sound marker");
-  console.log(sample);
-  document.getElementById("soundTelling").components.sound.pauseSound();
-})
+// m[2].addEventListener("markerLost", (e)=>{
+//    console.log("lost sound marker");
+//   console.log(sample);
+//   document.getElementById("soundTelling").components.sound.pauseSound();
+// })
 
 /*console.log(el);
 el.addEventListener('triggerA', function (event) {
