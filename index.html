@@ -307,20 +307,6 @@ m[2].addEventListener("markerFound", (e)=>{
    entity.components.sound.playSound();
 });
 
-m[2].addEventListener("markerLost", (e)=>{
-//pause
- console.log("sound pause");
-  let entity = document.querySelector('[sound]');
-   entity.components.sound.pauseSound();
-});
-
-
-   //sample.emit("samplePlay");
-//    document.getElementById("soundTelling").components.sound.playSound();
-//
-//
-// });
-
 document.getElementById("soundTelling").addEventListener('sound-ended', function(){
   console.log("sound ended");
 
@@ -349,6 +335,22 @@ document.getElementById("soundTelling").addEventListener('sound-ended', function
   document.getElementById("soundTelling").components.sound.playSound();
 
 });
+
+m[2].addEventListener("markerLost", (e)=>{
+//pause
+ console.log("sound pause");
+  let entity = document.querySelector('[sound]');
+   entity.components.sound.pauseSound();
+});
+
+
+   //sample.emit("samplePlay");
+//    document.getElementById("soundTelling").components.sound.playSound();
+//
+//
+// });
+
+
 
 // FROM WEBSITE: https://glitch.com/~a-frame-audio-tutorial-complete
 // AFRAME.registerComponent('audio-toggle', {
