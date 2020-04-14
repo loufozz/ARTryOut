@@ -325,7 +325,7 @@ let entity = document.querySelector('[sound]');
   if(soundNumToPlay ===1){
     console.log("sound congo");
       // entity.components.sound.src = "warCongo.m4a";
-      document.getElementById("soundTelling").src = "warCongo.m4a";
+      document.getElementById("soundTelling").components.sound.src = "warCongo.m4a";
   }
 
   // if(soundNumToPlay ===2){
@@ -333,7 +333,7 @@ let entity = document.querySelector('[sound]');
   //
   // }
   else if(soundNumToPlay ===0){
-    document.getElementById("soundTelling").src = "belgianLegacy.mp3";
+    document.getElementById("soundTelling").components.sound.src = "belgianLegacy.mp3";
 
   }
 
