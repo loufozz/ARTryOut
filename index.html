@@ -17,7 +17,7 @@
   <a-assets>
     <video id="testVid" muted playsinline src="bisieMining480.mov"></video>
     <!-- https://aframe.io/docs/1.0.0/components/sound.html -->
-   <audio id="soundTelling" src="belgianLegacy.mp3" preload="auto"></audio>
+   <audio id="soundTelling" src="warCongo.m4a" preload="auto"></audio>
 
 
 </a-assets>
@@ -310,7 +310,7 @@ m[2].addEventListener("markerFound", (e)=>{
 document.querySelector('[sound]').addEventListener('sound-ended', function(){
   console.log("sound ended");
 
-let entity = document.querySelector('[sound]');
+// let entity = document.querySelector('[sound]');
 
   if(soundNumToPlay <2){
     console.log("less than 2");
@@ -325,7 +325,9 @@ let entity = document.querySelector('[sound]');
   if(soundNumToPlay ===1){
     console.log("sound congo");
       // entity.components.sound.src = "warCongo.m4a";
-      document.getElementById("soundTelling").components.sound.src = "warCongo.m4a";
+      // document.getElementById("soundTelling").components.sound.src = "warCongo.m4a";
+
+      document.querySelector('[sound]').components.sound.src = "belgianLegacy.mp3";
   }
 
   // if(soundNumToPlay ===2){
@@ -333,12 +335,12 @@ let entity = document.querySelector('[sound]');
   //
   // }
   else if(soundNumToPlay ===0){
-    document.getElementById("soundTelling").components.sound.src = "belgianLegacy.mp3";
+    document.querySelector('[sound]').components.sound.src = "warCongo.m4a";
 
   }
 
  console.log("and now ... "+  entity);
-  document.getElementById("soundTelling").components.sound.playSound();
+  document.querySelector('[sound]').components.sound.playSound();
 
 });
 
