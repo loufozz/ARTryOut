@@ -313,7 +313,9 @@ document.querySelector('[sound]').addEventListener('sound-ended', function(){
 let entity = document.querySelector('[sound]');
 
   if(soundNumToPlay <2){
+    console.log("less than 2");
     soundNumToPlay +=1;
+
   }
   //reset
   else{
@@ -321,6 +323,7 @@ let entity = document.querySelector('[sound]');
   }
 
   if(soundNumToPlay ===1){
+    console.log("sound congo");
       entity.components.sound.src = "warCongo.m4a";
   }
 
@@ -333,7 +336,7 @@ let entity = document.querySelector('[sound]');
 
   }
 
- console.log("and now ... "+  document.querySelector('[sound]'));
+ console.log("and now ... "+  entity);
   entity.components.sound.playSound();
 
 });
