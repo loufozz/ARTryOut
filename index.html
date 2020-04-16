@@ -312,7 +312,7 @@ m[2].addEventListener("markerLost", (e)=>{
 //pause
  console.log("sound pause");
   let entity = document.querySelector('[sound]');
-   entity.components.sound.stopSound();
+   entity.components.sound.pauseSound();
 });
 
 
@@ -344,6 +344,8 @@ m.src = "url(warCongo.m4a)";
 console.log(m);
 document.getElementById("mySoundTest").setAttribute("sound",m);
  }
+
+ document.getElementById("mySoundTest").components.sound.playSound();
 
 // // let entity = document.querySelector('[sound]');
 //
