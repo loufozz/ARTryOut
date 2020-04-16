@@ -138,10 +138,11 @@
 <a-marker id="ani2" preset='custom' type='pattern' url='pattern-hardDrive.patt'>
 
   <!-- <a-entity looop: true sound="src: #soundTelling"></a-entity> -->
-   <a-sphere id="soundStart" radius="0.2" position="-1 -1 0" rotation="0 0 0" material='color: blue;'
-   animation="property: rotation; dur: 4000; from: 0 0 0; to: 0 360 0; loop: true; easing: easeInOutCirc;"
+   <a-sphere id="soundStart" radius="0.2" position="-1 -1 0" rotation="0 0 0" color="blue"
+   animation="property: rotation; dur: 4000; from: 0 0 0; to: 0 360 0; loop: true; easing: easeInOutCirc"
    animation__2="property: position; dur: 8000; from: -1 -1 0; to: -1 1 0; dir: alternate-reverse; loop: true"
-   animation__3="property: components.material.material.color; type: color; dur: 8000; from: blue; to: red; dir: alternate-reverse; loop: true">
+   animation__color="property: components.material.material.color; type: color; dur: 8000; from: blue; to: red;
+   dir: alternate-reverse; loop: true">
 
      <!-- <a-animation attribute="intensity" dur="2000" from="1" to="3" direction='alternate-reverse'
      repeat="indefinite" easing="linear"></a-animation> -->
