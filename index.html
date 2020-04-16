@@ -17,7 +17,7 @@
   <a-assets>
     <video id="testVid" muted playsinline src="bisieMining480.mov"></video>
     <!-- https://aframe.io/docs/1.0.0/components/sound.html -->
-   <audio id="soundTelling" src="warCongo.m4a" preload="auto"></audio>
+   <!-- <audio id="soundTelling" src="warCongo.m4a" preload="auto"></audio> -->
 
 
 </a-assets>
@@ -137,7 +137,8 @@
 
 <a-marker id="ani2" preset='custom' type='pattern' url='pattern-hardDrive.patt'>
   <a-box id="soundStart" color="blue" depth="0.2" height="0.2" width="0.2" position="0 2 1"></a-box>
-  <a-entity sound="src: #soundTelling; autoplay: false; loop: false"></a-entity>
+  <!-- <a-entity looop: true sound="src: #soundTelling"></a-entity> -->
+   <a-entity id="mySoundTest" looop: true sound="src: url(warCongo.m4a);"></a-entity>
   <!-- <a-entity sound="src: #soundTelling; volume: 0.75; loop: false" material="opacity:0.5"
   autoplay="false" geometry="primitive: box"
   position="0 0 0" scale="1 1 1" color="#FF0000" audio-toggle="playing: false"></a-entity> -->
@@ -199,7 +200,7 @@ console.log("markers:: ");
 console.log(m);
 
 let firstTime = false;
-
+let firstSound = false;
 //document.getElementById("vidStart")
 window.onclick = function(){
 console.log("video loaded");
@@ -307,49 +308,77 @@ m[2].addEventListener("markerFound", (e)=>{
    entity.components.sound.playSound();
 });
 
-document.querySelector('[sound]').addEventListener('sound-ended', function(){
-  console.log("sound ended");
-
-// let entity = document.querySelector('[sound]');
-
-  if(soundNumToPlay <1){
-    console.log("less than 2");
-    soundNumToPlay +=1;
-
-  }
-  //reset
-  else{
-     soundNumToPlay =0;
-  }
-
-  if(soundNumToPlay ===1){
-    console.log("sound congo");
-      // entity.components.sound.src = "warCongo.m4a";
-      // document.getElementById("soundTelling").components.sound.src = "warCongo.m4a";
-
-      document.querySelector('[sound]').components.sound.src = "belgianLegacy.mp3";
-  }
-
-  // if(soundNumToPlay ===2){
-  //    document.getElementById("soundTelling").src = "permit480.mov";
-  //
-  // }
-   if(soundNumToPlay ===0){
-    document.querySelector('[sound]').components.sound.src = "warCongo.m4a";
-
-  }
-
- console.log("and now next");
-  document.querySelector('[sound]').components.sound.playSound();
-
-});
-
 m[2].addEventListener("markerLost", (e)=>{
 //pause
  console.log("sound pause");
   let entity = document.querySelector('[sound]');
-   entity.components.sound.pauseSound();
+   entity.components.sound.stopSound();
 });
+
+
+document.querySelector('[sound]').addEventListener('sound-ended', function(){
+  console.log("sound ended");
+console.log(soundNumToPlay);
+if(soundNumToPlay <1){
+  soundNumToPlay +=1;
+  console.log("HERE");
+}
+//reset
+  else{
+      soundNumToPlay =0;
+   }
+ if(soundNumToPlay ===1){
+   console.log("AND CHANGING");
+
+let m = document.getElementById("mySoundTest").getAttribute("sound");
+m.src = "url(belgianLegacy.m4a)";
+console.log(m);
+document.getElementById("mySoundTest").setAttribute("sound",m);
+ }
+
+ if(soundNumToPlay ===0){
+   console.log("AND CHANGING BACK");
+
+let m = document.getElementById("mySoundTest").getAttribute("sound");
+m.src = "url(warCongo.m4a)";
+console.log(m);
+document.getElementById("mySoundTest").setAttribute("sound",m);
+ }
+
+// // let entity = document.querySelector('[sound]');
+//
+//   if(soundNumToPlay <1){
+//     console.log("less than 2");
+//     soundNumToPlay +=1;
+//
+//   }
+//   //reset
+//   else{
+//      soundNumToPlay =0;
+//   }
+//
+//   if(soundNumToPlay ===1){
+//     console.log("sound congo");
+//       // entity.components.sound.src = "warCongo.m4a";
+//       // document.getElementById("soundTelling").components.sound.src = "warCongo.m4a";
+//
+//       document.querySelector('[sound]').components.sound.src = "belgianLegacy.mp3";
+//   }
+//
+//   // if(soundNumToPlay ===2){
+//   //    document.getElementById("soundTelling").src = "permit480.mov";
+//   //
+//   // }
+//   else if(soundNumToPlay ===0){
+//     document.querySelector('[sound]').components.sound.src = "warCongo.m4a";
+//
+//   }
+//
+//  console.log("and now next");
+//   document.querySelector('[sound]').components.sound.playSound();
+
+});
+
 
 
    //sample.emit("samplePlay");
