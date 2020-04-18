@@ -140,7 +140,7 @@
 </a-scene>
 </a-marker>
 
-<a-marker id="ani3" preset='custom' type='pattern' url='pattern-markerRedishG.patt'>
+<a-marker id="ani2" preset='custom' type='pattern' url='pattern-markerRedishG.patt'>
   <!-- <a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true"> -->
 
 <a-scene id="receiver2" animation-timeline__2="timeline: #myTimeline2; loop: true; startEvents: myAni2; pauseEvents: myPause2; resumeEvents: myResume2">
@@ -279,7 +279,7 @@
 </a-scene>
 </a-marker>
 
-<a-marker id="ani2" preset='custom' type='pattern' url='pattern-pink3.patt'>
+<a-marker id="ani3" preset='custom' type='pattern' url='pattern-pink3.patt'>
 
   <!-- <a-entity looop: true sound="src: #soundTelling"></a-entity> -->
    <a-sphere id="soundStart" radius="0.3" position="0 -1 0" rotation="0 0 0" color="blue"
@@ -363,8 +363,8 @@ document.getElementById("testVid").muted =false;
 
 m[0].addEventListener("markerFound", (e)=>{
   // ensure that the animation element is not visible...
-  el.style.display = "none";
-  el2.style.display = "none";
+  // el.style.display = "none";
+  // el2.style.display = "none";
    console.log("found ani 0");
    console.log(m[0]);
    //play the video
@@ -467,20 +467,40 @@ m[1].addEventListener("markerLost", (e)=>{
 // //  document.getElementById("soundTelling").components.sound.playSound();
 // }
 
+
+
 m[2].addEventListener("markerFound", (e)=>{
+   console.log("found ani 2");
+   console.log(m[3]);
+   el2.style.display = "block";
+   //reset currentTime of the video
+   document.getElementById("testVid").currentTime =0;
+   if(firstTime2 === false){
+
+    el2.emit("myAni2");
+      firstTime2 =true;
+    }
+   else{
+     el2.emit("myResume2");
+   }
+
+});
 
 
-   console.log("ani 2 launched");
+m[2].addEventListener("markerLost", (e)=>{
+   console.log("lost image");
+  //console.log(el.pauseAnimation());
+   el.emit("myPause2");
+   console.log(el2);
+});
+
+m[3].addEventListener("markerFound", (e)=>{
+
+
+   console.log("ani 3 launched");
    let entity = document.querySelector('[sound]');
    //console.log(entity);
    entity.components.sound.playSound();
-});
-
-m[2].addEventListener("markerLost", (e)=>{
-//pause
- console.log("sound pause");
-  let entity = document.querySelector('[sound]');
-   entity.components.sound.pauseSound();
 });
 
 
@@ -516,29 +536,11 @@ document.getElementById("mySoundTest").setAttribute("sound",m);
  document.getElementById("mySoundTest").components.sound.playSound();
 });
 
-m[3].addEventListener("markerFound", (e)=>{
-   console.log("found ani 3");
-   console.log(m[3]);
-   el2.style.display = "block";
-   //reset currentTime of the video
-   document.getElementById("testVid").currentTime =0;
-   if(firstTime2 === false){
-
-    el2.emit("myAni2");
-      firstTime2 =true;
-    }
-   else{
-     el2.emit("myResume2");
-   }
-
-});
-
-
 m[3].addEventListener("markerLost", (e)=>{
-   console.log("lost image");
-  //console.log(el.pauseAnimation());
-   el.emit("myPause2");
-   console.log(el2);
+//pause
+ console.log("sound pause");
+  let entity = document.querySelector('[sound]');
+   entity.components.sound.pauseSound();
 });
 
 // // let entity = document.querySelector('[sound]');
