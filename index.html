@@ -40,7 +40,7 @@
 <a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true; startEvents: myAni; pauseEvents: myPause; resumeEvents: myResume">
 
 
-      <a-assets timeout="60000">
+      <a-assets timeout="40000">
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 
         <a-timeline id="myTimeline">
@@ -118,8 +118,8 @@
       <a-entity id="text1" mixin="text" text="value: Emails"></a-entity>
       <a-entity id="text2" mixin="text" text="value: Txt msg; opacity: 1"
                 animation__textcolor="property: text.color; from: #FAFAFA; to: #8C200E; dur: 1500; autoplay: false"></a-entity>
-      <a-entity id="text3" mixin="text" text="DMs & Notifications" position="0 0 0"></a-entity>
-      <a-entity id="text4" mixin="text" text="Data collections of our lives" position="0 0 0"
+      <a-entity id="text3" mixin="text" text="value: DMs & Notifications" position="0 0 0"></a-entity>
+      <a-entity id="text4" mixin="text" text="value: Data collections of our lives"
                 animation__positionin="property: position; to: 0 2 -3; dur: 500; autoplay: false"
                 animation__positionout="property: position; from: 0 2 -3; to: -10 2 -3; dur: 1500; autoplay: false"></a-entity>
       <!-- <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>
