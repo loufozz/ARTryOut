@@ -434,6 +434,7 @@ m[1].addEventListener("markerLost", (e)=>{
    console.log("lost");
   //console.log(el.pauseAnimation());
    el.emit("myPause");
+   el.style.display = "none";
    console.log(el);
 });
 
@@ -467,6 +468,7 @@ m[2].addEventListener("markerLost", (e)=>{
    console.log("lost image");
   //console.log(el.pauseAnimation());
    el.emit("myPause2");
+   el2.style.display = "none";
    console.log(el2);
 });
 
