@@ -40,7 +40,7 @@
 <a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true; startEvents: myAni; pauseEvents: myPause; resumeEvents: myResume">
 
 
-      <a-assets timeout="60000">
+      <a-assets timeout="40000">
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 
         <a-timeline id="myTimeline">
@@ -80,7 +80,7 @@
 
 
         <a-mixin id="text"
-          text="align: center; color: #5DF5FF; width: 3; opacity: 0; wrap-count: 17"
+          text="align: center; color: #5DF5FF; width: 3; opacity: 0; wrap-count: 17; letter-spacing: -2"
           animation__fadein="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 2000; easing: linear; autoplay: false"
           animation__fadeout="property: components.text.material.uniforms.opacity.value; from: 1; to: 0; dur: 2000; easing: linear; autoplay: false"
           animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
