@@ -30,7 +30,7 @@
 
   <a-marker id="ani0" preset='custom' type='pattern' url='pattern-markerGreen.patt'>
     <!-- <a-sphere id="vidStart" color="green" radius="0.2" position="0 2 1"></a-sphere> -->
-    <a-video src="#testVid" width="4" height="2.25" position="-1 -1 0" rotation="-45 0 0" opacity="0.8"></a-video>
+    <a-video src="#testVid" width="4" height="2.25" position="-1 -1 0" rotation="-60 0 0" opacity="0.8"></a-video>
  </a-marker>
 
 
@@ -41,19 +41,13 @@
 
 
       <a-assets timeout="40000">
-        <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
+        <a-asset-item src="https://cdn.aframe.io/fonts/Exo2Bold.fnt"></a-asset-item>
 
         <a-timeline id="myTimeline">
           <a-timeline-animation select="#text1" name="togglevisible"></a-timeline-animation>
           <a-timeline-animation select="#text1" name="fadein"></a-timeline-animation>
           <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
           <a-timeline-animation select="#text1" name="togglevisibleoff"></a-timeline-animation>
-
-        <!--  <a-timeline-group>
-            <a-timeline-animation select="a-entity[mixin~=box]" name="fadein"></a-timeline-animation>
-            <a-timeline-animation select="a-entity[mixin~=box]" name="scale"></a-timeline-animation>
-            <a-timeline-animation select="a-entity[mixin~=box]" name="color"></a-timeline-animation>
-          </a-timeline-group>  -->
 
           <a-timeline-group>
             <a-timeline-animation select="#text2" name="togglevisible"></a-timeline-animation>
@@ -79,33 +73,14 @@
           <a-timeline-animation select="#text4" name="fadein"></a-timeline-animation>
           </a-timeline-group>
 
-          <a-timeline-animation select="#text4" name="fadeout"></a-timeline-animation>
+          <a-timeline-animation select="#text4" name="fadeout" offset="500"></a-timeline-animation>
           <a-timeline-animation select="#text4" name="togglevisibleoff"></a-timeline-animation>
-
-        <!--  <a-timeline-animation select="#text4" name="togglevisible"></a-timeline-animation>
-
-          <a-timeline-group>-->
-            <!--<a-timeline-animation select="#sky" name="color"></a-timeline-animation>-->
-          <!--  <a-timeline-animation select="#text4" name="fadein"></a-timeline-animation>
-          </a-timeline-group>
-
-          <a-timeline-animation select="#text4" name="fadeout" offset="500"></a-timeline-animation>-->
 
         </a-timeline>
 
-    <!--    <a-mixin id="box"
-          geometry="primitive: box"
-          material="color: #AAA; opacity: 0"
-          animation__fadein="property: components.material.material.opacity; dur: 2000; from: 0; to: 1; autoplay: false"
-          animation__scale="property: scale; to: 2 20 2; dur: 2000; easing: easeInOutElastic; autoplay: false"
-          animation__position="property: position; to: 0 30 -3; dur: 2000; autoplay: false"
-          animation__color="property: components.material.material.color; type: color; from: #AAA; to: #222; dur: 2500; autoplay: false"
-          animation__rotate="property: rotation; to: 0 360; dur: 1000; easing: easeInQuad; autoplay: false"
-          scale="0.0001 0.0001 0.0001"
-        ></a-mixin> -->
 
         <a-mixin id="text"
-          text="align: center; color: white; width: 6; opacity: 0; wrap-count: 17"
+          text="align: center; color: #5DF5FF; width: 3; opacity: 0; wrap-count: 17; letterSpacing: -2"
           animation__fadein="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 2000; easing: linear; autoplay: false"
           animation__fadeout="property: components.text.material.uniforms.opacity.value; from: 1; to: 0; dur: 2000; easing: linear; autoplay: false"
           animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
@@ -136,7 +111,7 @@
       <!--<a-sky id="sky" color="#FAFAFA" animation__color="property: components.material.material.color; type: color; from: #FAFAFA; to: #111; dur: 2000; autoplay: false"></a-sky>-->
 
 
-</a-scene>
+ </a-scene>
 </a-marker>
 
 <a-marker id="ani2" preset='custom' type='pattern' url='pattern-markerRedishG.patt'>
@@ -146,7 +121,6 @@
 
 
       <a-assets timeout="20000">
-        <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 
         <a-timeline id="myTimeline2">
 
@@ -241,12 +215,12 @@
           <a-timeline-animation select="#image9" name="togglevisibleoff"></a-timeline-animation>
 
         <a-mixin id="image"
-          animation__fadein="property: components.material.material.opacity.value; from: 0; to: 1; dur: 800; easing: linear; autoplay: false"
+          animation__fadein="property: components.material.material.opacity.value; from: 0; to: 1; dur: 1000; easing: linear; autoplay: false"
           animation__fadeout="property: components.material.material.opacity.value; from: 1; to: 0; dur: 500; easing: linear; autoplay: false"
           animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
           animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
-          animation__positionin="property: position; to: 0 0 0; dur: 1000; autoplay: false"
-          animation__positionout="property: position; from: 0 0 0; to: -10 0 0; dur: 2000; autoplay: false"
+          animation__positionin="property: position; to: 0 0 0; dur: 1500; autoplay: false"
+          animation__positionout="property: position; from: 0 0 0; to: -10 0 0; dur: 2500; autoplay: false"
           position="4 0 0"
           rotation="-60 0 0"
           opacity="0.8"
