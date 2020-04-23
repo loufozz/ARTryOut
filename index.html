@@ -44,9 +44,12 @@
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 
         <a-timeline id="myTimeline">
+          <a-timeline-group>
           <a-timeline-animation select="#text1" name="togglevisible"></a-timeline-animation>
           <a-timeline-animation select="#text1" name="fadein"></a-timeline-animation>
           <a-timeline-animation select="#text1" name="positionchange1"></a-timeline-animation>
+          </a-timeline-group>
+          
           <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
           <a-timeline-animation select="#text1" name="togglevisibleoff"></a-timeline-animation>
 
@@ -91,8 +94,8 @@
           animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
           animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
           animation__scale="property: scale; from: 1 1 1; to: 3 3 3; dur: 2000; autoplay: false"
-          animation__positionchange1="property: position; from: -1 0 -2; to: -3 2 5; dur: 2500; autoplay: false"
-          animation__positionchange2="property: position; from: 0.5 0 -3; to: 3 -3 5; dur: 2500; autoplay: false"
+          animation__positionchange1="property: position; from: -1 0 -2; to: -3 0 5; dur: 2500; autoplay: false"
+          animation__positionchange2="property: position; from: 0.5 0 -3; to: 3 0 5; dur: 2500; autoplay: false"
           rotation="-60 0 0"
           visible="false"></a-mixin>
       </a-assets>
