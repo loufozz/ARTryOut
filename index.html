@@ -48,6 +48,7 @@
           <a-timeline-animation select="#text1" name="togglevisible"></a-timeline-animation>
           <a-timeline-animation select="#text1" name="fadein"></a-timeline-animation>
           <a-timeline-animation select="#text1" name="positionchange1"></a-timeline-animation>
+          <a-timeline-animation select="#text1" name="scale"></a-timeline-animation>
           </a-timeline-group>
 
           <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
@@ -57,7 +58,7 @@
             <a-timeline-animation select="#text2" name="togglevisible"></a-timeline-animation>
             <a-timeline-animation select="#text2" name="fadein"></a-timeline-animation>
             <a-timeline-animation select="#text2" name="positionchange2"></a-timeline-animation>
-            <a-timeline-animation select="#text2" name="textcolor"></a-timeline-animation>
+            <a-timeline-animation select="#text2" name="scale"></a-timeline-animation>
           </a-timeline-group>
 
           <a-timeline-animation select="#text2" name="fadeout"></a-timeline-animation>
@@ -69,6 +70,7 @@
             <a-timeline-group>
             <a-timeline-animation select="#text3" name="fadein"></a-timeline-animation>
             <a-timeline-animation select="#text3" name="positionchange1"></a-timeline-animation>
+            <a-timeline-animation select="#text3" name="scale"></a-timeline-animation>
         </a-timeline-group>
 
           <a-timeline-animation select="#text3" name="fadeout"></a-timeline-animation>
@@ -77,10 +79,11 @@
           <a-timeline-group>
           <a-timeline-animation select="#text4" name="togglevisible"></a-timeline-animation>
           <a-timeline-animation select="#text4" name="fadein"></a-timeline-animation>
-          <a-timeline-animation select="#text4" name="positionchange2"></a-timeline-animation>
+          <a-timeline-animation select="#text4" name="scale"></a-timeline-animation>
+          <a-timeline-animation select="#text4" name="positionin"></a-timeline-animation>
           </a-timeline-group>
-
-          <a-timeline-animation select="#text4" name="fadeout" offset="500"></a-timeline-animation>
+          <a-timeline-animation select="#text4" name="positionout"></a-timeline-animation>
+          <a-timeline-animation select="#text4" name="fadeout"></a-timeline-animation>
           <a-timeline-animation select="#text4" name="togglevisibleoff"></a-timeline-animation>
 
         </a-timeline>
@@ -89,14 +92,14 @@
         <a-mixin id="text"
           text="align: center; width: 3; opacity: 0; wrap-count: 17"
           color="#70F9FF"
-          animation__fadein="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 2000; easing: linear; autoplay: false"
-          animation__fadeout="property: components.text.material.uniforms.opacity.value; from: 1; to: 0; dur: 2000; easing: linear; autoplay: false"
+          animation__fadein="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 1000; easing: linear; autoplay: false"
+          animation__fadeout="property: components.text.material.uniforms.opacity.value; from: 1; to: 0; dur: 1000; easing: linear; autoplay: false"
           animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
           animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
           animation__scale="property: scale; from: 1 1 1; to: 3 3 3; dur: 2000; autoplay: false"
-          animation__positionchange1="property: position; from: -1 0 -2; to: -3 0 5; dur: 2500; autoplay: false"
-          animation__positionchange2="property: position; from: 0.5 0 -3; to: 3 0 5; dur: 2500; autoplay: false"
-          rotation="0 0 0"
+          animation__positionchange1="property: position; from: -1 0 -2; to: -4 0 5; dur: 2500; autoplay: false"
+          animation__positionchange2="property: position; from: 0 0 5; to: 3 0 -3; dur: 2500; autoplay: false"
+          rotation="-120 0 0"
           visible="false"></a-mixin>
       </a-assets>
 
@@ -104,9 +107,9 @@
       <a-entity id="text2" mixin="text" text="value: Txt msg; opacity: 1"
                 animation__textcolor="property: text.color; from: #FAFAFA; to: #8C200E; dur: 1500; autoplay: false"></a-entity>
       <a-entity id="text3" mixin="text" text="value: DMs & Notifications"></a-entity>
-      <a-entity id="text4" mixin="text" text="value: Data collections of our lives"
-                animation__positionin="property: position; to: 0 2 -3; dur: 500; autoplay: false"
-                animation__positionout="property: position; from: 0 2 -3; to: -10 2 -3; dur: 1500; autoplay: false"></a-entity>
+      <a-entity id="text4" mixin="text" text="value: Data collections of our lives" position="0 0 0"
+                animation__positionin="property: position; to: 0 0 4; dur: 1500; autoplay: false"
+                animation__positionout="property: position; from: 0 0 4; to: 0 -10 4; dur: 500; autoplay: false"></a-entity>
       <!-- <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>
 
       <a-entity position="0 -0.5 -10">
