@@ -91,7 +91,7 @@
 
 
         <a-mixin id="text"
-          text="align: center; width: 3; opacity: 0; wrap-count: 17; color: #70F9FF; font: cyber"
+          text="align: center; width: 3; opacity: 0; wrap-count: 17; text.color: #70F9FF; font: #cyber"
           animation__fadein="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 1000; easing: linear; autoplay: false"
           animation__fadeout="property: components.text.material.uniforms.opacity.value; from: 1; to: 0; dur: 1000; easing: linear; autoplay: false"
           animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
@@ -105,11 +105,11 @@
       </a-assets>
 
 
-      <a-entity id="text1" mixin="text" text="value: Emails" rotation="-90 0 -20" font="cyber"></a-entity>
-      <a-entity id="text2" mixin="text" text="value: Txt msg; opacity: 1" rotation="-90 0 20" font="cyber"
+      <a-entity id="text1" mixin="text" text="value: Emails" rotation="-90 0 -20" font="#cyber"></a-entity>
+      <a-entity id="text2" mixin="text" text="value: Txt msg; opacity: 1" rotation="-90 0 20" font="#cyber"
                 animation__textcolor="property: text.color; from: #FAFAFA; to: #8C200E; dur: 1500; autoplay: false"></a-entity>
-      <a-entity id="text3" mixin="text" text="value: DMs & Notifications" rotation="-90 0 -20" font="cyber"></a-entity>
-      <a-entity id="text4" mixin="text" text="value: Data collections of our lives" position="0 0 0" rotation="-90 0 20" font="cyber"
+      <a-entity id="text3" mixin="text" text="value: DMs & Notifications" rotation="-90 0 -20" font="#cyber"></a-entity>
+      <a-entity id="text4" mixin="text" text="value: Data collections of our lives" position="0 0 0" rotation="-90 0 20" font="#cyber"
                 animation__positionin="property: position; to: 0 2 0; dur: 2500; autoplay: false"
                 animation__positionout="property: position; to: 0 2 10; dur: 1000; autoplay: false"></a-entity>
       <!-- <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>
