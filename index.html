@@ -46,12 +46,14 @@
         <a-timeline id="myTimeline">
           <a-timeline-animation select="#text1" name="togglevisible"></a-timeline-animation>
           <a-timeline-animation select="#text1" name="fadein"></a-timeline-animation>
+          <a-timeline-animation select="#text1" name="positionchange1"></a-timeline-animation>
           <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
           <a-timeline-animation select="#text1" name="togglevisibleoff"></a-timeline-animation>
 
           <a-timeline-group>
             <a-timeline-animation select="#text2" name="togglevisible"></a-timeline-animation>
             <a-timeline-animation select="#text2" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#text2" name="positionchange2"></a-timeline-animation>
             <a-timeline-animation select="#text2" name="textcolor"></a-timeline-animation>
           </a-timeline-group>
 
@@ -63,6 +65,7 @@
             <a-timeline-animation select="#text3" name="togglevisible"></a-timeline-animation>
             <a-timeline-group>
             <a-timeline-animation select="#text3" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#text3" name="positionchange1"></a-timeline-animation>
         </a-timeline-group>
 
           <a-timeline-animation select="#text3" name="fadeout"></a-timeline-animation>
@@ -71,6 +74,7 @@
           <a-timeline-group>
           <a-timeline-animation select="#text4" name="togglevisible"></a-timeline-animation>
           <a-timeline-animation select="#text4" name="fadein"></a-timeline-animation>
+          <a-timeline-animation select="#text4" name="positionchange2"></a-timeline-animation>
           </a-timeline-group>
 
           <a-timeline-animation select="#text4" name="fadeout" offset="500"></a-timeline-animation>
@@ -80,12 +84,15 @@
 
 
         <a-mixin id="text"
-          text="align: center; color: yellow; width: 3; opacity: 0; wrap-count: 17"
+          text="align: center; width: 3; opacity: 0; wrap-count: 17"
+          color="#70F9FF"
           animation__fadein="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 2000; easing: linear; autoplay: false"
           animation__fadeout="property: components.text.material.uniforms.opacity.value; from: 1; to: 0; dur: 2000; easing: linear; autoplay: false"
           animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
           animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
-          position="0 0 0"
+          animation__scale="property: scale; from: 1 1 1; to: 3 3 3; dur: 2000; autoplay: false"
+          animation__positionchange1="property: position; from: -1 0 -2; to: -3 2 5; dur: 2500; autoplay: false"
+          animation__positionchange2="property: position; from: 0.5 0 -3; to: 3 -3 5; dur: 2500; autoplay: false"
           rotation="-60 0 0"
           visible="false"></a-mixin>
       </a-assets>
