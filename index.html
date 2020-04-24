@@ -52,25 +52,30 @@
           <a-timeline-animation select="#text1" name="scale"></a-timeline-animation>
           </a-timeline-group>
 
-          <a-timeline-animation select="#text2" name="togglevisible"></a-timeline-animation>
-          <a-timeline-animation select="#text2" name="fadein"></a-timeline-animation>
-          <a-timeline-animation select="#text2" name="positionchange2"></a-timeline-animation>
-          <a-timeline-animation select="#text2" name="scale"></a-timeline-animation>
-
           <a-timeline-group>
           <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
           <a-timeline-animation select="#text1" name="togglevisibleoff"></a-timeline-animation>
           </a-timeline-group>
 
-          <a-timeline-animation select="#text3" name="togglevisible"></a-timeline-animation>
-          <a-timeline-animation select="#text3" name="fadein"></a-timeline-animation>
-          <a-timeline-animation select="#text3" name="positionchange1"></a-timeline-animation>
-          <a-timeline-animation select="#text3" name="scale"></a-timeline-animation>
+          <a-timeline-group>
+          <a-timeline-animation select="#text2" name="togglevisible"></a-timeline-animation>
+          <a-timeline-animation select="#text2" name="fadein"></a-timeline-animation>
+          <a-timeline-animation select="#text2" name="positionchange2"></a-timeline-animation>
+          <a-timeline-animation select="#text2" name="scale"></a-timeline-animation>
+          </a-timeline-group>
 
           <a-timeline-group>
           <a-timeline-animation select="#text2" name="fadeout"></a-timeline-animation>
           <a-timeline-animation select="#text2" name="togglevisibleoff"></a-timeline-animation>
+          </a-timeline-group>
 
+
+
+          <a-timeline-group>
+            <a-timeline-animation select="#text3" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#text3" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#text3" name="positionchange1"></a-timeline-animation>
+            <a-timeline-animation select="#text3" name="scale"></a-timeline-animation>
           </a-timeline-group>
 
         <a-timeline-group>
@@ -281,8 +286,9 @@
           <a-timeline-animation select="#image9" name="togglevisibleoff"></a-timeline-animation>
 
         <a-mixin id="image"
-          animation__fadein="property: components.material.material.opacity.value; from: 0; to: 0.8; dur: 1500; easing: linear; autoplay: false"
-          animation__fadeout="property: components.material.material.opacity.value; from: 0.8; to: 0; dur: 900; easing: linear; autoplay: false"
+          material="opacity: 0.8"
+          animation__fadein="property: components.material.material.opacity; from: 0; to: 0.8; dur: 1500; easing: linear; autoplay: false"
+          animation__fadeout="property: components.material.material.opacity; from: 0.8; to: 0; dur: 900; easing: linear; autoplay: false"
           animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
           animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
           animation__positionin="property: position; to: 0 0 0; dur: 2500; autoplay: false"
@@ -291,7 +297,6 @@
           animation__scaleout="property: scale; from: 3 3 3; to: 1 1 1; dur: 1500; autoplay: false"
           position="4 0 0"
           rotation="-60 0 0"
-          opacity="0.8"
           visible="false"></a-mixin>
       </a-assets>
       <a-image id="image1" mixin="image" src="boyMine.jpg"></a-image>
