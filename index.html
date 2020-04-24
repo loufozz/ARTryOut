@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>A-Frame Animation Timeline Component - Bohemian</title>
+    <title>Dismantling Your Electronics - AR experience</title>
     <meta name="description" content="Basic example for Animation Timeline component."></meta>
     <!--<script src="lib/aframe-v0.3.0.min.js"></script> -->
      <!-- does not seem to work with the version above -->
@@ -15,7 +15,7 @@
     <!-- <audio src="bohemian.mp3" autoplay></audio> -->
 <a-scene embedded arjs>
   <a-assets>
-    <video id="testVid" muted playsinline src="cassiteriteCongo.mov"></video>
+    <video id="testVid" muted playsinline src="miningIndustry480.mov"></video>
     <!-- https://aframe.io/docs/1.0.0/components/sound.html -->
    <!-- <audio id="soundTelling" src="warCongo.m4a" preload="auto"></audio> -->
 
@@ -41,7 +41,7 @@
 <a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true; startEvents: myAni; pauseEvents: myPause; resumeEvents: myResume">
 
 
-      <a-assets timeout="40000">
+      <a-assets timeout="60000">
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 
         <a-timeline id="myTimeline">
@@ -52,22 +52,28 @@
           <a-timeline-animation select="#text1" name="scale"></a-timeline-animation>
           </a-timeline-group>
 
+          <a-timeline-animation select="#text2" name="togglevisible"></a-timeline-animation>
+          <a-timeline-animation select="#text2" name="fadein"></a-timeline-animation>
+
           <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
           <a-timeline-animation select="#text1" name="togglevisibleoff"></a-timeline-animation>
 
           <a-timeline-group>
-            <a-timeline-animation select="#text2" name="togglevisible"></a-timeline-animation>
-            <a-timeline-animation select="#text2" name="fadein"></a-timeline-animation>
+
             <a-timeline-animation select="#text2" name="positionchange2"></a-timeline-animation>
             <a-timeline-animation select="#text2" name="scale"></a-timeline-animation>
           </a-timeline-group>
 
+          <a-timeline-group>
           <a-timeline-animation select="#text2" name="fadeout"></a-timeline-animation>
+          <a-timeline-animation select="#text3" name="togglevisible"></a-timeline-animation>
+          </a-timeline-group>
+
           <a-timeline-animation select="#text2" name="togglevisibleoff"></a-timeline-animation>
 
 
 
-            <a-timeline-animation select="#text3" name="togglevisible"></a-timeline-animation>
+
             <a-timeline-group>
             <a-timeline-animation select="#text3" name="fadein"></a-timeline-animation>
             <a-timeline-animation select="#text3" name="positionchange1"></a-timeline-animation>
@@ -78,7 +84,7 @@
           <a-timeline-animation select="#text3" name="togglevisibleoff"></a-timeline-animation>
 
           <a-timeline-group>
-          <a-timeline-animation select="#text4" name="togglevisible"></a-timeline-animation>
+          <a-timeline-animation select="#text4" name="togglevisible" offset="1000"></a-timeline-animation>
           <a-timeline-animation select="#text4" name="fadein"></a-timeline-animation>
           <a-timeline-animation select="#text4" name="scale"></a-timeline-animation>
           <a-timeline-animation select="#text4" name="positionin"></a-timeline-animation>
@@ -91,25 +97,24 @@
 
 
         <a-mixin id="text"
-          text="align: center; width: 3; opacity: 0; wrap-count: 17; color: #70F9FF"
+          text="align: center; width: 3; opacity: 0; wrap-count: 17; color: #70F9FF; negate: false"
           animation__fadein="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 1000; easing: linear; autoplay: false"
           animation__fadeout="property: components.text.material.uniforms.opacity.value; from: 1; to: 0; dur: 1000; easing: linear; autoplay: false"
           animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
           animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
-          animation__scale="property: scale; from: 1 1 1; to: 3 3 3; dur: 2000; autoplay: false"
-          animation__positionchange1="property: position; from: 0 -2 0; to: -4 5 1; dur: 2500; autoplay: false"
+          animation__scale="property: scale; from: 1 1 1; to: 4 4 4; dur: 2000; autoplay: false"
+          animation__positionchange1="property: position; from: 0 -2 0; to: -4 5 1; dur: 3000; autoplay: false"
           animation__positionchange2="property: position; from: 0 -3 0; to: 3 5 2; dur: 2500; autoplay: false"
           rotation="-90 0 0"
-
-          visible="false"></a-mixin>
+          ></a-mixin>
       </a-assets>
 
 
-      <a-entity id="text1" mixin="text" text="value: Emails; font: cyberpnuk2-msdf.json" rotation="-90 0 -20"></a-entity>
-      <a-entity id="text2" mixin="text" text="value: Txt msg; opacity: 1; font: cyberpnuk2-msdf.json" rotation="-90 0 20"
+      <a-entity id="text1" mixin="text" text="value: Emails; font: cyberpnuk2-msdf.json; negate: true" rotation="-90 0 -20"></a-entity>
+      <a-entity id="text2" mixin="text" text="value: Txt msg; opacity: 1; font: cyberpnuk2-msdf.json; negate: true" rotation="-90 0 20"
                 animation__textcolor="property: text.color; from: #FAFAFA; to: #8C200E; dur: 1500; autoplay: false"></a-entity>
-      <a-entity id="text3" mixin="text" text="value: DMs & Notifications; font: cyberpnuk2-msdf.json" rotation="-90 0 -20" ></a-entity>
-      <a-entity id="text4" mixin="text" text="value: Data collections of our lives; font: cyberpnuk2-msdf.json" position="0 0 0" rotation="-90 0 20" 
+      <a-entity id="text3" mixin="text" text="value: DMs & Notifications; font: cyberpnuk2-msdf.json; negate: true" rotation="-90 0 -20" ></a-entity>
+      <a-entity id="text4" mixin="text" text="value: Data collections of our lives; font: cyberpnuk2-msdf.json; negate: true" position="0 0 0"  
                 animation__positionin="property: position; to: 0 2 0; dur: 2500; autoplay: false"
                 animation__positionout="property: position; to: 0 2 10; dur: 1000; autoplay: false"></a-entity>
       <!-- <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>
@@ -237,6 +242,8 @@
           animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
           animation__positionin="property: position; to: 0 0 0; dur: 1500; autoplay: false"
           animation__positionout="property: position; from: 0 0 0; to: -10 0 0; dur: 2500; autoplay: false"
+          animation__scalein="property: scale; from: 1 1 1; to: 3 3 3; dur: 2000; autoplay: false"
+          animation__scaleout="property: scale; from: 3 3 3; to: 1 1 1; dur: 1000; autoplay: false"
           position="4 0 0"
           rotation="-60 0 0"
           opacity="0.8"
@@ -391,11 +398,11 @@ m[0].addEventListener("markerFound", (e)=>{
    }
 
    if(videoNumToPlay ===1){
-       document.getElementById("testVid").src = "miningIndustry480.mov";
+       document.getElementById("testVid").src = "permit480.mov";
    }
 
    if(videoNumToPlay ===2){
-      document.getElementById("testVid").src = "permit480.mov";
+      document.getElementById("testVid").src = "bisieMining480.mov";
 
    }
    if(videoNumToPlay ===3){
@@ -403,7 +410,7 @@ m[0].addEventListener("markerFound", (e)=>{
 
    }
    if(videoNumToPlay ===4){
-      document.getElementById("testVid").src = "bisieMining480.mov";
+      document.getElementById("testVid").src = "cassiteriteCongo.mov";
 
    }
    if(videoNumToPlay ===5){
@@ -411,7 +418,7 @@ m[0].addEventListener("markerFound", (e)=>{
 
    }
    else if(videoNumToPlay ===0){
-     document.getElementById("testVid").src = "cassiteriteCongo.mov";
+     document.getElementById("testVid").src = "miningIndustry480.mov";
 
    }
 
