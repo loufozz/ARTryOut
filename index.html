@@ -86,7 +86,7 @@
           <a-timeline-animation select="#text3" name="fadeout"></a-timeline-animation>
           <a-timeline-animation select="#text3" name="togglevisibleoff"></a-timeline-animation>
           </a-timeline-group>
-          
+
           <a-timeline-animation select="#text4" name="togglevisible" offset="1000"></a-timeline-animation>
           <a-timeline-group>
 
@@ -289,8 +289,8 @@
           <a-timeline-animation select="#image9" name="togglevisibleoff"></a-timeline-animation>
 
         <a-mixin id="image"
-          animation__fadein="property: components.material.material.opacity.value; from: 0; to: 1; dur: 1500; easing: linear; autoplay: false"
-          animation__fadeout="property: components.material.material.opacity.value; from: 1; to: 0; dur: 900; easing: linear; autoplay: false"
+          animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; dur: 1500; easing: linear; autoplay: false"
+          animation__fadeout="property: components.material.material.uniforms.opacity.value; from: 1; to: 0; dur: 900; easing: linear; autoplay: false"
           animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
           animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
           animation__positionin="property: position; to: 0 0 0; dur: 2500; autoplay: false"
