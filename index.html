@@ -1,519 +1,68 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Dismantling Your Electronics - AR experience</title>
-    <meta name="description" content="Basic example for Animation Timeline component."></meta>
-    <!--<script src="lib/aframe-v0.3.0.min.js"></script> -->
-     <!-- does not seem to work with the version above -->
-    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
-    <script src="dist/aframe-animation-timeline-component.js"></script>
-    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Image based tracking AR.js demo</title>
+    <!-- import aframe and then ar.js with image tracking / location based features -->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 
+    <!-- style for the loader -->
+    <style>
+      .arjs-loader {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .arjs-loader div {
+        text-align: center;
+        font-size: 1.25em;
+        color: white;
+      }
+    </style>
   </head>
-  <body>
-    <!-- <audio src="bohemian.mp3" autoplay></audio> -->
-<a-scene embedded arjs>
-  <a-assets>
-    <video id="testVid" muted playsinline src="miningIndustry480.mov"></video>
-    <!-- https://aframe.io/docs/1.0.0/components/sound.html -->
-   <!-- <audio id="soundTelling" src="warCongo.m4a" preload="auto"></audio> -->
 
+  <body style="margin : 0px; overflow: hidden;">
+    <!-- minimal loader shown until image descriptors are loaded. Loading may take a while according to the device computational power -->
+    <div class="arjs-loader">
+      <div>Loading, please wait...</div>
+    </div>
 
-</a-assets>
-
-  <!-- second-->
-  <!-- <a-assets>
-    <audio id="soundTelling" src="belgianLegacy.mp3" preload="auto"></audio>
-  </a-assets> -->
-
-
-
-  <a-marker id="ani0" preset='custom' type='pattern' url='pattern-markerGreen.patt'>
-    <!-- <a-sphere id="vidStart" color="green" radius="0.2" position="0 2 1"></a-sphere> -->
-    <a-video src="#testVid" width="4" height="2.25" position="-1 -1 0" rotation="-60 0 0" opacity="1"></a-video>
-    <a-text id="clickH" value="click screen for sound" font="toreadore-msdf.json" font-image="toreadore-msdf.png" color="#70F9FF" negate="false" position="-3.45 -4 1" rotation="-90 0 0" scale="2 2 2"></a-text>
- </a-marker>
-
-
-<a-marker id="ani1" preset='custom' type='pattern' url='pattern-markerYellow.patt'>
-  <!-- <a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true"> -->
-
-<a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true; startEvents: myAni; pauseEvents: myPause; resumeEvents: myResume">
-
-
-      <a-assets timeout="60000">
-        <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
-
-        <a-timeline id="myTimeline">
-          <a-timeline-group>
-          <a-timeline-animation select="#text1" name="togglevisible"></a-timeline-animation>
-          <a-timeline-animation select="#text1" name="fadein"></a-timeline-animation>
-          <a-timeline-animation select="#text1" name="positionchange1"></a-timeline-animation>
-          <a-timeline-animation select="#text1" name="scale"></a-timeline-animation>
-          </a-timeline-group>
-
-          <a-timeline-group>
-          <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
-          <a-timeline-animation select="#text1" name="togglevisibleoff"></a-timeline-animation>
-          </a-timeline-group>
-
-          <a-timeline-group>
-          <a-timeline-animation select="#text2" name="togglevisible"></a-timeline-animation>
-          <a-timeline-animation select="#text2" name="fadein"></a-timeline-animation>
-          <a-timeline-animation select="#text2" name="positionchange2"></a-timeline-animation>
-          <a-timeline-animation select="#text2" name="scale"></a-timeline-animation>
-          </a-timeline-group>
-
-          <a-timeline-group>
-          <a-timeline-animation select="#text2" name="fadeout"></a-timeline-animation>
-          <a-timeline-animation select="#text2" name="togglevisibleoff"></a-timeline-animation>
-          </a-timeline-group>
-
-
-
-          <a-timeline-group>
-            <a-timeline-animation select="#text3" name="togglevisible"></a-timeline-animation>
-            <a-timeline-animation select="#text3" name="fadein"></a-timeline-animation>
-            <a-timeline-animation select="#text3" name="positionchange1"></a-timeline-animation>
-            <a-timeline-animation select="#text3" name="scale"></a-timeline-animation>
-          </a-timeline-group>
-
-        <a-timeline-group>
-          <a-timeline-animation select="#text3" name="fadeout"></a-timeline-animation>
-          <a-timeline-animation select="#text3" name="togglevisibleoff"></a-timeline-animation>
-          </a-timeline-group>
-
-          <a-timeline-animation select="#text4" name="togglevisible" offset="1000"></a-timeline-animation>
-          <a-timeline-animation select="#text4" name="fadein"></a-timeline-animation>
-          <a-timeline-group>
-
-
-          <a-timeline-animation select="#text4" name="scale"></a-timeline-animation>
-          <a-timeline-animation select="#text4" name="positionin"></a-timeline-animation>
-          </a-timeline-group>
-          <a-timeline-animation select="#text4" name="positionout"></a-timeline-animation>
-          <a-timeline-animation select="#text4" name="fadeout"></a-timeline-animation>
-          <a-timeline-animation select="#text4" name="togglevisibleoff"></a-timeline-animation>
-
-        </a-timeline>
-
-
-        <a-mixin id="text"
-          text="align: center; width: 3; opacity: 0; wrap-count: 17; color: #70F9FF"
-          animation__fadein="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 1000; easing: linear; autoplay: false"
-          animation__fadeout="property: components.text.material.uniforms.opacity.value; from: 1; to: 0; dur: 1000; easing: linear; autoplay: false"
-          animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
-          animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
-          animation__scale="property: scale; from: 0.5 0.5 0.5; to: 3 3 3; dur: 2000; autoplay: false"
-          animation__positionchange1="property: position; from: 0 -2 0; to: -4 5 1; dur: 3000; autoplay: false"
-          animation__positionchange2="property: position; from: 0 -2 0; to: 3 5 2; dur: 2500; autoplay: false"
-          rotation="-90 0 0"
-          ></a-mixin>
-      </a-assets>
-
-      <a-entity id="text1" mixin="text" text="value: Emails; font: toreadore-msdf.json; font-image: toreadore-msdf.png; negate: false" rotation="-90 0 -20"></a-entity>
-      <a-entity id="text2" mixin="text" text="value: Txt msg; opacity: 1; font: toreadore-msdf.json; font-image: toreadore-msdf.png; negate: false" rotation="-90 0 20"
-                animation__textcolor="property: text.color; from: #FAFAFA; to: #8C200E; dur: 1500; autoplay: false"></a-entity>
-      <a-entity id="text3" mixin="text" text="value: DMs & Notifications; font: toreadore-msdf.json; font-image: toreadore-msdf.png; negate: false" rotation="-90 0 -20" ></a-entity>
-      <a-entity id="text4" mixin="text" text="value: Data collections of our lives; font: toreadore-msdf.json; font-image: toreadore-msdf.png; negate: false" position="0 0 0"
-                animation__positionin="property: position; to: 0 2 0; dur: 2500; autoplay: false"
-                animation__positionout="property: position; to: 0 2 10; dur: 1000; autoplay: false"></a-entity>
-
- </a-scene>
-</a-marker>
-
-<a-marker id="ani2" preset='custom' type='pattern' url='pattern-markerRedishG.patt'>
-  <!-- <a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true"> -->
-
-<a-scene id="receiver2" animation-timeline__2="timeline: #myTimeline2; loop: true; startEvents: myAni2; pauseEvents: myPause2; resumeEvents: myResume2">
-
-
-      <a-assets timeout="60000">
-        <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
-
-        <a-timeline id="myTimeline2">
-
-          <a-timeline-group>
-          <a-timeline-animation select="#image1" name="togglevisible"></a-timeline-animation>
-          <a-timeline-animation select="#image1" name="fadein"></a-timeline-animation>
-          <a-timeline-animation select="#image1" name="positionin"></a-timeline-animation>
-          <a-timeline-animation select="#image1" name="scalein"></a-timeline-animation>
-          </a-timeline-group>
-
-          <a-timeline-group>
-          <a-timeline-animation select="#image1" name="scaleout"></a-timeline-animation>
-          <a-timeline-animation select="#image1" name="positionout"></a-timeline-animation>
-          <a-timeline-animation select="#image1" name="fadeout"></a-timeline-animation>
-          </a-timeline-group>
-          <a-timeline-animation select="#image1" name="togglevisibleoff"></a-timeline-animation>
-
-          <a-timeline-group>
-          <a-timeline-animation select="#image2" name="togglevisible"></a-timeline-animation>
-          <a-timeline-animation select="#image2" name="fadein"></a-timeline-animation>
-          <a-timeline-animation select="#image2" name="positionin"></a-timeline-animation>
-          <a-timeline-animation select="#image2" name="scalein"></a-timeline-animation>
-          </a-timeline-group>
-
-          <a-timeline-group>
-          <a-timeline-animation select="#image2" name="scaleout"></a-timeline-animation>
-          <a-timeline-animation select="#image2" name="positionout"></a-timeline-animation>
-          <a-timeline-animation select="#image2" name="fadeout"></a-timeline-animation>
-          </a-timeline-group>
-          <a-timeline-animation select="#image2" name="togglevisibleoff"></a-timeline-animation>
-
-          <a-timeline-group>
-          <a-timeline-animation select="#image3" name="togglevisible"></a-timeline-animation>
-          <a-timeline-animation select="#image3" name="fadein"></a-timeline-animation>
-          <a-timeline-animation select="#image3" name="positionin"></a-timeline-animation>
-          <a-timeline-animation select="#image3" name="scalein"></a-timeline-animation>
-          </a-timeline-group>
-
-          <a-timeline-group>
-          <a-timeline-animation select="#image3" name="scaleout"></a-timeline-animation>
-          <a-timeline-animation select="#image3" name="positionout"></a-timeline-animation>
-          <a-timeline-animation select="#image3" name="fadeout"></a-timeline-animation>
-          </a-timeline-group>
-          <a-timeline-animation select="#image3" name="togglevisibleoff"></a-timeline-animation>
-
-          <a-timeline-group>
-          <a-timeline-animation select="#image4" name="togglevisible"></a-timeline-animation>
-          <a-timeline-animation select="#image4" name="fadein"></a-timeline-animation>
-          <a-timeline-animation select="#image4" name="positionin"></a-timeline-animation>
-          <a-timeline-animation select="#image4" name="scalein"></a-timeline-animation>
-          </a-timeline-group>
-
-          <a-timeline-group>
-          <a-timeline-animation select="#image4" name="scaleout"></a-timeline-animation>
-          <a-timeline-animation select="#image4" name="positionout"></a-timeline-animation>
-          <a-timeline-animation select="#image4" name="fadeout"></a-timeline-animation>
-          </a-timeline-group>
-          <a-timeline-animation select="#image4" name="togglevisibleoff"></a-timeline-animation>
-
-
-          <a-timeline-group>
-          <a-timeline-animation select="#image5" name="togglevisible"></a-timeline-animation>
-          <a-timeline-animation select="#image5" name="fadein"></a-timeline-animation>
-          <a-timeline-animation select="#image5" name="positionin"></a-timeline-animation>
-          <a-timeline-animation select="#image5" name="scalein"></a-timeline-animation>
-          </a-timeline-group>
-
-          <a-timeline-group>
-          <a-timeline-animation select="#image5" name="scaleout"></a-timeline-animation>
-          <a-timeline-animation select="#image5" name="positionout"></a-timeline-animation>
-          <a-timeline-animation select="#image5" name="fadeout"></a-timeline-animation>
-          </a-timeline-group>
-          <a-timeline-animation select="#image5" name="togglevisibleoff"></a-timeline-animation>
-
-          <a-timeline-group>
-          <a-timeline-animation select="#image6" name="togglevisible"></a-timeline-animation>
-          <a-timeline-animation select="#image6" name="fadein"></a-timeline-animation>
-          <a-timeline-animation select="#image6" name="positionin"></a-timeline-animation>
-          <a-timeline-animation select="#image6" name="scalein"></a-timeline-animation>
-          </a-timeline-group>
-
-          <a-timeline-group>
-          <a-timeline-animation select="#image6" name="scaleout"></a-timeline-animation>
-          <a-timeline-animation select="#image6" name="positionout"></a-timeline-animation>
-          <a-timeline-animation select="#image6" name="fadeout"></a-timeline-animation>
-          </a-timeline-group>
-          <a-timeline-animation select="#image6" name="togglevisibleoff"></a-timeline-animation>
-
-          <a-timeline-group>
-          <a-timeline-animation select="#image7" name="togglevisible"></a-timeline-animation>
-          <a-timeline-animation select="#image7" name="fadein"></a-timeline-animation>
-          <a-timeline-animation select="#image7" name="positionin"></a-timeline-animation>
-          <a-timeline-animation select="#image7" name="scalein"></a-timeline-animation>
-          </a-timeline-group>
-
-          <a-timeline-group>
-          <a-timeline-animation select="#image7" name="scaleout"></a-timeline-animation>
-          <a-timeline-animation select="#image7" name="positionout"></a-timeline-animation>
-          <a-timeline-animation select="#image7" name="fadeout"></a-timeline-animation>
-          </a-timeline-group>
-          <a-timeline-animation select="#image7" name="togglevisibleoff"></a-timeline-animation>
-
-          <a-timeline-group>
-          <a-timeline-animation select="#image8" name="togglevisible"></a-timeline-animation>
-          <a-timeline-animation select="#image8" name="fadein"></a-timeline-animation>
-          <a-timeline-animation select="#image8" name="positionin"></a-timeline-animation>
-          <a-timeline-animation select="#image8" name="scalein"></a-timeline-animation>
-          </a-timeline-group>
-
-          <a-timeline-group>
-          <a-timeline-animation select="#image8" name="scaleout"></a-timeline-animation>
-          <a-timeline-animation select="#image8" name="positionout"></a-timeline-animation>
-          <a-timeline-animation select="#image8" name="fadeout"></a-timeline-animation>
-          </a-timeline-group>
-          <a-timeline-animation select="#image8" name="togglevisibleoff"></a-timeline-animation>
-
-          <a-timeline-group>
-          <a-timeline-animation select="#image9" name="togglevisible"></a-timeline-animation>
-          <a-timeline-animation select="#image9" name="fadein"></a-timeline-animation>
-          <a-timeline-animation select="#image9" name="positionin"></a-timeline-animation>
-          <a-timeline-animation select="#image9" name="scalein"></a-timeline-animation>
-          </a-timeline-group>
-
-          <a-timeline-group>
-          <a-timeline-animation select="#image9" name="scaleout"></a-timeline-animation>
-          <a-timeline-animation select="#image9" name="positionout"></a-timeline-animation>
-          <a-timeline-animation select="#image9" name="fadeout"></a-timeline-animation>
-          </a-timeline-group>
-          <a-timeline-animation select="#image9" name="togglevisibleoff"></a-timeline-animation>
-
-        <a-mixin id="image"
-          animation__fadein="property: components.material.material.opacity; from: 0; to: 0.8; dur: 500; easing: linear; autoplay: false"
-          animation__fadeout="property: components.material.material.opacity; from: 0.8; to: 0; dur: 2000; offset: 1000; easing: linear; autoplay: false"
-          animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
-          animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; offset: 2000; autoplay: false"
-          animation__positionin="property: position; to: 0 0 0; dur: 2500; autoplay: false"
-          animation__positionout="property: position; from: 0 0 0; to: -10 0 0; dur: 2500; offset: 2000; autoplay: false"
-          animation__scalein="property: scale; from: 1 1 1; to: 3 3 3; dur: 2000; autoplay: false"
-          animation__scaleout="property: scale; from: 3 3 3; to: 1 1 1; dur: 1500; autoplay: false"
-          position="4 0 0"
-          rotation="-60 0 0"></a-mixin>
-      </a-assets>
-      <a-image id="image1" mixin="image" src="boyMine.jpg"></a-image>
-      <a-image id="image2" mixin="image" src="boi_coltan_congo.jpg" ></a-image>
-      <a-image id="image3" mixin="image" src="workers.jpg" ></a-image>
-      <a-image id="image4" mixin="image" src="chineseTinSeparator.jpg" ></a-image>
-      <a-image id="image5" mixin="image" src="childSold.jpg" ></a-image>
-      <a-image id="image6" mixin="image" src="mineralProcessing.jpeg" ></a-image>
-      <a-image id="image7" mixin="image" src="consumerAll.jpeg" ></a-image>
-      <a-image id="image8" mixin="image" src="consumer2.jpg" ></a-image>
-      <a-image id="image9" mixin="image" src="consumerFight.jpg" ></a-image>
-
-</a-scene>
-</a-marker>
-
-<a-marker id="ani3" preset='custom' type='pattern' url='pattern-pink3.patt'>
-
-  <!-- <a-entity looop: true sound="src: #soundTelling"></a-entity> -->
-   <a-sphere id="soundStart" radius="0.3" position="0 -1 0" rotation="0 0 0" color="blue"
-
-   animation="property: position; dur: 8000; from: 0 1 0; to: 0 -1 0; dir: alternate; loop: true"
-   animation__color="property: components.material.material.color; type: color; dur: 8000; from: red; to: blue;
-   dir: alternate; loop: true">
-
-     <!-- <a-animation attribute="intensity" dur="2000" from="1" to="3" direction='alternate-reverse'
-     repeat="indefinite" easing="linear"></a-animation> -->
-   </a-sphere>
-   <a-entity id="mySoundTest" loop="true" sound="src: url(warCongo.m4a)"></a-entity>
-  <!-- <a-entity sound="src: #soundTelling; volume: 0.75; loop: false" material="opacity:0.5"
-  autoplay="false" geometry="primitive: box"
-  position="0 0 0" scale="1 1 1" color="#FF0000" audio-toggle="playing: false"></a-entity> -->
-</a-marker>
-
-
-<a-entity camera></a-entity>
-
+    <!-- a-frame scene -->
+    <a-scene
+      vr-mode-ui="enabled: false;"
+      renderer="logarithmicDepthBuffer: true;"
+      embedded
+      arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+      <!-- a-nft is the anchor that defines an Image Tracking entity -->
+      <!-- on 'url' use the path to the Image Descriptors created before. -->
+      <!-- the path should end with the name without the extension e.g. if file is trex.fset' the path should end with trex -->
+      <a-nft
+        type="nft"
+        url="arsenopyrite"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance=".01"
+        smoothThreshold="5">
+          <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
+          <a-entity
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+              scale="5 5 5"
+              position="100 100 0"
+          >
+          </a-entity>
+      </a-nft>
+      <!-- static camera that moves according to the device movemenents -->
+      <a-entity camera></a-entity>
     </a-scene>
-
-
- <script>
-
-window.onload = function(){
-  let videoNumToPlay =0;
-  let soundNumToPlay =0;
-
-  console.log("ready for debug");
-
-
-//let m = document.getElementById("ani1");
-let el = document.getElementById("receiver");
-let el2 = document.getElementById("receiver2");
-let m = document.getElementsByTagName("a-marker");
-// let tVid = document.getElementById("vidStart");
-// let tSound = document.getElementById("soundStart");
-
-console.log("markers:: ");
-console.log(m);
-
-let firstTime = false;
-let firstTime2 = false;
-//document.getElementById("vidStart")
-window.onclick = function(){
-console.log("video loaded");
-document.getElementById("testVid").muted =false;
-document.getElementById("clickH").components.text.material.uniforms.opacity.value =0;
-}
-
-el.style.display = "none";
-el2.style.display = "none";
-
-
-m[0].addEventListener("markerFound", (e)=>{
-  // ensure that the animation element is not visible...
-  el.style.display = "none";
-  el2.style.display = "none";
-   console.log("found ani 0");
-   console.log(m[0]);
-   //play the video
-   console.log( document.getElementById("testVid"));
-   if(document.getElementById("testVid").currentTime === 0){
-
-//  setInterval( testFunc, 1000);
-   document.getElementById("testVid").play();
-   console.log("play");
- }
- else{
-   document.getElementById("testVid").play();
- }
-
-});
-
- document.getElementById("testVid").onended = function(){
-   console.log("ended");
-
-   if(videoNumToPlay <5){
-     videoNumToPlay +=1;
-   }
-   //reset
-   else{
-      videoNumToPlay =0;
-   }
-
-   if(videoNumToPlay ===1){
-       document.getElementById("testVid").src = "permit480.mov";
-   }
-
-   if(videoNumToPlay ===2){
-      document.getElementById("testVid").src = "bisieMining480.mov";
-
-   }
-   if(videoNumToPlay ===3){
-      document.getElementById("testVid").src = "corporateSustainability.mov";
-
-   }
-   if(videoNumToPlay ===4){
-      document.getElementById("testVid").src = "cassiteriteCongo.mov";
-
-   }
-   if(videoNumToPlay ===5){
-      document.getElementById("testVid").src = "sustainability.mov";
-
-   }
-   else if(videoNumToPlay ===0){
-     document.getElementById("testVid").src = "miningIndustry480.mov";
-
-   }
-
-
-  console.log("and now ... "+  document.getElementById("testVid"));
-   document.getElementById("testVid").play();
-
- }
-
-
-m[0].addEventListener("markerLost", (e)=>{
-   console.log("lost video marker");
-  //console.log(document.getElementById("testVid").currentTime);
-  document.getElementById("testVid").pause();
-});
-
-
-m[1].addEventListener("markerFound", (e)=>{
-   console.log("found ani 1");
-   console.log(m[1]);
-   el.style.display = "block";
-   //reset currentTime of the video
-   document.getElementById("testVid").currentTime =0;
-   if(firstTime === false){
-
-    el.emit("myAni");
-      firstTime =true;
-    }
-   else{
-     el.emit("myResume");
-   }
-
-});
-
-
-m[1].addEventListener("markerLost", (e)=>{
-   console.log("lost");
-  //console.log(el.pauseAnimation());
-   el.emit("myPause");
-   el.style.display = "none";
-
-   console.log(el);
-});
-
-m[2].addEventListener("markerFound", (e)=>{
-   console.log("found ani 2");
-   console.log(m[3]);
-   el2.style.display = "block";
-   //reset currentTime of the video
-   document.getElementById("testVid").currentTime =0;
-   if(firstTime2 === false){
-
-    el2.emit("myAni2");
-      firstTime2 =true;
-    }
-   else{
-     el2.emit("myResume2");
-   }
-
-});
-
-
-m[2].addEventListener("markerLost", (e)=>{
-   console.log("lost image");
-  //console.log(el.pauseAnimation());
-   el2.emit("myPause2");
-   el2.style.display = "none";
-   console.log(el2);
-});
-
-m[3].addEventListener("markerFound", (e)=>{
-
-
-   console.log("ani 3 launched");
-   let entity = document.querySelector('[sound]');
-   //console.log(entity);
-   entity.components.sound.playSound();
-});
-
-
-document.querySelector('[sound]').addEventListener('sound-ended', function(){
-  console.log("sound ended");
-console.log(soundNumToPlay);
-if(soundNumToPlay <1){
-  soundNumToPlay +=1;
-  console.log("HERE");
-}
-//reset
-  else{
-      soundNumToPlay =0;
-   }
- if(soundNumToPlay ===1){
-   console.log("AND CHANGING");
-
-let m = document.getElementById("mySoundTest").getAttribute("sound");
-m.src = "url(belgianLegacy.m4a)";
-console.log(m);
-document.getElementById("mySoundTest").setAttribute("sound",m);
- }
-
- if(soundNumToPlay ===0){
-   console.log("AND CHANGING BACK");
-
-let m = document.getElementById("mySoundTest").getAttribute("sound");
-m.src = "url(warCongo.m4a)";
-console.log(m);
-document.getElementById("mySoundTest").setAttribute("sound",m);
- }
-
- document.getElementById("mySoundTest").components.sound.playSound();
-})
-
-m[3].addEventListener("markerLost", (e)=>{
-//pause
- console.log("sound pause");
-  let entity = document.querySelector('[sound]');
-   entity.components.sound.pauseSound();
-});
-}
-</script>
   </body>
 </html>
