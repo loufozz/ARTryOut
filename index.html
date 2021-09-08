@@ -7,7 +7,7 @@
     <!--<script src="lib/aframe-v0.3.0.min.js"></script> -->
      <!-- does not seem to work with the version above -->
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
-    <script src="dist/aframe-animation-timeline-component.js"></script>
+    <script src="dist/aframe-animation-timeline-component.min.js"></script>
     <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 
   </head>
@@ -36,7 +36,7 @@
  </a-marker>
 
 
-<a-marker-camera id="ani1" preset='custom' type='pattern' url='pattern-markerDYE22.patt'>
+<a-marker id="ani1" preset='custom' type='pattern' url='pattern-markerDYE22.patt'>
   <!-- <a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true"> -->
 
 <a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true; startEvents: myAni; pauseEvents: myPause; resumeEvents: myResume">
@@ -146,9 +146,9 @@
 
 
  </a-scene>
-</a-marker-camera>
+</a-marker>
 
-<a-marker-camera id="ani2" preset='custom' type='pattern' url='pattern-markerDYE33.patt'>
+<a-marker id="ani2" preset='custom' type='pattern' url='pattern-markerDYE33.patt'>
   <!-- <a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true"> -->
 
 <a-scene id="receiver2" animation-timeline__2="timeline: #myTimeline2; loop: true; startEvents: myAni2; pauseEvents: myPause2; resumeEvents: myResume2">
@@ -322,9 +322,9 @@
 
 
 </a-scene>
-</a-marker-camera>
+</a-marker>
 
-<a-marker-camera id="ani3" preset='custom' type='pattern' url='pattern-markerDYE44.patt'>
+<a-marker id="ani3" preset='custom' type='pattern' url='pattern-markerDYE44.patt'>
 
   <!-- <a-entity looop: true sound="src: #soundTelling"></a-entity> -->
    <a-sphere id="soundStart" radius="0.3" position="0 -1 0" rotation="0 0 0" color="blue"
@@ -340,7 +340,7 @@
   <!-- <a-entity sound="src: #soundTelling; volume: 0.75; loop: false" material="opacity:0.5"
   autoplay="false" geometry="primitive: box"
   position="0 0 0" scale="1 1 1" color="#FF0000" audio-toggle="playing: false"></a-entity> -->
-</a-marker-camera>
+</a-marker>
 
 
 <a-entity camera></a-entity>
