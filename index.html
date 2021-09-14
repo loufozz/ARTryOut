@@ -127,7 +127,7 @@
       <a-entity id="text2" mixin="text" text="value: Txt msg; opacity: 0; font: toreadore-msdf.json; font-image: toreadore-msdf.png; negate: false"
                 animation__textcolor="property: text.color; from: #FAFAFA; to: #8C200E; dur: 1500; autoplay: false"></a-entity>
       <a-entity id="text3" mixin="text" text="value: DMs & Notifications; font: toreadore-msdf.json; font-image: toreadore-msdf.png; negate: false; align: center; width: 3; opacity: 0; wrap-count: 17; color: #70F9FF" ></a-entity>
-      <a-entity id="text4" text="value: Data collections of our lives; font: toreadore-msdf.json; font-image: toreadore-msdf.png; negate: false" position="0 0 0"
+      <a-entity id="text4" text="value: Data collections of our lives; font: toreadore-msdf.json; font-image: toreadore-msdf.png; negate: false; align: center; width: 3; opacity: 0; wrap-count: 17; color: #70F9FF; position: 0 0 0"
                 animation__positionin="property: position; to: 0 2 0; dur: 2500; autoplay: false"
                 animation__positionout="property: position; to: 0 2 10; dur: 1000; autoplay: false"
                 animation__fadein="property: components.text.material.uniforms.opacity.value; from: 0; to: 1; dur: 1000; easing: linear; autoplay: false"
@@ -308,11 +308,10 @@
           animation__fadeout="property: components.material.material.opacity; from: 1; to: 0; dur: 2000; offset: 1000; easing: linear; autoplay: false"
           animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
           animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; offset: 2000; autoplay: false"
-          animation__positionin="property: position; to: 0 0 0; dur: 2500; autoplay: false"
+          animation__positionin="property: position; from: 4 0 0; to: 0 0 0; dur: 2500; autoplay: false"
           animation__positionout="property: position; from: 0 0 0; to: -10 0 0; dur: 2500; offset: 2000; autoplay: false"
           animation__scalein="property: scale; from: 1 1 1; to: 3 3 3; dur: 2000; autoplay: false"
           animation__scaleout="property: scale; from: 3 3 3; to: 1 1 1; dur: 1500; autoplay: false"
-          position="4 0 0"
           rotation="-60 0 0"></a-mixin>
       </a-assets>
       <a-image id="image1" mixin="image" src="boyMine.jpg"></a-image>
