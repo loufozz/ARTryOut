@@ -294,8 +294,8 @@
                     animation__fadeout="property: components.material.material.opacity; from: 1; to: 0; dur: 2000; easing: linear; autoplay: false"
                     animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
                     animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; delay: 1000; autoplay: false"
-                    animation__positionleft="property: position; from: -6 -8 0; to: -1 -8 0; dur: 1000; autoplay: false"
-                    animation__positionright="property: position; from: 6 -8 0; to: 1 -8 0; dur: 1000; autoplay: false"
+                    animation__positionleft="property: position; from: -6 -8 -0.5; to: -1 -8 -0.5; dur: 1000; autoplay: false"
+                    animation__positionright="property: position; from: 6 -6 0.5; to: 1 -6 0.5; dur: 1000; autoplay: false"
                     animation__positionout="property: position; to: 0 -12 -4; dur: 1000; autoplay: false"
                     animation__scalein="property: scale; from: 1 1 1; to: 4 4 4; dur: 1000; delay: 2000; autoplay: false"
                     animation__scaleout="property: scale; from: 4 4 4; to: 1 1 1; dur: 4000; delay: 6000; autoplay: false"
@@ -559,19 +559,19 @@ if(soundNumToPlay2 <1){
  if(soundNumToPlay2 ===1){
    console.log("AND CHANGING");
 
-let m = document.getElementById("conversationMKK").getAttribute("sound");
-m.src = "url(dyeconversation2nd_2_mixdown.mp3)";
-console.log(m);
-document.getElementById("conversationMKK").setAttribute("sound",m);
+let m2 = document.getElementById("conversationMKK").getAttribute("sound");
+m2.src = "url(dyeconversation2nd_2_mixdown.mp3)";
+console.log(m2);
+document.getElementById("conversationMKK").setAttribute("sound",m2);
  }
 
  if(soundNumToPlay2 ===0){
    console.log("AND CHANGING BACK");
 
-let m = document.getElementById("conversationMKK").getAttribute("sound");
-m.src = "url(dyeconversations2_2_mixdown.mp3)";
-console.log(m);
-document.getElementById("conversationMKK").setAttribute("sound",m);
+let m2 = document.getElementById("conversationMKK").getAttribute("sound");
+m2.src = "url(dyeconversations2_2_mixdown.mp3)";
+console.log(m2);
+document.getElementById("conversationMKK").setAttribute("sound",m2);
  }
 
  document.getElementById("conversationMKK").components.sound.playSound();
