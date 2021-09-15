@@ -160,8 +160,6 @@
 
 <a-marker id="ani2" preset='custom' type='pattern' url='pattern-markerDYEmonitorBW2.patt'>
 
-  <a-text id="clickH" value="click screen for sound" font="toreadore-msdf.json" font-image="toreadore-msdf.png" color="#70F9FF" negate="false" position="-3.45 -4 1" rotation="-90 0 0" scale="2 2 2"></a-text>
-
 <a-scene id="receiver2" animation-timeline__2="timeline: #myTimeline2; loop: true; startEvents: myAni2; pauseEvents: myPause2; resumeEvents: myResume2">
 
 
@@ -311,12 +309,12 @@
 
           <a-mixin id="image"
                     animation__fadein="property: components.material.material.opacity; from: 0; to: 1; dur: 500; easing: linear; autoplay: false"
-                    animation__fadeout="property: components.material.material.opacity; from: 1; to: 0; dur: 2000; delay: 4000; easing: linear; autoplay: false"
+                    animation__fadeout="property: components.material.material.opacity; from: 1; to: 0; dur: 2000; delay: 2000; easing: linear; autoplay: false"
                     animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
                     animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; delay: 1000; autoplay: false"
                     animation__positionin="property: position; to: 0 -4 0; dur: 1000; autoplay: false"
                     animation__positionout="property: position; from: 0 -4 0; to: -4 -4 0; dur: 3000; delay: 2000; autoplay: false"
-                    animation__scalein="property: scale; from: 1 1 1; to: 2 2 2; dur: 4000; autoplay: false"
+                    animation__scalein="property: scale; from: 1 1 1; to: 2 2 2; dur: 1000; autoplay: false"
                     animation__scaleout="property: scale; from: 2 2 2; to: 1 1 1; dur: 3000; delay: 4000; autoplay: false"
                     position="4 -4 0"
                     rotation="-90 0 0"></a-mixin>
