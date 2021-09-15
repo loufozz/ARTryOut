@@ -165,7 +165,7 @@
 <a-scene id="receiver2" animation-timeline__2="timeline: #myTimeline2; loop: true; startEvents: myAni2; pauseEvents: myPause2; resumeEvents: myResume2">
 
 
-      <a-assets timeout="500000">
+      <a-assets timeout="750000">
         <!-- <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item> -->
 
         <a-timeline id="myTimeline2">
@@ -306,7 +306,7 @@
           </a-timeline-group>
           <a-timeline-animation select="#image9" name="togglevisibleoff"></a-timeline-animation> -->
 
-
+<!-- animation__positioninR="property: position; from:4 -4 0; to: 0 -4 0; dur: 1000; autoplay: false" -->
           </a-timeline>
 
           <a-mixin id="image"
@@ -314,9 +314,9 @@
                     animation__fadeout="property: components.material.material.opacity; from: 1; to: 0; dur: 2000; delay: 4000; easing: linear; autoplay: false"
                     animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
                     animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; delay: 1000; autoplay: false"
-                    animation__positionin="property: position; from:-6 -4 0 to: 0 -4 0; dur: 1000; autoplay: false"
+                    animation__positionin="property: position; from:-4 -4 0 to: 0 -4 0; dur: 1000; autoplay: false"
 
-                    animation__positionout="property: position; from: 0 -4 0; to: 0 -4 -10; dur: 5000; delay: 2000; autoplay: false"
+                    animation__positionout="property: position; from: 0 -4 0; to: 0 -4 -6; dur: 5000; delay: 2000; autoplay: false"
                     animation__scalein="property: scale; from: 1 1 1; to: 2 2 2; dur: 4000; autoplay: false"
                     animation__scaleout="property: scale; from: 2 2 2; to: 1 1 1; dur: 3000; delay: 4000; autoplay: false"
                     rotation="-90 0 0"></a-mixin>
