@@ -249,7 +249,7 @@
           <a-timeline-group>
           <a-timeline-animation select="#image6" name="togglevisible"></a-timeline-animation>
           <a-timeline-animation select="#image6" name="fadein"></a-timeline-animation>
-          <a-timeline-animation select="#image6" name="positionleft"></a-timeline-animation>
+          <a-timeline-animation select="#image6" name="positionright"></a-timeline-animation>
           </a-timeline-group>
 
           <a-timeline-group>
@@ -275,7 +275,6 @@
           <a-timeline-group>
           <a-timeline-animation select="#image7" name="togglevisible"></a-timeline-animation>
           <a-timeline-animation select="#image7" name="fadein"></a-timeline-animation>
-          <a-timeline-animation select="#image7" name="positionleft"></a-timeline-animation>
           </a-timeline-group>
 
           <a-timeline-animation select="#image7" name="scalein"></a-timeline-animation>
@@ -309,7 +308,7 @@
       <a-image id="image4" mixin="image" src="MKK_L2.png" ></a-image>
       <a-image id="image5" mixin="image" src="MKK_L3.png" ></a-image>
       <a-image id="image6" mixin="image" src="MKK_R3.png" ></a-image>
-      <a-image id="image7" mixin="image" src="MKK_question.png" ></a-image>
+      <a-image id="image7" mixin="image" src="MKK_question.png" position="0 -8 0" ></a-image>
 
       <a-entity id="conversationMKK" loop="true" volume="1" sound="src: url(dyeconversations2_2_mixdown.mp3)"></a-entity>
 
@@ -532,7 +531,7 @@ m[2].addEventListener("markerFound", (e)=>{
    document.getElementById("testVid").currentTime =0;
 
    let entity = document.querySelector('[sound]');
-   //console.log(entity);
+   console.log(entity);
    entity.components.sound.playSound();
 
    if(firstTime2 === false){
