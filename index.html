@@ -41,7 +41,7 @@
 <a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true; startEvents: myAni; pauseEvents: myPause; resumeEvents: myResume">
 
 
-      <a-assets timeout="60000">
+      <a-assets timeout="300000">
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 
         <a-timeline id="myTimeline">
@@ -159,13 +159,14 @@
 </a-marker>
 
 <a-marker id="ani2" preset='custom' type='pattern' url='pattern-markerDYEmonitorBW2.patt'>
+      <a-text id="clickH" value="click screen for sound" font="toreadore-msdf.json" font-image="toreadore-msdf.png" color="#70F9FF" negate="false" position="-3.45 -4 1" rotation="-90 0 0" scale="2 2 2"></a-text>
 
 <a-scene id="receiver2" animation-timeline__2="timeline: #myTimeline2; loop: true; startEvents: myAni2; pauseEvents: myPause2; resumeEvents: myResume2">
-  <a-text id="clickH" value="click screen for sound" font="toreadore-msdf.json" font-image="toreadore-msdf.png" color="#70F9FF" negate="false" position="-3.45 -4 1" rotation="-90 0 0" scale="2 2 2"></a-text>
 
 
-      <a-assets timeout="500000">
-        <!-- <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item> -->
+
+      <a-assets timeout="300000">
+        <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 
         <a-timeline id="myTimeline2">
 
