@@ -507,66 +507,58 @@ m[0].addEventListener("markerLost", (e)=>{
 });
 
 
-m[1].addEventListener("markerFound", (e)=>{
-   console.log("found ani 1");
-   console.log(m[1]);
-   el.style.display = "block";
-   //reset currentTime of the video
-   document.getElementById("testVid").currentTime =0;
-   if(firstTime === false){
+// m[1].addEventListener("markerFound", (e)=>{
+//    console.log("found ani 1");
+//    console.log(m[1]);
+//    el.style.display = "block";
+//    //reset currentTime of the video
+//    document.getElementById("testVid").currentTime =0;
+//    if(firstTime === false){
+//
+//     el.emit("myAni");
+//       firstTime =true;
+//     }
+//    else{
+//      el.emit("myResume");
+//    }
+//
+// });
+//
+//
+// m[1].addEventListener("markerLost", (e)=>{
+//    console.log("lost");
+//   //console.log(el.pauseAnimation());
+//    el.emit("myPause");
+//    el.style.display = "none";
+//
+//    console.log(el);
+// });
 
-    el.emit("myAni");
-      firstTime =true;
-    }
-   else{
-     el.emit("myResume");
-   }
-
-});
-
-
-m[1].addEventListener("markerLost", (e)=>{
-   console.log("lost");
-  //console.log(el.pauseAnimation());
-   el.emit("myPause");
-   el.style.display = "none";
-
-   console.log(el);
-});
-
-// document.getElementById("soundStart").onclick = function(){
-//   console.log("sound clicked");
-//   document.querySelector('#soundTelling').components.sound.playSound();
-// //  document.getElementById("soundTelling").components.sound.playSound();
-// }
-
-
-
-m[2].addEventListener("markerFound", (e)=>{
-   console.log("found ani 2");
-   console.log(m[3]);
-   el2.style.display = "block";
-   //reset currentTime of the video
-   document.getElementById("testVid").currentTime =0;
-   if(firstTime2 === false){
-
-    el2.emit("myAni2");
-      firstTime2 =true;
-    }
-   else{
-     el2.emit("myResume2");
-   }
-
-});
-
-
-m[2].addEventListener("markerLost", (e)=>{
-   console.log("lost image");
-  //console.log(el.pauseAnimation());
-   el2.emit("myPause2");
-   el2.style.display = "none";
-   console.log(el2);
-});
+// m[2].addEventListener("markerFound", (e)=>{
+//    console.log("found ani 2");
+//    console.log(m[3]);
+//    el2.style.display = "block";
+//    //reset currentTime of the video
+//    document.getElementById("testVid").currentTime =0;
+//    if(firstTime2 === false){
+//
+//     el2.emit("myAni2");
+//       firstTime2 =true;
+//     }
+//    else{
+//      el2.emit("myResume2");
+//    }
+//
+// });
+//
+//
+// m[2].addEventListener("markerLost", (e)=>{
+//    console.log("lost image");
+//   //console.log(el.pauseAnimation());
+//    el2.emit("myPause2");
+//    el2.style.display = "none";
+//    console.log(el2);
+// });
 
 m[3].addEventListener("markerFound", (e)=>{
 
@@ -616,133 +608,6 @@ m[3].addEventListener("markerLost", (e)=>{
   let entity = document.querySelector('[sound]');
    entity.components.sound.pauseSound();
 });
-
-// // let entity = document.querySelector('[sound]');
-//
-//   if(soundNumToPlay <1){
-//     console.log("less than 2");
-//     soundNumToPlay +=1;
-//
-//   }
-//   //reset
-//   else{
-//      soundNumToPlay =0;
-//   }
-//
-//   if(soundNumToPlay ===1){
-//     console.log("sound congo");
-//       // entity.components.sound.src = "warCongo.m4a";
-//       // document.getElementById("soundTelling").components.sound.src = "warCongo.m4a";
-//
-//       document.querySelector('[sound]').components.sound.src = "belgianLegacy.mp3";
-//   }
-//
-//   // if(soundNumToPlay ===2){
-//   //    document.getElementById("soundTelling").src = "permit480.mov";
-//   //
-//   // }
-//   else if(soundNumToPlay ===0){
-//     document.querySelector('[sound]').components.sound.src = "warCongo.m4a";
-//
-//   }
-//
-//  console.log("and now next");
-//   document.querySelector('[sound]').components.sound.playSound();
-
-
-
-
-
-   //sample.emit("samplePlay");
-//    document.getElementById("soundTelling").components.sound.playSound();
-//
-//
-// });
-
-
-
-// FROM WEBSITE: https://glitch.com/~a-frame-audio-tutorial-complete
-// AFRAME.registerComponent('audio-toggle', {
-//   schema: {
-//     playing: {
-//       type: 'boolean',
-//       default: false
-//     }
-//   },
-//   update: function() {
-//     let data = this.data
-//     let el = this.el
-//     let playing = data.playing
-//
-//     m[2].addEventListener("markerFound", (e)=>{
-//     if (playing === true) {
-//       el.components.sound.playSound()
-//     }
-//
-//     el.addEventListener('click', () => {
-//       if (playing) {
-//         el.components.sound.pauseSound()
-//         playing = false
-//       } else {
-//         el.components.sound.playSound()
-//         playing = true
-//       }
-//     })
-//    })
-//    m[2].addEventListener("markerLost", (e)=>{
-//      console.log("lost sound marker");
-//      el.components.sound.pauseSound()
-//     })
-//   }
-// })
-
-
-/*function testFunc(){
-  console.log("dur:: "+document.getElementById("testVid").duration);
-  console.log("curr:: "+document.getElementById("testVid").currentTime );
-}*/
-
- // document.getElementById("soundTelling").addEventListener('sound-ended', function(){
- //   console.log("sound ended");
- //
- //   if(soundNumToPlay <1){
- //     soundNumToPlay +=1;
- //   }
- //   //reset
- //   else{
- //      soundNumToPlay =0;
- //   }
- //
- //   if(soundNumToPlay ===1){
- //       document.getElementById("soundTelling").src = "bl11.mp3";
- //   }
- //
- //   // if(soundNumToPlay ===2){
- //   //    document.getElementById("soundTelling").src = "permit480.mov";
- //   //
- //   // }
- //   else if(soundNumToPlay ===0){
- //     document.getElementById("soundTelling").src = "belgianLegacy.mp3";
- //
- //   }
- //
- //  console.log("and now ... "+  document.getElementById("soundTelling"));
- //   document.getElementById("soundTelling").components.sound.playSound();
- //
- // });
-
-// m[2].addEventListener("markerLost", (e)=>{
-//    console.log("lost sound marker");
-//   console.log(sample);
-//   document.getElementById("soundTelling").components.sound.pauseSound();
-// })
-
-/*console.log(el);
-el.addEventListener('triggerA', function (event) {
-  console.log("EMIT RECEIVED");
-  console.log(el);
-  //console.log('Entity collided with', event.detail.collidingEntity);
-});*/-->
 }
 </script>
   </body>
