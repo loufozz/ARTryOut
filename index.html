@@ -529,6 +529,11 @@ m[2].addEventListener("markerFound", (e)=>{
    el2.style.display = "block";
    //reset currentTime of the video
    document.getElementById("testVid").currentTime =0;
+
+   let entity = document.querySelector('[sound]');
+   //console.log(entity);
+   entity.components.sound.playSound();
+
    if(firstTime2 === false){
 
     el2.emit("myAni2");
@@ -544,6 +549,9 @@ m[2].addEventListener("markerFound", (e)=>{
 m[2].addEventListener("markerLost", (e)=>{
    console.log("lost image");
   //console.log(el.pauseAnimation());
+  let entity = document.querySelector('[sound]');
+   entity.components.sound.pauseSound();
+   
    el2.emit("myPause2");
    el2.style.display = "none";
    console.log(el2);
