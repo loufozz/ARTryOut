@@ -335,17 +335,19 @@
 </a-marker>
 
 <a-marker id="ani3" preset='custom' type='pattern' url='pattern-markerDYEbatteryBW2.patt'>
-
+  <a-assets>
+    <a-asset-item id="tree" src="character6.glb"></a-asset-item>
+  </a-assets>
   <!-- <a-entity looop: true sound="src: #soundTelling"></a-entity> -->
-   <a-sphere id="soundStart" radius="0.3" position="0 -1 0" rotation="0 0 0" color="blue"
+   <!-- <a-sphere id="soundStart" radius="0.3" position="0 -1 0" rotation="0 0 0" color="blue"
 
    animation="property: position; dur: 8000; from: 0 1 0; to: 0 -1 0; dir: alternate; loop: true"
    animation__color="property: components.material.material.color; type: color; dur: 8000; from: red; to: blue;
-   dir: alternate; loop: true">
+   dir: alternate; loop: true"> -->
 
      <!-- <a-animation attribute="intensity" dur="2000" from="1" to="3" direction='alternate-reverse'
      repeat="indefinite" easing="linear"></a-animation> -->
-   </a-sphere>
+   <!-- </a-sphere> -->
    <a-entity id="mySoundTest" loop="true" sound="src: url(warCongo.m4a)"></a-entity>
   <!-- <a-entity sound="src: #soundTelling; volume: 0.75; loop: false" material="opacity:0.5"
   autoplay="false" geometry="primitive: box"
