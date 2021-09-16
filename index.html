@@ -205,32 +205,32 @@
                     animation__positionright="property: position; from: 6 -6 -6; to: 1 -6 0; dur: 1000; autoplay: false"
                     animation__positionleft0="property: position; from: 0 -6 1; to: -6 -6 -6; dur: 1000; autoplay: false"
                     animation__positionright0="property: position; from: 0 -6 1; to: 6 -6 6; dur: 1000; autoplay: false"
-                    animation__scalein="property: scale; from: 1 1 1; to: 5 5 5; dur: 6000; delay: 1000; autoplay: false"
-                    animation__scaleout="property: scale; from: 5 5 5; to: 2 2 2; dur: 3000; delay: 4000; autoplay: false"
+                    animation__scalein="property: scale; from: 1 1 1; to: 5 5 5; dur: 7000; delay: 1000; autoplay: false"
+                    animation__scaleout="property: scale; from: 5 5 5; to: 2 2 2; dur: 2000; delay: 5000; autoplay: false"
                     rotation="-90 0 0"></a-mixin>
       </a-assets>
 
       <a-image id="photo1" mixin="photo" src="virtualReality.jpg" opacity="0"
-      animation="property: rotation; from: -90 0 -30; to: -90 0 30; loop: true; dur: 3000; dir: alternate">
+      animation="property: rotation; from: -90 0 -60; to: -90 0 60; loop: true; dur: 3000; dir: alternate">
               <a-text id="vr" value="virtual reality" align="center" wrap-count="10" font="toreadore-msdf.json"
               font-image="toreadore-msdf.png" color="#70F9FF" opacity="0" negate="false"
-              position="0 0 5" rotation="-45 0 0" scale="0.15 0.15 0.15"></a-text></a-image>
+              position="0 0 4" rotation="-45 0 0" scale="0.15 0.15 0.15"></a-text></a-image>
       <a-image id="photo2" mixin="photo" src="augmentedReality.jpg" opacity="0"
-      animation="property: rotation; from: -90 0 -45; to: -90 45 45; loop: true; dur: 2000; dir: alternate"></a-image>
+      animation="property: rotation; from: -90 0 -60; to: -90 45 60; loop: true; dur: 2000; dir: alternate"></a-image>
       <a-image id="photo3" mixin="photo" src="artisanalMiners_robertCarruba.jpg" opacity="0"
-      animation="property: rotation; from: -90 0 -45; to: -90 0 45; loop: true; dur: 2000; dir: alternate"></a-image>
+      animation="property: rotation; from: -90 0 -60; to: -90 0 60; loop: true; dur: 2000; dir: alternate"></a-image>
       <a-image id="photo4" mixin="photo" src="bauxiteRaw.jpg" opacity="0"
-      animation="property: rotation; from: -90 0 -45; to: -90 0 45; loop: true; dur: 2000; dir: alternate"></a-image>
+      animation="property: rotation; from: -90 0 -60; to: -90 0 60; loop: true; dur: 2000; dir: alternate"></a-image>
       <a-image id="photo5" mixin="photo" src="aluminium_topquark22.jpg" opacity="0"
-      animation="property: rotation; from: -90 0 -45; to: -90 0 45; loop: true; dur: 2000; dir: alternate"></a-image>
+      animation="property: rotation; from: -90 0 -60; to: -90 0 60; loop: true; dur: 2000; dir: alternate"></a-image>
       <a-image id="photo6" mixin="photo" src="cassiteriteRaw.jpg" opacity="0"
-      animation="property: rotation; from: -90 0 -45; to: -90 0 45; loop: true; dur: 2000; dir: alternate"></a-image>
+      animation="property: rotation; from: -90 0 -60; to: -90 0 60; loop: true; dur: 2000; dir: alternate"></a-image>
       <a-image id="photo7" mixin="photo" src="tomatoCan.jpg" opacity="0"
-      animation="property: rotation; from: -90 0 -45; to: -90 0 45; loop: true; dur: 2000; dir: alternate"></a-image>
+      animation="property: rotation; from: -90 0 -60; to: -90 0 60; loop: true; dur: 2000; dir: alternate"></a-image>
       <a-image id="photo8" mixin="photo" src="copperRaw.jpg" opacity="0"
-      animation="property: rotation; from: -90 0 -45; to: -90 0 45; loop: true; dur: 2000; dir: alternate"></a-image>
+      animation="property: rotation; from: -90 0 -60; to: -90 0 60; loop: true; dur: 2000; dir: alternate"></a-image>
       <a-image id="photo9" mixin="photo" src="coinsCopper.jpg" opacity="0"
-      animation="property: rotation; from: -90 0 -45; to: -90 0 45; loop: true; dur: 2000; dir: alternate"></a-image>
+      animation="property: rotation; from: -90 0 -60; to: -90 0 60; loop: true; dur: 2000; dir: alternate"></a-image>
 
 
       <a-entity id="photoAmbient" loop="true" volume="1" sound="src: url(dyeconversations2_2_mixdown.mp3)"></a-entity>
@@ -261,6 +261,20 @@
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 
         <a-timeline id="myTimeline2">
+
+          <a-timeline-group>
+          <a-timeline-animation select="#image8" name="togglevisible"></a-timeline-animation>
+          <a-timeline-animation select="#image8" name="fadein"></a-timeline-animation>
+          <a-timeline-animation select="#image8" name="scaleentry"></a-timeline-animation>
+          </a-timeline-group>
+
+          <a-timeline-group>
+          <a-timeline-animation select="#image8" name="scaleentry0"></a-timeline-animation>
+          <a-timeline-animation select="#image8" name="positionout"></a-timeline-animation>
+          <a-timeline-animation select="#image8" name="fadeout"></a-timeline-animation>
+          </a-timeline-group>
+
+          <a-timeline-animation select="#image1" name="togglevisibleoff"></a-timeline-animation>
 
           <a-timeline-group>
           <a-timeline-animation select="#image1" name="togglevisible"></a-timeline-animation>
@@ -392,6 +406,8 @@
                     animation__positionright="property: position; from: 6 -8 0; to: 1 -8 0; dur: 1000; autoplay: false"
                     animation__positionout="property: position; from: 0 -8 1; to: 0 -12 -4; dur: 1000; autoplay: false"
                     animation__scalein="property: scale; from: 1 1 1; to: 4 4 4; dur: 2000; delay: 2000; autoplay: false"
+                    animation__scaleentry="property: scale; from: 2 2 2; to: 4 4 4; dur: 8000; delay: 1000; autoplay: false"
+                    animation__scaleentry0="property: scale; from: 4 4 4; to: 2 2 2; dur: 1000; autoplay: false"
                     animation__scaleout="property: scale; from: 4 4 4; to: 1 1 1; dur: 4000; delay: 6000; autoplay: false"
                     rotation="-90 0 0"></a-mixin>
       </a-assets>
@@ -403,6 +419,7 @@
       <a-image id="image5" mixin="image" src="MKK_L3.png" opacity="0"></a-image>
       <a-image id="image6" mixin="image" src="MKK_R3.png" opacity="0"></a-image>
       <a-image id="image7" mixin="image" src="MKK_question.png" opacity="0"></a-image>
+      <a-image id="image8" mixin="image" src="entryMessageMK.png" opacity="0"></a-image>
 
 
       <a-entity id="conversationMKK" loop="true" volume="1" sound="src: url(dyeconversations2_2_mixdown.mp3)"></a-entity>
