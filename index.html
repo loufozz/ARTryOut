@@ -42,7 +42,7 @@
 <a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true; startEvents: myAni; pauseEvents: myPause; resumeEvents: myResume">
 
 
-      <a-assets timeout="10000">
+      <a-assets timeout="60000">
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 
         <a-timeline id="myTimeline">
@@ -164,7 +164,7 @@
 <a-scene id="receiver2" animation-timeline__2="timeline: #myTimeline2; loop: true; startEvents: myAni2; pauseEvents: myPause2; resumeEvents: myResume2">
 
 
-      <a-assets timeout="10000">
+      <a-assets timeout="500000">
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 
         <a-timeline id="myTimeline2">
@@ -574,7 +574,7 @@ document.getElementById("conversationMKK").setAttribute("sound",m2);
 
 let m2 = document.getElementById("conversationMKK").getAttribute("sound");
 m2.src = "url(dyeconversations2_2_mixdown.mp3)";
-//console.log(m2);
+console.log(m2);
 document.getElementById("conversationMKK").setAttribute("sound",m2);
  }
 
