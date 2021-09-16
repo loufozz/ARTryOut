@@ -549,13 +549,13 @@ m[3].addEventListener("markerFound", (e)=>{
 
 
    console.log("ani 3 launched");
-   let entity = document.querySelector('[sound]');
+   let entity = document.getElementById("mySoundTest");
    //console.log(entity);
    entity.components.sound.playSound();
 });
 
 
-document.querySelector('[sound]').addEventListener('sound-ended', function(){
+document.getElementById("mySoundTest").addEventListener('sound-ended', function(){
   console.log("sound ended");
 console.log(soundNumToPlay);
 if(soundNumToPlay <1){
@@ -590,7 +590,7 @@ document.getElementById("mySoundTest").setAttribute("sound",m);
 m[3].addEventListener("markerLost", (e)=>{
 //pause
  console.log("sound pause");
-  let entity = document.querySelector('[sound]');
+  let entity = document.getElementById("mySoundTest");
    entity.components.sound.pauseSound();
 });
 }
