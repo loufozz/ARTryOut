@@ -19,7 +19,7 @@
     <video id="testVid" muted playsinline src="miningIndustry480.mov"></video>
     <!-- https://aframe.io/docs/1.0.0/components/sound.html -->
    <!-- <audio id="soundTelling" src="warCongo.m4a" preload="auto"></audio> -->
-
+    <a-asset-item id="character" src="character6.glb"></a-asset-item>
 
 </a-assets>
 
@@ -336,7 +336,7 @@
 
 <a-marker id="ani3" preset='custom' type='pattern' url='pattern-markerDYEbatteryBW2.patt'>
 
-    <a-asset-item id="tree" src="character6.glb"></a-asset-item>
+    <a-entity gltf-model="#character"></a-entity>
 
   <!-- <a-entity looop: true sound="src: #soundTelling"></a-entity> -->
    <!-- <a-sphere id="soundStart" radius="0.3" position="0 -1 0" rotation="0 0 0" color="blue"
