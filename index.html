@@ -205,13 +205,15 @@
                     animation__positionright="property: position; from: 6 -6 -6; to: 1 -8 0; dur: 1000; autoplay: false"
                     animation__positionleft0="property: position; from: 0 -8 1; to: -6 -6 -6; dur: 1000; autoplay: false"
                     animation__positionright0="property: position; from: 0 -8 1; to: 6 -6 6; dur: 1000; autoplay: false"
-                    animation__scalein="property: scale; from: 1 1 1; to: 4 4 4; dur: 4000; delay: 2000; autoplay: false"
-                    animation__scaleout="property: scale; from: 4 4 4; to: 1 1 1; dur: 4000; delay: 4000; autoplay: false"
+                    animation__scalein="property: scale; from: 1 1 1; to: 5 5 5; dur: 5000; delay: 2000; autoplay: false"
+                    animation__scaleout="property: scale; from: 5 5 5; to: 2 2 2; dur: 3000; delay: 4000; autoplay: false"
                     rotation="-90 0 0"></a-mixin>
       </a-assets>
 
-      <a-image id="photo1" mixin="photo" src="virtualReality.jpg" opacity="0"></a-image>
-      <a-image id="photo2" mixin="photo" src="augmentedReality.jpg" opacity="0"></a-image>
+      <a-image id="photo1" mixin="photo" src="virtualReality.jpg" opacity="0"
+      animation="property: rotation; from: -90 0 -45; to: -90 0 45; loop: true; dur: 10000; dir: alternate"></a-image>
+      <a-image id="photo2" mixin="photo" src="augmentedReality.jpg" opacity="0"
+      animation="property: rotation; from: -90 0 -45; to: -90 0 45; loop: true; dur: 10000; dir: alternate"></a-image>
       <a-image id="photo3" mixin="photo" src="artisanalMiners_robertCarruba.jpg" opacity="0"></a-image>
       <a-image id="photo4" mixin="photo" src="bauxiteRaw.jpg" opacity="0"></a-image>
       <a-image id="photo5" mixin="photo" src="aluminium_topquark22.jpg" opacity="0"></a-image>
