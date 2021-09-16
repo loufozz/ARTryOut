@@ -543,22 +543,22 @@ m[2].addEventListener("markerFound", (e)=>{
 });
 
 document.getElementById("conversationMKK").addEventListener('sound-ended', function(){
-  console.log("sound ended");
-console.log(soundNumToPlay);
+//   console.log("sound ended");
+// console.log(soundNumToPlay);
 if(soundNumToPlay <1){
   soundNumToPlay +=1;
-  console.log("HERE");
+  // console.log("HERE");
 }
 //reset
   else{
       soundNumToPlay =0;
    }
  if(soundNumToPlay ===1){
-   console.log("AND CHANGING");
+   // console.log("AND CHANGING");
 
 let m = document.getElementById("conversationMKK").getAttribute("sound");
 m.src = "url(dyeconversation2nd_2_mixdown.mp3)";
-console.log(m);
+// console.log(m);
 document.getElementById("conversationMKK").setAttribute("sound",m);
  }
 
@@ -567,7 +567,7 @@ document.getElementById("conversationMKK").setAttribute("sound",m);
 
 let m = document.getElementById("conversationMKK").getAttribute("sound");
 m.src = "url(dyeconversations2_2_mixdown.mp3)";
-console.log(m);
+// console.log(m);
 document.getElementById("conversationMKK").setAttribute("sound",m);
  }
 
@@ -576,8 +576,8 @@ document.getElementById("conversationMKK").setAttribute("sound",m);
 
 
 m[2].addEventListener("markerLost", (e)=>{
-  // let entity = document.getElementById("conversationMKK");
-  //  entity.components.sound.pauseSound();
+  let entity = document.getElementById("conversationMKK");
+   entity.components.sound.pauseSound();
    console.log("lost image");
   //console.log(el.pauseAnimation());
    el2.emit("myPause2");
@@ -588,8 +588,10 @@ m[2].addEventListener("markerLost", (e)=>{
 
 m[3].addEventListener("markerFound", (e)=>{
 
+  el.style.display = "none";
+  el2.style.display = "none";
 
-   console.log("ani 3 launched");
+   //console.log("ani 3 launched");
    let entity = document.getElementById("mySoundTest");
    //console.log(entity);
    entity.components.sound.playSound();
