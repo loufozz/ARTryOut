@@ -550,8 +550,8 @@ m[2].addEventListener("markerFound", (e)=>{
 });
 
 document.querySelector('[sound]').addEventListener('sound-ended', function(){
-  console.log("sound ended");
-console.log(soundNumToPlay2);
+  //console.log("sound ended");
+//console.log(soundNumToPlay2);
 if(soundNumToPlay2 <1){
   soundNumToPlay2 +=1;
   console.log("HERE");
@@ -565,8 +565,8 @@ if(soundNumToPlay2 <1){
 
 let m2 = document.getElementById("conversationMKK").getAttribute("sound");
 m2.src = "url(dyeconversation2nd_2_mixdown.mp3)";
-console.log(m);
-document.getElementById("conversationMKK").setAttribute("sound",m);
+//console.log(m2);
+document.getElementById("conversationMKK").setAttribute("sound",m2);
  }
 
  if(soundNumToPlay2 ===0){
@@ -574,7 +574,7 @@ document.getElementById("conversationMKK").setAttribute("sound",m);
 
 let m2 = document.getElementById("conversationMKK").getAttribute("sound");
 m2.src = "url(dyeconversations2_2_mixdown.mp3)";
-console.log(m2);
+//console.log(m2);
 document.getElementById("conversationMKK").setAttribute("sound",m2);
  }
 
