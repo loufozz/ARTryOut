@@ -503,7 +503,6 @@ m[1].addEventListener("markerFound", (e)=>{
    console.log("found ani 1");
    console.log(m[1]);
    el.style.display = "block";
-   el2.style.display = "none";
    //reset currentTime of the video
    document.getElementById("testVid").currentTime =0;
    if(firstTime === false){
@@ -528,8 +527,8 @@ m[1].addEventListener("markerLost", (e)=>{
 });
 
 m[2].addEventListener("markerFound", (e)=>{
-   //console.log("found ani 2");
-   el1.style.display = "none";
+   console.log("found ani 2");
+   console.log(m[3]);
    el2.style.display = "block";
    //reset currentTime of the video
    document.getElementById("testVid").currentTime =0;
@@ -596,8 +595,7 @@ m[2].addEventListener("markerLost", (e)=>{
 
 m[3].addEventListener("markerFound", (e)=>{
 
-  el.style.display = "none";
-  el2.style.display = "none";
+
    console.log("ani 3 launched");
    let entity = document.querySelector('[sound]');
    //console.log(entity);
