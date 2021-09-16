@@ -15,7 +15,7 @@
     <!-- <audio src="bohemian.mp3" autoplay></audio> -->
 <a-scene embedded arjs='sourceType: webcam;'>
   <a-assets>
-    <video id="testVid" muted playsinline src="miningIndustry480.mov"></video>
+    <video id="videoPlay" muted playsinline src="conflictCongo1st.mp4"></video>
     <a-asset-item id="character" src="characterAnimationTest.glb"></a-asset-item>
     <!-- https://aframe.io/docs/1.0.0/components/sound.html -->
    <!-- <audio id="soundTelling" src="warCongo.m4a" preload="auto"></audio> -->
@@ -31,7 +31,7 @@
 
   <a-marker id="ani0" preset='custom' type='pattern' url='pattern-markerDYEnewchargerBW2.patt'>
     <!-- <a-sphere id="vidStart" color="green" radius="0.2" position="0 2 1"></a-sphere> -->
-    <a-video src="#testVid" width="4" height="2.25" position="-1 -1 0" rotation="-60 0 0" opacity="0.8"></a-video>
+    <a-video src="#videoPlay" width="4" height="2.25" position="-1 -1 0" rotation="-60 0 0" opacity="0.8"></a-video>
     <a-text id="clickH" value="click screen for sound" font="toreadore-msdf.json" font-image="toreadore-msdf.png" color="#70F9FF" negate="false" position="-3.45 -4 1" rotation="-90 0 0" scale="2 2 2"></a-text>
  </a-marker>
 
@@ -411,7 +411,7 @@ let firstTime2 = false;
 //document.getElementById("vidStart")
 window.onclick = function(){
 console.log("video loaded");
-document.getElementById("testVid").muted =false;
+document.getElementById("videoPlay").muted =false;
 document.getElementById("clickH").components.text.material.uniforms.opacity.value =0;
 }
 
@@ -426,25 +426,25 @@ m[0].addEventListener("markerFound", (e)=>{
    console.log("found ani 0");
    console.log(m[0]);
    //play the video
-   console.log( document.getElementById("testVid"));
-   if(document.getElementById("testVid").currentTime === 0){
+   console.log( document.getElementById("videoPlay"));
+   if(document.getElementById("videoPlay").currentTime === 0){
 
 //  setInterval( testFunc, 1000);
-   document.getElementById("testVid").play();
+   document.getElementById("videoPlay").play();
    console.log("play");
  }
  else{
-   document.getElementById("testVid").play();
+   document.getElementById("videoPlay").play();
  }
 
 });
 
 /*function testFunc(){
-  console.log("dur:: "+document.getElementById("testVid").duration);
-  console.log("curr:: "+document.getElementById("testVid").currentTime );
+  console.log("dur:: "+document.getElementById("videoPlay").duration);
+  console.log("curr:: "+document.getElementById("videoPlay").currentTime );
 }*/
 
- document.getElementById("testVid").onended = function(){
+ document.getElementById("videoPlay").onended = function(){
    console.log("ended");
 
    if(videoNumToPlay <5){
@@ -456,41 +456,41 @@ m[0].addEventListener("markerFound", (e)=>{
    }
 
    if(videoNumToPlay ===1){
-       document.getElementById("testVid").src = "permit480.mov";
+       document.getElementById("videoPlay").src = "samsungFold_ad.mp4";
    }
 
    if(videoNumToPlay ===2){
-      document.getElementById("testVid").src = "bisieMining480.mov";
+      document.getElementById("videoPlay").src = "tiktokJade.mp4";
 
    }
    if(videoNumToPlay ===3){
-      document.getElementById("testVid").src = "corporateSustainability.mov";
+      document.getElementById("videoPlay").src = "africaDeadliest.mp4";
 
    }
    if(videoNumToPlay ===4){
-      document.getElementById("testVid").src = "cassiteriteCongo.mov";
+      document.getElementById("videoPlay").src = "minnesotaMining_ad.mp4";
 
    }
    if(videoNumToPlay ===5){
-      document.getElementById("testVid").src = "sustainability.mov";
+      document.getElementById("videoPlay").src = "sustainability.mov";
 
    }
    else if(videoNumToPlay ===0){
-     document.getElementById("testVid").src = "miningIndustry480.mov";
+     document.getElementById("videoPlay").src = "conflictCongo1st.mp4";
 
    }
 
 
-  console.log("and now ... "+  document.getElementById("testVid"));
-   document.getElementById("testVid").play();
+  console.log("and now ... "+  document.getElementById("videoPlay"));
+   document.getElementById("videoPlay").play();
 
  }
 
 
 m[0].addEventListener("markerLost", (e)=>{
    console.log("lost video marker");
-  //console.log(document.getElementById("testVid").currentTime);
-  document.getElementById("testVid").pause();
+  //console.log(document.getElementById("videoPlay").currentTime);
+  document.getElementById("videoPlay").pause();
 });
 
 
@@ -499,7 +499,7 @@ m[1].addEventListener("markerFound", (e)=>{
    console.log(m[1]);
    el.style.display = "block";
    //reset currentTime of the video
-   document.getElementById("testVid").currentTime =0;
+   document.getElementById("videoPlay").currentTime =0;
    if(firstTime === false){
 
     el.emit("myAni");
@@ -526,7 +526,7 @@ m[2].addEventListener("markerFound", (e)=>{
    console.log(m[3]);
    el2.style.display = "block";
    //reset currentTime of the video
-   document.getElementById("testVid").currentTime =0;
+   document.getElementById("videoPlay").currentTime =0;
 
    let entity = document.getElementById("conversationMKK");
    //console.log(entity);
