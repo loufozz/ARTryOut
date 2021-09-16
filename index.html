@@ -563,8 +563,8 @@ if(soundNumToPlay2 <1){
  if(soundNumToPlay2 ===1){
    console.log("AND CHANGING");
 
-let m = document.getElementById("conversationMKK").getAttribute("sound");
-m.src = "url(dyeconversation2nd_2_mixdown.mp3)";
+let m2 = document.getElementById("conversationMKK").getAttribute("sound");
+m2.src = "url(dyeconversation2nd_2_mixdown.mp3)";
 console.log(m);
 document.getElementById("conversationMKK").setAttribute("sound",m);
  }
@@ -572,10 +572,10 @@ document.getElementById("conversationMKK").setAttribute("sound",m);
  if(soundNumToPlay2 ===0){
    console.log("AND CHANGING BACK");
 
-let m = document.getElementById("conversationMKK").getAttribute("sound");
-m.src = "url(dyeconversations2_2_mixdown.mp3)";
-console.log(m);
-document.getElementById("conversationMKK").setAttribute("sound",m);
+let m2 = document.getElementById("conversationMKK").getAttribute("sound");
+m2.src = "url(dyeconversations2_2_mixdown.mp3)";
+console.log(m2);
+document.getElementById("conversationMKK").setAttribute("sound",m2);
  }
 
  document.getElementById("conversationMKK").components.sound.playSound();
