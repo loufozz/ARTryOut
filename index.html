@@ -289,9 +289,6 @@
 
           </a-timeline>
 
-
-          </a-timeline>
-
           <a-mixin id="image"
                     animation__fadein="property: components.material.material.opacity; from: 0; to: 1; dur: 500; easing: linear; autoplay: false"
                     animation__fadeout="property: components.material.material.opacity; from: 1; to: 0; dur: 2000; easing: linear; autoplay: false"
@@ -303,7 +300,7 @@
                     animation__scalein="property: scale; from: 1 1 1; to: 4 4 4; dur: 2000; delay: 2000; autoplay: false"
                     animation__scaleout="property: scale; from: 4 4 4; to: 1 1 1; dur: 4000; delay: 6000; autoplay: false"
                     rotation="-90 0 0"
-                    components.material.material.opacity="0"></a-mixin>
+                    material.opacity="0"></a-mixin>
       </a-assets>
 
       <a-image id="image1" mixin="image" src="MKK_R1.png"></a-image>
