@@ -198,7 +198,7 @@
 
           <a-mixin id="photo"
                     animation__fadein="property: components.material.material.opacity; from: 0; to: 1; dur: 250; easing: linear; autoplay: false"
-                    animation__fadeout="property: components.material.material.opacity; from: 1; to: 0; dur: 250; easing: linear; autoplay: false"
+                    animation__fadeout="property: components.material.material.opacity; from: 1; to: 0; dur: 250; delay: 2000; easing: linear; autoplay: false"
                     animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
                     animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; delay: 1000; autoplay: false"
                     animation__positionleft="property: position; from: -6 -6 6; to: -1 -8 0; dur: 1000; autoplay: false"
@@ -211,9 +211,12 @@
       </a-assets>
 
       <a-image id="photo1" mixin="photo" src="virtualReality.jpg" opacity="0"
-      animation="property: rotation; from: -90 0 -45; to: -90 0 45; loop: true; dur: 2000; dir: alternate"></a-image>
+      animation="property: rotation; from: -90 0 -45; to: -90 0 45; loop: true; dur: 2000; dir: alternate">
+              <a-text id="vr" value="virtual reality" font="toreadore-msdf.json"
+              font-image="toreadore-msdf.png" color="#70F9FF" negate="false" position="-3.45 -4 1"
+              rotation="-90 0 0" scale="2 2 2"></a-text></a-image>
       <a-image id="photo2" mixin="photo" src="augmentedReality.jpg" opacity="0"
-      animation="property: rotation; from: -90 0 -45; to: -90 0 45; loop: true; dur: 2000; dir: alternate"></a-image>
+      animation="property: rotation; from: -90 0 -45; to: -90 45 45; loop: true; dur: 2000; dir: alternate"></a-image>
       <a-image id="photo3" mixin="photo" src="artisanalMiners_robertCarruba.jpg" opacity="0"
       animation="property: rotation; from: -90 0 -45; to: -90 0 45; loop: true; dur: 2000; dir: alternate"></a-image>
       <a-image id="photo4" mixin="photo" src="bauxiteRaw.jpg" opacity="0"
