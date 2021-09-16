@@ -576,13 +576,14 @@ document.getElementById("conversationMKK").setAttribute("sound",m);
 
 
 m[2].addEventListener("markerLost", (e)=>{
+  let entity = document.getElementById("conversationMKK");
+   entity.components.sound.pauseSound();
    console.log("lost image");
   //console.log(el.pauseAnimation());
    el2.emit("myPause2");
    el2.style.display = "none";
-   console.log(el2);
-   let entity = document.getElementById("conversationMKK");
-    entity.components.sound.pauseSound();
+   //console.log(el2);
+
 });
 
 m[3].addEventListener("markerFound", (e)=>{
