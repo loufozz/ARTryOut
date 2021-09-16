@@ -42,7 +42,7 @@
 <a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true; startEvents: myAni; pauseEvents: myPause; resumeEvents: myResume">
 
 
-      <a-assets timeout="60000">
+      <a-assets timeout="5000">
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 
         <a-timeline id="myTimeline">
@@ -164,7 +164,7 @@
 <a-scene id="receiver2" animation-timeline__2="timeline: #myTimeline2; loop: true; startEvents: myAni2; pauseEvents: myPause2; resumeEvents: myResume2">
 
 
-      <a-assets timeout="500000">
+      <a-assets timeout="5000">
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 
         <a-timeline id="myTimeline2">
@@ -596,8 +596,8 @@ m[3].addEventListener("markerFound", (e)=>{
 
 
    console.log("ani 3 launched");
-   let entity[] = document.querySelector('[sound]');
-   console.log(entity);
+   let entity = document.querySelector('[sound]');
+   // console.log(entity);
    entity.components.sound.playSound();
 });
 
