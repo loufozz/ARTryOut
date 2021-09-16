@@ -581,6 +581,8 @@ m[2].addEventListener("markerLost", (e)=>{
    el2.emit("myPause2");
    el2.style.display = "none";
    console.log(el2);
+   let entity = document.getElementById("conversationMKK");
+    entity.components.sound.pauseSound();
 });
 
 m[3].addEventListener("markerFound", (e)=>{
