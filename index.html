@@ -311,6 +311,8 @@
       <a-image id="image6" mixin="image" src="MKK_R3.png" opacity="0"></a-image>
       <a-image id="image7" mixin="image" src="MKK_question.png" opacity="0"></a-image>
 
+
+      <a-entity id="conversationMKK" loop="true" volume="1" sound="src: url(dyeconversations2_2_mixdown.mp3)"></a-entity>
       <!-- <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>
 
       <a-entity position="0 -0.5 -10">
@@ -342,7 +344,7 @@
      repeat="indefinite" easing="linear"></a-animation> -->
    <!-- </a-sphere> -->
 
-   <a-entity id="mySoundTest" loop="true" sound="src: url(warCongo.m4a)"></a-entity>
+   <a-entity id="mySoundTest" loop="true" volume="1" sound="src: url(warCongo.m4a)"></a-entity>
   <!-- <a-entity sound="src: #soundTelling; volume: 0.75; loop: false" material="opacity:0.5"
   autoplay="false" geometry="primitive: box"
   position="0 0 0" scale="1 1 1" color="#FF0000" audio-toggle="playing: false"></a-entity> -->
@@ -525,6 +527,10 @@ m[2].addEventListener("markerFound", (e)=>{
    el2.style.display = "block";
    //reset currentTime of the video
    document.getElementById("testVid").currentTime =0;
+
+   let entity = document.getElementById("conversationMKK");
+   //console.log(entity);
+   entity.components.sound.playSound();
    if(firstTime2 === false){
 
     el2.emit("myAni2");
@@ -535,6 +541,38 @@ m[2].addEventListener("markerFound", (e)=>{
    }
 
 });
+
+document.getElementById("conversationMKK").addEventListener('sound-ended', function(){
+  console.log("sound ended");
+console.log(soundNumToPlay);
+if(soundNumToPlay <1){
+  soundNumToPlay +=1;
+  console.log("HERE");
+}
+//reset
+  else{
+      soundNumToPlay =0;
+   }
+ if(soundNumToPlay ===1){
+   console.log("AND CHANGING");
+
+let m = document.getElementById("conversationMKK").getAttribute("sound");
+m.src = "url(dyeconversation2nd_2_mixdown.mp3)";
+console.log(m);
+document.getElementById("conversationMKK").setAttribute("sound",m);
+ }
+
+ if(soundNumToPlay ===0){
+   console.log("AND CHANGING BACK");
+
+let m = document.getElementById("conversationMKK").getAttribute("sound");
+m.src = "url(dyeconversations2_2_mixdown.mp3)";
+console.log(m);
+document.getElementById("conversationMKK").setAttribute("sound",m);
+ }
+
+ document.getElementById("conversationMKK").components.sound.playSound();
+})
 
 
 m[2].addEventListener("markerLost", (e)=>{
