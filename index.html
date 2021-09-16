@@ -20,10 +20,6 @@
     <!-- https://aframe.io/docs/1.0.0/components/sound.html -->
    <!-- <audio id="soundTelling" src="warCongo.m4a" preload="auto"></audio> -->
     <a-asset-item id="character" src="character6.glb"></a-asset-item>
-    <audio id="conversationMKK" volume="1" src="dyeconversations2_2_mixdown.mp3" preload="auto"></audio>
-    <audio id="mySoundTest" volume="1" src="warCongo.m4a" preload="auto"></audio>
-
-
 
 </a-assets>
 
@@ -46,7 +42,7 @@
 <a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true; startEvents: myAni; pauseEvents: myPause; resumeEvents: myResume">
 
 
-      <a-assets timeout="5000">
+      <a-assets timeout="60000">
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 
         <a-timeline id="myTimeline">
@@ -168,7 +164,7 @@
 <a-scene id="receiver2" animation-timeline__2="timeline: #myTimeline2; loop: true; startEvents: myAni2; pauseEvents: myPause2; resumeEvents: myResume2">
 
 
-      <a-assets timeout="5000">
+      <a-assets timeout="500000">
         <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 
         <a-timeline id="myTimeline2">
@@ -315,8 +311,8 @@
       <a-image id="image6" mixin="image" src="MKK_R3.png" ></a-image>
       <a-image id="image7" mixin="image" src="MKK_question.png"></a-image>
 
-      <!-- <a-entity id="conversationMKK" loop="true" volume="1" sound="src: url(dyeconversations2_2_mixdown.mp3)"></a-entity> -->
-      <a-entity sound="src: #conversationMKK"></a-entity>
+      <a-entity id="conversationMKK" loop="true" volume="1" sound="src: url(dyeconversations2_2_mixdown.mp3)"></a-entity>
+
       <!-- animation__positionin="property: position; from: 6 -4 0; to: 0 -4 0; dur: 1000; autoplay: false" -->
 
       <!-- <a-image id="image8" mixin="image" src="consumer2.jpg" ></a-image>
@@ -352,9 +348,7 @@
      <!-- <a-animation attribute="intensity" dur="2000" from="1" to="3" direction='alternate-reverse'
      repeat="indefinite" easing="linear"></a-animation> -->
    <!-- </a-sphere> -->
-   <a-entity sound="src: #mySoundTest"></a-entity>
-
-   <!-- <a-entity id="mySoundTest" loop="true" sound="src: url(warCongo.m4a)"></a-entity> -->
+   <a-entity id="mySoundTest" loop="true" sound="src: url(warCongo.m4a)"></a-entity>
   <!-- <a-entity sound="src: #soundTelling; volume: 0.75; loop: false" material="opacity:0.5"
   autoplay="false" geometry="primitive: box"
   position="0 0 0" scale="1 1 1" color="#FF0000" audio-toggle="playing: false"></a-entity> -->
@@ -539,11 +533,9 @@ m[2].addEventListener("markerFound", (e)=>{
    //reset currentTime of the video
    document.getElementById("testVid").currentTime =0;
 
-   // let entity = document.querySelector('[sound]');
-   // console.log(entity);
-   // entity.components.sound.playSound();
-    let entity = document.getElementById("conversationMKK");
-    entity.components.sound.playSound();
+   let entity = document.querySelector('[sound]');
+   console.log(entity);
+   entity.components.sound.playSound();
 
    if(firstTime2 === false){
 
@@ -592,10 +584,8 @@ document.getElementById("conversationMKK").setAttribute("sound",m2);
 m[2].addEventListener("markerLost", (e)=>{
    console.log("lost image");
   //console.log(el.pauseAnimation());
-  let entity = document.getElementById("conversationMKK");
-  entity.components.sound.pauseSound();
-  // let entity = document.querySelector('[sound]');
-  //  entity.components.sound.pauseSound();
+  let entity = document.querySelector('[sound]');
+   entity.components.sound.pauseSound();
 
    el2.emit("myPause2");
    el2.style.display = "none";
@@ -606,10 +596,8 @@ m[3].addEventListener("markerFound", (e)=>{
 
 
    console.log("ani 3 launched");
-   // let entity = document.querySelector('[sound]');
-   // // console.log(entity);
-   // entity.components.sound.playSound();
-   let entity = document.getElementById("mySoundTest");
+   let entity = document.querySelector('[sound]');
+   console.log(entity);
    entity.components.sound.playSound();
 });
 
@@ -649,10 +637,8 @@ document.getElementById("mySoundTest").setAttribute("sound",m);
 m[3].addEventListener("markerLost", (e)=>{
 //pause
  console.log("sound pause");
- let entity = document.getElementById("mySoundTest");
-entity.components.sound.pauseSound();
-  // let entity = document.querySelector('[sound]');
-  //  entity.components.sound.pauseSound();
+  let entity = document.querySelector('[sound]');
+   entity.components.sound.pauseSound();
 });
 }
 </script>
