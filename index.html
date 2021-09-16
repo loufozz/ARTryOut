@@ -20,6 +20,12 @@
     <!-- https://aframe.io/docs/1.0.0/components/sound.html -->
    <!-- <audio id="soundTelling" src="warCongo.m4a" preload="auto"></audio> -->
     <a-asset-item id="character" src="character6.glb"></a-asset-item>
+    <audio id="conversationMKK" volume="1" src="dyeconversations2_2_mixdown.mp3" preload="auto"></audio>
+    <audio id="conversationMR" volume="1" src="dyeconversation2nd_2_mixdown.mp3" preload="auto"></audio>
+    <audio id="mySoundTest" volume="1" src="warCongo.m4a" preload="auto"></audio>
+    <audio id="mySoundTest2" volume="1" src="belgianLegacy.m4a" preload="auto"></audio>
+
+
 
 </a-assets>
 
@@ -311,8 +317,9 @@
       <a-image id="image6" mixin="image" src="MKK_R3.png" ></a-image>
       <a-image id="image7" mixin="image" src="MKK_question.png"></a-image>
 
-      <a-entity id="conversationMKK" loop="true" volume="1" sound="src: url(dyeconversations2_2_mixdown.mp3)"></a-entity>
-
+      <!-- <a-entity id="conversationMKK" loop="true" volume="1" sound="src: url(dyeconversations2_2_mixdown.mp3)"></a-entity> -->
+      <a-entity sound="src: #conversationMKK"></a-entity>
+      <a-entity sound="src: #conversationMR"></a-entity>
       <!-- animation__positionin="property: position; from: 6 -4 0; to: 0 -4 0; dur: 1000; autoplay: false" -->
 
       <!-- <a-image id="image8" mixin="image" src="consumer2.jpg" ></a-image>
@@ -348,7 +355,9 @@
      <!-- <a-animation attribute="intensity" dur="2000" from="1" to="3" direction='alternate-reverse'
      repeat="indefinite" easing="linear"></a-animation> -->
    <!-- </a-sphere> -->
-   <a-entity id="mySoundTest" loop="true" sound="src: url(warCongo.m4a)"></a-entity>
+   <a-entity sound="src: #mySoundTest"></a-entity>
+   <a-entity sound="src: #mySoundTest2"></a-entity>
+   <!-- <a-entity id="mySoundTest" loop="true" sound="src: url(warCongo.m4a)"></a-entity> -->
   <!-- <a-entity sound="src: #soundTelling; volume: 0.75; loop: false" material="opacity:0.5"
   autoplay="false" geometry="primitive: box"
   position="0 0 0" scale="1 1 1" color="#FF0000" audio-toggle="playing: false"></a-entity> -->
@@ -533,9 +542,11 @@ m[2].addEventListener("markerFound", (e)=>{
    //reset currentTime of the video
    document.getElementById("testVid").currentTime =0;
 
-   let entity = document.querySelector('[sound]');
-   console.log(entity);
-   entity.components.sound.playSound();
+   // let entity = document.querySelector('[sound]');
+   // console.log(entity);
+   // entity.components.sound.playSound();
+    let entity = document.getElementById("conversationMKK");
+    entity.components.sound.playSound();
 
    if(firstTime2 === false){
 
@@ -596,8 +607,10 @@ m[3].addEventListener("markerFound", (e)=>{
 
 
    console.log("ani 3 launched");
-   let entity = document.querySelector('[sound]');
-   // console.log(entity);
+   // let entity = document.querySelector('[sound]');
+   // // console.log(entity);
+   // entity.components.sound.playSound();
+   let entity = document.getElementById("mySoundTest");
    entity.components.sound.playSound();
 });
 
