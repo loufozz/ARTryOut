@@ -406,7 +406,6 @@
           <a-timeline-group>
           <a-timeline-animation select="#image7" name="togglevisible"></a-timeline-animation>
           <a-timeline-animation select="#image7" name="fadein"></a-timeline-animation>
-          <a-timeline-animation select="#image7" name="positionleft"></a-timeline-animation>
           </a-timeline-group>
 
           <a-timeline-animation select="#image7" name="scalein"></a-timeline-animation>
@@ -466,22 +465,365 @@
 
 <a-marker id="ani3" preset='custom' type='pattern' url='pattern-markerDYEbatteryBW2.patt'>
 
-    <a-entity gltf-model="#character"></a-entity>
-  <!-- <a-entity looop: true sound="src: #soundTelling"></a-entity> -->
-   <!-- <a-sphere id="soundStart" radius="0.3" position="0 -1 0" rotation="0 0 0" color="blue"
+  <a-scene id="receiver3" animation-timeline__3="timeline: #myTimeline3; loop: true; startEvents: myAni3; pauseEvents: myPause3; resumeEvents: myResume3">
 
-   animation="property: position; dur: 8000; from: 0 1 0; to: 0 -1 0; dir: alternate; loop: true"
-   animation__color="property: components.material.material.color; type: color; dur: 8000; from: red; to: blue;
-   dir: alternate; loop: true"> -->
+  <!-- <a-image id="chatMK" src="chatHeaderBubbleMK.png" opacity="0.8"></a-image> -->
+        <a-assets timeout="15000">
+          <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 
-     <!-- <a-animation attribute="intensity" dur="2000" from="1" to="3" direction='alternate-reverse'
-     repeat="indefinite" easing="linear"></a-animation> -->
-   <!-- </a-sphere> -->
+          <a-timeline id="myTimeline3">
 
-   <a-entity id="mySoundTest" loop="true" volume="1" sound="src: url(warCongo.m4a)"></a-entity>
-  <!-- <a-entity sound="src: #soundTelling; volume: 0.75; loop: false" material="opacity:0.5"
-  autoplay="false" geometry="primitive: box"
-  position="0 0 0" scale="1 1 1" color="#FF0000" audio-toggle="playing: false"></a-entity> -->
+            <a-timeline-group>
+            <a-timeline-animation select="#convo8" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#convo8" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#convo8" name="scaleentry"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo8" name="scaleentry0"></a-timeline-animation>
+            <a-timeline-animation select="#convo8" name="positionout"></a-timeline-animation>
+            <a-timeline-animation select="#convo8" name="fadeout"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-animation select="#convo8" name="togglevisibleoff"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo1" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#convo1" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#convo1" name="positionright"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-animation select="#convo1" name="scalein"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo2" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#convo2" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#convo2" name="positionleft"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo1" name="scaleout"></a-timeline-animation>
+            <a-timeline-animation select="#convo2" name="scalein"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo1" name="positionout"></a-timeline-animation>
+            <a-timeline-animation select="#convo1" name="fadeout"></a-timeline-animation>
+            </a-timeline-group>
+            <a-timeline-animation select="#convo1" name="togglevisibleoff"></a-timeline-animation>
+
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo3" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#convo3" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#convo3" name="positionright"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo2" name="scaleout"></a-timeline-animation>
+            <a-timeline-animation select="#convo3" name="scalein"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo2" name="positionout"></a-timeline-animation>
+            <a-timeline-animation select="#convo2" name="fadeout"></a-timeline-animation>
+            </a-timeline-group>
+            <a-timeline-animation select="#convo2" name="togglevisibleoff"></a-timeline-animation>
+
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo4" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#convo4" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#convo4" name="positionleft"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo3" name="scaleout"></a-timeline-animation>
+            <a-timeline-animation select="#convo4" name="scalein"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo3" name="positionout"></a-timeline-animation>
+            <a-timeline-animation select="#convo3" name="fadeout"></a-timeline-animation>
+            </a-timeline-group>
+            <a-timeline-animation select="#convo3" name="togglevisibleoff"></a-timeline-animation>
+
+            <a-timeline-animation select="#convo4" name="scaleout"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo4" name="positionout"></a-timeline-animation>
+            <a-timeline-animation select="#convo4" name="fadeout"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo5" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#convo5" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#convo5" name="positionleft"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-animation select="#convo4" name="togglevisibleoff"></a-timeline-animation>
+
+            <a-timeline-animation select="#convo5" name="scalein"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo6" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#convo6" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#convo6" name="positionright"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo5" name="scaleout"></a-timeline-animation>
+            <a-timeline-animation select="#convo6" name="scalein"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo5" name="positionout"></a-timeline-animation>
+            <a-timeline-animation select="#convo5" name="fadeout"></a-timeline-animation>
+            </a-timeline-group>
+            <a-timeline-animation select="#convo5" name="togglevisibleoff"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo7" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#convo7" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#convo7" name="positionleft"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-animation select="#convo6" name="scaleout"></a-timeline-animation>
+            <a-timeline-animation select="#convo7" name="scalein"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo6" name="positionout"></a-timeline-animation>
+            <a-timeline-animation select="#convo6" name="fadeout"></a-timeline-animation>
+            </a-timeline-group>
+            <a-timeline-animation select="#convo6" name="togglevisibleoff"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo8" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#convo8" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#convo8" name="positionleft"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-animation select="#convo7" name="scaleout"></a-timeline-animation>
+            <a-timeline-animation select="#convo8" name="scalein"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo7" name="positionout"></a-timeline-animation>
+            <a-timeline-animation select="#convo7" name="fadeout"></a-timeline-animation>
+            </a-timeline-group>
+            <a-timeline-animation select="#convo7" name="togglevisibleoff"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo9" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#convo9" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#convo9" name="positionleft"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-animation select="#convo8" name="scaleout"></a-timeline-animation>
+            <a-timeline-animation select="#convo9" name="scalein"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo8" name="positionout"></a-timeline-animation>
+            <a-timeline-animation select="#convo8" name="fadeout"></a-timeline-animation>
+            </a-timeline-group>
+            <a-timeline-animation select="#convo8" name="togglevisibleoff"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo10" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#convo10" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#convo10" name="positionleft"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-animation select="#convo9" name="scaleout"></a-timeline-animation>
+            <a-timeline-animation select="#convo10" name="scalein"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo9" name="positionout"></a-timeline-animation>
+            <a-timeline-animation select="#convo9" name="fadeout"></a-timeline-animation>
+            </a-timeline-group>
+            <a-timeline-animation select="#convo9" name="togglevisibleoff"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo11" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#convo11" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#convo11" name="positionleft"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-animation select="#convo10" name="scaleout"></a-timeline-animation>
+            <a-timeline-animation select="#convo11" name="scalein"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo10" name="positionout"></a-timeline-animation>
+            <a-timeline-animation select="#convo10" name="fadeout"></a-timeline-animation>
+            </a-timeline-group>
+            <a-timeline-animation select="#convo10" name="togglevisibleoff"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo12" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#convo12" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#convo12" name="positionleft"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-animation select="#convo11" name="scaleout"></a-timeline-animation>
+            <a-timeline-animation select="#convo12" name="scalein"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo11" name="positionout"></a-timeline-animation>
+            <a-timeline-animation select="#convo11" name="fadeout"></a-timeline-animation>
+            </a-timeline-group>
+            <a-timeline-animation select="#convo11" name="togglevisibleoff"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo13" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#convo13" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#convo13" name="positionleft"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-animation select="#convo12" name="scaleout"></a-timeline-animation>
+            <a-timeline-animation select="#convo13" name="scalein"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo12" name="positionout"></a-timeline-animation>
+            <a-timeline-animation select="#convo12" name="fadeout"></a-timeline-animation>
+            </a-timeline-group>
+            <a-timeline-animation select="#convo12" name="togglevisibleoff"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo14" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#convo14" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#convo14" name="positionleft"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-animation select="#convo13" name="scaleout"></a-timeline-animation>
+            <a-timeline-animation select="#convo14" name="scalein"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo13" name="positionout"></a-timeline-animation>
+            <a-timeline-animation select="#convo13" name="fadeout"></a-timeline-animation>
+            </a-timeline-group>
+            <a-timeline-animation select="#convo13" name="togglevisibleoff"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo15" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#convo15" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#convo15" name="positionleft"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-animation select="#convo14" name="scaleout"></a-timeline-animation>
+            <a-timeline-animation select="#convo15" name="scalein"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo14" name="positionout"></a-timeline-animation>
+            <a-timeline-animation select="#convo14" name="fadeout"></a-timeline-animation>
+            </a-timeline-group>
+            <a-timeline-animation select="#convo14" name="togglevisibleoff"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo16" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#convo16" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#convo16" name="positionleft"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-animation select="#convo15" name="scaleout"></a-timeline-animation>
+            <a-timeline-animation select="#convo16" name="scalein"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo15" name="positionout"></a-timeline-animation>
+            <a-timeline-animation select="#convo15" name="fadeout"></a-timeline-animation>
+            </a-timeline-group>
+            <a-timeline-animation select="#convo15" name="togglevisibleoff"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo17" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#convo17" name="fadein"></a-timeline-animation>
+            <a-timeline-animation select="#convo17" name="positionleft"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-animation select="#convo16" name="scaleout"></a-timeline-animation>
+            <a-timeline-animation select="#convo17" name="scalein"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo16" name="positionout"></a-timeline-animation>
+            <a-timeline-animation select="#convo16" name="fadeout"></a-timeline-animation>
+            </a-timeline-group>
+            <a-timeline-animation select="#convo16" name="togglevisibleoff"></a-timeline-animation>
+
+            <a-timeline-animation select="#convo17" name="scaleout"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo17" name="positionout"></a-timeline-animation>
+            <a-timeline-animation select="#convo17" name="fadeout"></a-timeline-animation>
+            </a-timeline-group>
+            <a-timeline-animation select="#convo17" name="togglevisibleoff"></a-timeline-animation>
+
+            <a-timeline-group>
+            <a-timeline-animation select="#convo18" name="togglevisible"></a-timeline-animation>
+            <a-timeline-animation select="#convo18" name="fadein"></a-timeline-animation>
+            </a-timeline-group>
+
+            <a-timeline-animation select="#convo18" name="scalein"></a-timeline-animation>
+
+            <a-timeline-animation select="#convo18" name="scaleout"></a-timeline-animation>
+            <a-timeline-group>
+            <a-timeline-animation select="#convo18" name="positionout"></a-timeline-animation>
+            <a-timeline-animation select="#convo18" name="fadeout"></a-timeline-animation>
+            </a-timeline-group>
+            <a-timeline-animation select="#convo18" name="togglevisibleoff"></a-timeline-animation>
+
+
+            </a-timeline>
+
+            <a-mixin id="convo"
+                      animation__fadein="property: components.material.material.opacity; from: 0; to: 1; dur: 500; easing: linear; autoplay: false"
+                      animation__fadeout="property: components.material.material.opacity; from: 1; to: 0; dur: 2000; easing: linear; autoplay: false"
+                      animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
+                      animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; delay: 1000; autoplay: false"
+                      animation__positionleft="property: position; from: -6 -8 0; to: -1 -8 0; dur: 1000; autoplay: false"
+                      animation__positionright="property: position; from: 6 -8 0; to: 1 -8 0; dur: 1000; autoplay: false"
+                      animation__positionout="property: position; from: 0 -8 1; to: 0 -12 -4; dur: 1000; autoplay: false"
+                      animation__scalein="property: scale; from: 1 1 1; to: 4 4 4; dur: 7500; delay: 1000; autoplay: false"
+                      animation__scaleentry="property: scale; from: 2 2 2; to: 3 3 3; dur: 7000; autoplay: false"
+                      animation__scaleentry0="property: scale; from: 4 4 4; to: 2 2 2; dur: 500; autoplay: false"
+                      animation__scaleout="property: scale; from: 4 4 4; to: 1 1 1; dur: 4000; delay: 6000; autoplay: false"
+                      rotation="-90 0 0"></a-mixin>
+        </a-assets>
+
+        <a-image id="convo1" mixin="convo" src="MR_L1.png" opacity="0"></a-image>
+        <a-image id="convo2" mixin="convo" src="MR_R1.png" opacity="0"></a-image>
+        <a-image id="convo3" mixin="convo" src="MR_L2.png" opacity="0"></a-image>
+        <a-image id="convo4" mixin="convo" src="MR_L3.png" opacity="0"></a-image>
+        <a-image id="convo5" mixin="convo" src="MR_R2.png" opacity="0"></a-image>
+        <a-image id="convo6" mixin="convo" src="MR_L4.png" opacity="0"></a-image>
+        <a-image id="convo7" mixin="convo" src="MR_L5.png" opacity="0"></a-image>
+        <a-image id="convo8" mixin="convo" src="MR_R3.png" opacity="0"></a-image>
+        <a-image id="convo9" mixin="convo" src="MR_L6.png" opacity="0"></a-image>
+        <a-image id="convo10" mixin="convo" src="MR_R4.png" opacity="0"></a-image>
+        <a-image id="convo11" mixin="convo" src="MR_L7.png" opacity="0"></a-image>
+        <a-image id="convo12" mixin="convo" src="MR_R5.png" opacity="0"></a-image>
+        <a-image id="convo13" mixin="convo" src="MR_L8.png" opacity="0"></a-image>
+        <a-image id="convo14" mixin="convo" src="MR_R6.png" opacity="0"></a-image>
+        <a-image id="convo15" mixin="convo" src="MR_L9.png" opacity="0"></a-image>
+        <a-image id="convo16" mixin="convo" src="MR_L10.png" opacity="0"></a-image>
+        <a-image id="convo17" mixin="convo" src="MR_R7.png" opacity="0"></a-image>
+        <a-image id="convo18" mixin="convo" src="MR_question.png" opacity="0"></a-image>
+        <a-image id="convo19" mixin="convo" src="entryMessageMR.png" opacity="0" position="0 1 0"></a-image>
+
+
+        <a-entity id="conversationMR" loop="true" volume="1" sound="src: url(dyeconversation2nd_2.mp3)"></a-entity>
+        <!-- <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>
+
+        <a-entity position="0 -0.5 -10">
+          <a-entity id="box1" mixin="box" position="-4 0 0"></a-entity>
+          <a-entity mixin="box"></a-entity>
+          <a-entity mixin="box" position="4 0 0"></a-entity>
+  0 -10 0
+          0 2 -3
+        </a-entity>-->
+
+
+        <!--<a-sky id="sky" color="#FAFAFA" animation__color="property: components.material.material.color; type: color; from: #FAFAFA; to: #111; dur: 2000; autoplay: false"></a-sky>-->
+
+
+  </a-scene>
 </a-marker>
 
 
@@ -533,6 +875,7 @@ window.onload = function(){
 //let m = document.getElementById("ani1");
 let el = document.getElementById("receiver");
 let el2 = document.getElementById("receiver2");
+let el3 = document.getElementById("receiver3");
 let m = document.getElementsByTagName("a-marker");
 // let tVid = document.getElementById("vidStart");
 // let tSound = document.getElementById("soundStart");
@@ -542,6 +885,7 @@ console.log(m);
 
 let firstTime = false;
 let firstTime2 = false;
+let firstTime3 = false;
 //document.getElementById("vidStart")
 // window.onclick = function(){
 // console.log("video loaded");
@@ -552,12 +896,14 @@ let firstTime2 = false;
 document.getElementById("videoPlay").muted =false;
 el.style.display = "none";
 el2.style.display = "none";
+el3.style.display = "none";
 
 
 m[0].addEventListener("markerFound", (e)=>{
   // ensure that the animation element is not visible...
   el.style.display = "none";
   el2.style.display = "none";
+  el3.style.display = "none";
    console.log("found ani 0");
    console.log(m[0]);
    //play the video
@@ -690,54 +1036,34 @@ m[2].addEventListener("markerLost", (e)=>{
 });
 
 m[3].addEventListener("markerFound", (e)=>{
+   el3.style.display = "block";
+   //reset currentTime of the video
+   document.getElementById("videoPlay").currentTime =0;
 
-  el.style.display = "none";
-  el2.style.display = "none";
-
-   //console.log("ani 3 launched");
-   let entity = document.getElementById("mySoundTest");
+   let entity = document.getElementById("conversationMR");
    //console.log(entity);
    entity.components.sound.playSound();
+   if(firstTime3 === false){
+
+    el3.emit("myAni3");
+      firstTime3 =true;
+    }
+   else{
+     el3.emit("myResume3");
+   }
+
 });
 
 
-document.getElementById("mySoundTest").addEventListener('sound-ended', function(){
-  console.log("sound ended");
-console.log(soundNumToPlay);
-if(soundNumToPlay <1){
-  soundNumToPlay +=1;
-  console.log("HERE");
-}
-//reset
-  else{
-      soundNumToPlay =0;
-   }
- if(soundNumToPlay ===1){
-   console.log("AND CHANGING");
-
-let m = document.getElementById("mySoundTest").getAttribute("sound");
-m.src = "url(belgianLegacy.m4a)";
-console.log(m);
-document.getElementById("mySoundTest").setAttribute("sound",m);
- }
-
- if(soundNumToPlay ===0){
-   console.log("AND CHANGING BACK");
-
-let m = document.getElementById("mySoundTest").getAttribute("sound");
-m.src = "url(warCongo.m4a)";
-console.log(m);
-document.getElementById("mySoundTest").setAttribute("sound",m);
- }
-
- document.getElementById("mySoundTest").components.sound.playSound();
-})
-
 m[3].addEventListener("markerLost", (e)=>{
-//pause
- console.log("sound pause");
-  let entity = document.getElementById("mySoundTest");
+  let entity = document.getElementById("conversationMR");
    entity.components.sound.pauseSound();
+   console.log("lost image");
+  //console.log(el.pauseAnimation());
+   el3.emit("myPause2");
+   el3.style.display = "none";
+
+
 });
 }
 </script>
