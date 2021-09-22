@@ -15,7 +15,7 @@
   </head>
   <body style='margin : 0px; overflow: hidden;'>
     <!-- <audio src="bohemian.mp3" autoplay></audio> -->
-<a-scene embedded arjs='sourceType: webcam;'>
+<a-scene embedded arjs>
   <a-assets>
     <video id="videoPlay" muted playsinline src="conflictCongo1st.mp4"></video>
     <a-asset-item id="character" src="characterAnimationTest.glb"></a-asset-item>
@@ -31,16 +31,16 @@
   </a-assets> -->
 
 
-  <a-marker id="ani0" preset='custom' type='pattern' url='pattern-markerDYEnewchargerBW2.patt'>
+  <a-marker-camera id="ani0" preset='custom' type='pattern' url='pattern-markerDYEnewchargerBW2.patt'>
     <!-- <a-sphere id="vidStart" color="green" radius="0.2" position="0 2 1"></a-sphere> -->
     <a-image id="photo9" src="screen4videos.png" opacity="1" position="-0 -4 0" rotation="-90 0 0" scale="5 5 5">
     </a-image>
     <a-video src="#videoPlay" width="4" height="2.25" position="0 -1 -1" rotation="-60 0 0" opacity="1"></a-video>
     <!-- <a-text id="clickH" value="click screen for sound" font="toreadore-msdf.json" font-image="toreadore-msdf.png" color="#70F9FF" negate="false" position="-3.45 -4 1" rotation="-90 0 0" scale="2 2 2"></a-text> -->
- </a-marker>
+ </a-marker-camera>
 
 
-<a-marker id="ani1" preset='custom' type='pattern' url='pattern-markerDYEheadBW2.patt'>
+<a-marker-camera id="ani1" preset='custom' type='pattern' url='pattern-markerDYEheadBW2.patt'>
   <!-- <a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true"> -->
 
 <a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true; startEvents: myAni, pauseEvents: myPause, resumeEvents: myResume">
@@ -278,9 +278,9 @@
 
 
  </a-scene>
-</a-marker>
+</a-marker-camera>
 
-<a-marker id="ani2" preset='custom' type='pattern' url='pattern-markerDYEmonitorBW2.patt'>
+<a-marker-camera id="ani2" preset='custom' type='pattern' url='pattern-markerDYEmonitorBW2.patt'>
 
 <a-scene id="receiver2" animation-timeline__2="timeline: #myTimeline2; loop: true; startEvents: myAni2, pauseEvents: myPause2, resumeEvents: myResume2">
 
@@ -464,9 +464,9 @@
 
 
 </a-scene>
-</a-marker>
+</a-marker-camera>
 
-<a-marker id="ani3" preset='custom' type='pattern' url='pattern-markerDYEbatteryBW2.patt'>
+<a-marker-camera id="ani3" preset='custom' type='pattern' url='pattern-markerDYEbatteryBW2.patt'>
 
   <a-scene id="receiver3" animation-timeline__3="timeline: #myTimeline3; loop: true; startEvents: myAni3, pauseEvents: myPause3, resumeEvents: myResume3">
 
@@ -827,7 +827,7 @@
 
 
   </a-scene>
-</a-marker>
+</a-marker-camera>
 
 
 <a-entity camera></a-entity>
