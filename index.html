@@ -37,7 +37,7 @@
     <a-image id="photo9" src="screen4videos.png" opacity="1" position="-0 -4 0" rotation="-90 0 0" scale="5 5 5">
     </a-image>
     <a-video src="#videoPlay" width="4" height="2.25" position="0 -1 -1" rotation="-60 0 0" opacity="1"></a-video>
-    <!-- <a-text id="clickH" value="click screen for sound" font="toreadore-msdf.json" font-image="toreadore-msdf.png" color="#70F9FF" negate="false" position="-3.45 -4 1" rotation="-90 0 0" scale="2 2 2"></a-text> -->
+    <a-text id="clickH" value="click screen for sound" font="toreadore-msdf.json" font-image="toreadore-msdf.png" color="#70F9FF" negate="false" position="-3.45 0 1" rotation="-90 0 0" scale="2 2 2"></a-text>
  </a-marker>
 
 
@@ -853,7 +853,12 @@ let firstTime = false;
 let firstTime2 = false;
 let firstTime3 = false;
 
-document.getElementById("videoPlay").muted =false;
+window.onclick = function(){
+console.log("video loaded");
+document.getElementById("testVid").muted =false;
+document.getElementById("clickH").components.text.material.uniforms.opacity.value =0;
+}
+
 el1.style.display = "none";
 el2.style.display = "none";
 el3.style.display = "none";
