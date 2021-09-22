@@ -7,7 +7,7 @@
     <!--<script src="lib/aframe-v0.3.0.min.js"></script> -->
      <!-- does not seem to work with the version above -->
 
-     
+
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="dist/aframe-animation-timeline-component.min.js"></script>
     <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
@@ -43,7 +43,7 @@
 <a-marker id="ani1" preset='custom' type='pattern' url='pattern-markerDYEheadBW2.patt'>
   <!-- <a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true"> -->
 
-<a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true; startEvents: myAni; pauseEvents: myPause; resumeEvents: myResume">
+<a-scene id="receiver" animation-timeline__1="timeline: #myTimeline; loop: true; startEvents: myAni, pauseEvents: myPause, resumeEvents: myResume">
 
 
       <a-assets timeout="60000">
@@ -282,7 +282,7 @@
 
 <a-marker id="ani2" preset='custom' type='pattern' url='pattern-markerDYEmonitorBW2.patt'>
 
-<a-scene id="receiver2" animation-timeline__2="timeline: #myTimeline2; loop: true; startEvents: myAni2; pauseEvents: myPause2; resumeEvents: myResume2">
+<a-scene id="receiver2" animation-timeline__2="timeline: #myTimeline2; loop: true; startEvents: myAni2, pauseEvents: myPause2, resumeEvents: myResume2">
 
 <!-- <a-image id="chatMK" src="chatHeaderBubbleMK.png" opacity="0.8"></a-image> -->
       <a-assets timeout="500000">
@@ -468,7 +468,7 @@
 
 <a-marker id="ani3" preset='custom' type='pattern' url='pattern-markerDYEbatteryBW2.patt'>
 
-  <a-scene id="receiver3" animation-timeline__3="timeline: #myTimeline3; loop: true; startEvents: myAni3; pauseEvents: myPause3; resumeEvents: myResume3">
+  <a-scene id="receiver3" animation-timeline__3="timeline: #myTimeline3; loop: true; startEvents: myAni3, pauseEvents: myPause3, resumeEvents: myResume3">
 
   <!-- <a-image id="chatMK" src="chatHeaderBubbleMK.png" opacity="0.8"></a-image> -->
         <a-assets timeout="15000">
