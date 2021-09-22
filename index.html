@@ -843,7 +843,7 @@ window.onload = function(){
   let soundNumToPlay3 =0;
 
 
-let el = document.getElementById("receiver");
+let el1 = document.getElementById("receiver");
 let el2 = document.getElementById("receiver2");
 let el3 = document.getElementById("receiver3");
 let m = document.getElementsByTagName("a-marker");
@@ -853,14 +853,14 @@ let firstTime2 = false;
 let firstTime3 = false;
 
 document.getElementById("videoPlay").muted =false;
-el.style.display = "none";
+el1.style.display = "none";
 el2.style.display = "none";
 el3.style.display = "none";
 
 
 m[0].addEventListener("markerFound", (e)=>{
   // ensure that the animation element is not visible...
-  el.style.display = "none";
+  el1.style.display = "none";
   el2.style.display = "none";
   el3.style.display = "none";
 
@@ -924,7 +924,7 @@ m[0].addEventListener("markerLost", (e)=>{
 
 
 m[1].addEventListener("markerFound", (e)=>{
-   el.style.display = "block";
+   el1.style.display = "block";
    //reset currentTime of the video
    document.getElementById("videoPlay").currentTime =0;
 
@@ -934,11 +934,11 @@ m[1].addEventListener("markerFound", (e)=>{
 
    if(firstTime === false){
 
-    el.emit("myAni");
+    el1.emit("myAni");
       firstTime =true;
     }
    else{
-     el.emit("myResume");
+     el1.emit("myResume");
    }
 
 });
@@ -974,8 +974,8 @@ document.getElementById("photoAmbient").setAttribute("sound",snd);
 m[1].addEventListener("markerLost", (e)=>{
   let entity = document.getElementById("photoAmbient");
    entity.components.sound.pauseSound();
-   el.emit("myPause");
-   el.style.display = "none";
+   el1.emit("myPause");
+   el1.style.display = "none";
 });
 
 m[2].addEventListener("markerFound", (e)=>{
