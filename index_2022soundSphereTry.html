@@ -5,9 +5,6 @@
     <title>Dismantling Your Electronics - AR experience</title>
     <meta name="description" content="Augmented Reality about geopolitical aspect of electronics"></meta>
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <!--<script src="lib/aframe-v0.3.0.min.js"></script> -->
-     <!-- does not seem to work with the version above -->
-
 
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="dist/aframe-animation-timeline-component.min.js"></script>
@@ -19,9 +16,7 @@
 <a-scene embedded arjs>
   <a-assets>
     <video id="videoPlay" muted playsinline src="conflictCongo1st.mp4"></video>
-    <!-- <a-asset-item id="character" src="characterAnimationTest.glb"></a-asset-item> -->
-    <!-- https://aframe.io/docs/1.0.0/components/sound.html -->
-   <!-- <audio id="soundTelling" src="warCongo.m4a" preload="auto"></audio> -->
+
 </a-assets>
 
   <!-- second-->
@@ -260,24 +255,13 @@
               position="0 0.25 1" rotation="-45 0 0" scale="0.1 0.1 0.1"></a-text></a-image>
 
 
-      <a-entity id="photoAmbient" loop="true" volume="1" sound="src: url(ambientPhotos.mp3)"></a-entity>
-
-      <!-- <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>
-
-      <a-entity position="0 -0.5 -10">
-        <a-entity id="box1" mixin="box" position="-4 0 0"></a-entity>
-        <a-entity mixin="box"></a-entity>
-        <a-entity mixin="box" position="4 0 0"></a-entity>
-0 -10 0
-        0 2 -3
-      </a-entity>-->
-
-
-      <!--<a-sky id="sky" color="#FAFAFA" animation__color="property: components.material.material.color; type: color; from: #FAFAFA; to: #111; dur: 2000; autoplay: false"></a-sky>-->
-
+      <a-entity id="photoAmbient" geometry="primitive: sphere; radius: 0.25; color: black" loop="true" volume="1" sound="src: url(ambientPhotos.mp3); on: click"></a-entity>
+      <a-text id="clickImg" value="click screen for sound" font="toreadore-msdf.json" font-image="toreadore-msdf.png" color="black" negate="false" position="-1 0 0.7" rotation="-90 0 0" scale="0.75 0.75 0.75"></a-text>
 
  </a-scene>
 </a-marker>
+
+
 
 <a-marker id="ani2" preset='custom' type='pattern' url='pattern-markerDYEmonitorBWdiff.patt'>
 
@@ -447,21 +431,8 @@
       <a-image id="image8" mixin="image" src="entryMessageMK.png" opacity="0" position="0 1 0"></a-image>
 
 
-      <a-entity id="conversationMKK" loop="true" volume="1" sound="src: url(dyeconversation2_2.mp3)"></a-entity>
-      <!-- <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>
-
-      <a-entity position="0 -0.5 -10">
-        <a-entity id="box1" mixin="box" position="-4 0 0"></a-entity>
-        <a-entity mixin="box"></a-entity>
-        <a-entity mixin="box" position="4 0 0"></a-entity>
-0 -10 0
-        0 2 -3
-      </a-entity>-->
-
-
-      <!--<a-sky id="sky" color="#FAFAFA" animation__color="property: components.material.material.color; type: color; from: #FAFAFA; to: #111; dur: 2000; autoplay: false"></a-sky>-->
-
-
+      <a-entity id="conversationMKK" geometry="primitive: sphere; radius: 0.25; color: black" loop="true" volume="1" sound="src: url(dyeconversation2_2.mp3); on: click"></a-entity>
+      <a-text id="clickConvo1" value="click screen for sound" font="toreadore-msdf.json" font-image="toreadore-msdf.png" color="black" negate="false" position="-1 0 0.7" rotation="-90 0 0" scale="0.75 0.75 0.75" z-index="2"></a-text>
 </a-scene>
 </a-marker>
 
@@ -810,21 +781,8 @@
         <a-image id="convo19" mixin="convo" src="entryMessageMR.png" opacity="0" position="0 1 0"></a-image>
 
 
-        <a-entity id="conversationMR" loop="true" volume="1" sound="src: url(dyeconversation2nd_2.mp3)"></a-entity>
-        <!-- <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>
-
-        <a-entity position="0 -0.5 -10">
-          <a-entity id="box1" mixin="box" position="-4 0 0"></a-entity>
-          <a-entity mixin="box"></a-entity>
-          <a-entity mixin="box" position="4 0 0"></a-entity>
-  0 -10 0
-          0 2 -3
-        </a-entity>-->
-
-
-        <!--<a-sky id="sky" color="#FAFAFA" animation__color="property: components.material.material.color; type: color; from: #FAFAFA; to: #111; dur: 2000; autoplay: false"></a-sky>-->
-
-
+        <a-entity id="conversationMR" geometry="primitive: sphere; radius: 0.25; color: black" loop="true" volume="1" sound="src: url(dyeconversation2nd_2.mp3); on: click"></a-entity>
+        <a-text id="clickConvo2" value="click screen for sound" font="toreadore-msdf.json" font-image="toreadore-msdf.png" color="black" negate="false" position="-1 0 0.7" rotation="-90 0 0" scale="0.75 0.75 0.75" z-index="2"></a-text>
   </a-scene>
 </a-marker>
 
@@ -854,7 +812,13 @@ let firstTime3 = false;
 window.onclick = function(){
 console.log("video loaded");
 document.getElementById("videoPlay").muted =false;
+// document.getElementById("photoAmbient").muted =false;
+// document.getElementById("conversationMKK").muted =false;
+// document.getElementById("conversationMR").muted =false;
 document.getElementById("clickH").components.text.material.uniforms.opacity.value =0;
+document.getElementById("clickImg").components.text.material.uniforms.opacity.value =0;
+document.getElementById("clickConvo1").components.text.material.uniforms.opacity.value =0;
+document.getElementById("clickConvo2").components.text.material.uniforms.opacity.value =0;
 }
 
 el1.style.display = "none";
