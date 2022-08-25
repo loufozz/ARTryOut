@@ -12,7 +12,6 @@
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="dist/aframe-animation-timeline-component.min.js"></script>
     <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-    <script src="lib/howler.core.js"></script>
 
   </head>
   <body style='margin : 0px; overflow: hidden;'>
@@ -261,7 +260,7 @@
               position="0 0.25 1" rotation="-45 0 0" scale="0.1 0.1 0.1"></a-text></a-image>
 
 
-      <!-- <a-entity id="photoAmbient" loop="true" volume="1" sound="src: url(ambientPhotos.mp3)"></a-entity> -->
+      <a-entity id="photoAmbient" sound="src: url(ambientPhotos.mp3); loop:true; autoplay: true; volume: 1"></a-entity>
 
       <!-- <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>
 
@@ -448,7 +447,7 @@
       <a-image id="image8" mixin="image" src="entryMessageMK.png" opacity="0" position="0 1 0"></a-image>
 
 
-      <!-- <a-entity id="conversationMKK" loop="true" volume="1" sound="src: url(dyeconversation2_2.mp3)"></a-entity> -->
+      <a-entity id="conversationMKK" loop="true" volume="1" sound="src: url(dyeconversation2_2.mp3); loop:true; autoplay: true; volume: 1"></a-entity>
       <!-- <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>
 
       <a-entity position="0 -0.5 -10">
@@ -811,7 +810,7 @@
         <a-image id="convo19" mixin="convo" src="entryMessageMR.png" opacity="0" position="0 1 0"></a-image>
 
 
-        <a-entity id="conversationMR" loop="true" volume="1" sound="src: url(dyeconversation2nd_2.mp3)"></a-entity>
+        <a-entity id="conversationMR" loop="true" volume="1" sound="src: url(dyeconversation2nd_2.mp3); loop:true; autoplay: true; volume: 1"></a-entity>
         <!-- <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>
 
         <a-entity position="0 -0.5 -10">
@@ -933,16 +932,9 @@ m[1].addEventListener("markerFound", (e)=>{
    //reset currentTime of the video
    document.getElementById("videoPlay").currentTime =0;
 
-   var soundPhotos = new Howl({
-  src: ['ambientPhotos.mp3'],
-  autoplay: true,
-loop: true,
-});
-
-soundPhotos.play();
-
-   // let entity = document.getElementById("photoAmbient");
-   // entity.components.sound.playSound();
+   let entity = document.getElementById("photoAmbient");
+   //console.log(entity);
+   entity.components.sound.playSound();
 
    if(firstTime === false){
 
@@ -953,51 +945,39 @@ soundPhotos.play();
      el1.emit("myResume");
    }
 
-   soundPhotos.on('end', function(){
-     soundPhotos.play();
-   });
-
 });
 
+document.getElementById("photoAmbient").addEventListener('sound-ended', function(){
 
+if(soundNumToPlay3 <1){
+  soundNumToPlay3 +=1;
 
-// document.getElementById("photoAmbient").addEventListener('sound-ended', function(){
-//
-// if(soundNumToPlay3 <1){
-//   soundNumToPlay3 +=1;
-//
-// }
-// //reset
-//   else{
-//       soundNumToPlay3 =0;
-//    }
-//  if(soundNumToPlay3 ===1){
-//
-// let snd = document.getElementById("photoAmbient").getAttribute("sound");
-// snd.src = "url(ambientPhotos.mp3)";
-// document.getElementById("photoAmbient").setAttribute("sound",snd);
-//  }
-//
-//  if(soundNumToPlay3 ===0){
-//
-// let snd = document.getElementById("photoAmbient").getAttribute("sound");
-// snd.src = "url(ambientPhotos.mp3)";
-// document.getElementById("photoAmbient").setAttribute("sound",snd);
-//  }
-//
-//  document.getElementById("photoAmbient").components.sound.playSound();
-// })
+}
+//reset
+  else{
+      soundNumToPlay3 =0;
+   }
+ if(soundNumToPlay3 ===1){
+
+let snd = document.getElementById("photoAmbient").getAttribute("sound");
+snd.src = "url(ambientPhotos.mp3)";
+document.getElementById("photoAmbient").setAttribute("sound",snd);
+ }
+
+ if(soundNumToPlay3 ===0){
+
+let snd = document.getElementById("photoAmbient").getAttribute("sound");
+snd.src = "url(ambientPhotos.mp3)";
+document.getElementById("photoAmbient").setAttribute("sound",snd);
+ }
+
+ document.getElementById("photoAmbient").components.sound.playSound();
+})
 
 
 m[1].addEventListener("markerLost", (e)=>{
-  var soundPhotos = new Howl({
- src: ['ambientPhotos.mp3'],
- autoplay: true,
-loop: true,
-});
-    soundPhotos.pause();
-  // let entity = document.getElementById("photoAmbient");
-  //  entity.components.sound.pauseSound();
+  let entity = document.getElementById("photoAmbient");
+   entity.components.sound.pauseSound();
    el1.emit("myPause");
    el1.style.display = "none";
 });
@@ -1007,17 +987,9 @@ m[2].addEventListener("markerFound", (e)=>{
    //reset currentTime of the video
    document.getElementById("videoPlay").currentTime =0;
 
-   var soundMKK = new Howl({
-  src: ['dyeconversation2_2.mp3'],
-  autoplay: true,
-loop: true,
-});
-
-soundMKK.play();
-
-   // let entity = document.getElementById("conversationMKK");
-   // entity.components.sound.playSound();
-
+   let entity = document.getElementById("conversationMKK");
+   //console.log(entity);
+   entity.components.sound.playSound();
    if(firstTime2 === false){
 
     el2.emit("myAni2");
@@ -1027,49 +999,38 @@ soundMKK.play();
      el2.emit("myResume2");
    }
 
-   soundMKK.on('end', function(){
-     soundMKK.play();
-   });
 });
 
+document.getElementById("conversationMKK").addEventListener('sound-ended', function(){
 
+if(soundNumToPlay <1){
+  soundNumToPlay +=1;
+}
+//reset
+  else{
+      soundNumToPlay =0;
+   }
+ if(soundNumToPlay ===1){
 
-// document.getElementById("conversationMKK").addEventListener('sound-ended', function(){
-//
-// if(soundNumToPlay <1){
-//   soundNumToPlay +=1;
-// }
-// //reset
-//   else{
-//       soundNumToPlay =0;
-//    }
-//  if(soundNumToPlay ===1){
-//
-// let snd = document.getElementById("conversationMKK").getAttribute("sound");
-// snd.src = "url(dyeconversation2_2.mp3)";
-// document.getElementById("conversationMKK").setAttribute("sound",snd);
-//  }
-//
-//  if(soundNumToPlay ===0){
-//
-// let snd = document.getElementById("conversationMKK").getAttribute("sound");
-// snd.src = "url(dyeconversations2_2.mp3)";
-// document.getElementById("conversationMKK").setAttribute("sound",snd);
-//  }
-//
-//  document.getElementById("conversationMKK").components.sound.playSound();
-// })
+let snd = document.getElementById("conversationMKK").getAttribute("sound");
+snd.src = "url(dyeconversation2_2.mp3)";
+document.getElementById("conversationMKK").setAttribute("sound",snd);
+ }
+
+ if(soundNumToPlay ===0){
+
+let snd = document.getElementById("conversationMKK").getAttribute("sound");
+snd.src = "url(dyeconversations2_2.mp3)";
+document.getElementById("conversationMKK").setAttribute("sound",snd);
+ }
+
+ document.getElementById("conversationMKK").components.sound.playSound();
+})
 
 
 m[2].addEventListener("markerLost", (e)=>{
-  var soundMKK = new Howl({
- src: ['dyeconversation2_2.mp3'],
- autoplay: true,
-loop: true,
-});
-  soundMKK.pause();
-  // let entity = document.getElementById("conversationMKK");
-  //  entity.components.sound.pauseSound();
+  let entity = document.getElementById("conversationMKK");
+   entity.components.sound.pauseSound();
    el2.emit("myPause2");
    el2.style.display = "none";
 
@@ -1081,15 +1042,9 @@ m[3].addEventListener("markerFound", (e)=>{
    //reset currentTime of the video
    document.getElementById("videoPlay").currentTime =0;
 
-   var soundMR = new Howl({
-  src: ['dyeconversation2nd_2.mp3'],
-  autoplay: true,
-loop: true,
-});
-
-   // let entity = document.getElementById("conversationMR");
-   // entity.components.sound.playSound();
-
+   let entity = document.getElementById("conversationMR");
+   //console.log(entity);
+   entity.components.sound.playSound();
    if(firstTime3 === false){
 
     el3.emit("myAni3");
@@ -1099,53 +1054,41 @@ loop: true,
      el3.emit("myResume3");
    }
 
-   soundMR.on('end', function(){
-     soundMR.play();
-   });
-
 });
 
+document.getElementById("conversationMR").addEventListener('sound-ended', function(){
 
+if(soundNumToPlay2 <1){
+  soundNumToPlay2 +=1;
+  console.log("HERE");
 
-// document.getElementById("conversationMR").addEventListener('sound-ended', function(){
-//
-// if(soundNumToPlay2 <1){
-//   soundNumToPlay2 +=1;
-//   console.log("HERE");
-//
-// }
-// //reset
-//   else{
-//       soundNumToPlay2 =0;
-//    }
-//  if(soundNumToPlay2 ===1){
-//
-// let snd = document.getElementById("conversationMR").getAttribute("sound");
-// snd.src = "url(dyeconversation2nd_2.mp3)";
-// document.getElementById("conversationMR").setAttribute("sound",snd);
-//  }
-//
-//  if(soundNumToPlay2 ===0){
-//    console.log("AND CHANGING BACK");
-//
-// let snd = document.getElementById("conversationMR").getAttribute("sound");
-// snd.src = "url(dyeconversation2nd_2.mp3)";
-// document.getElementById("conversationMR").setAttribute("sound",snd);
-//  }
-//
-//  document.getElementById("conversationMR").components.sound.playSound();
-// })
+}
+//reset
+  else{
+      soundNumToPlay2 =0;
+   }
+ if(soundNumToPlay2 ===1){
+
+let snd = document.getElementById("conversationMR").getAttribute("sound");
+snd.src = "url(dyeconversation2nd_2.mp3)";
+document.getElementById("conversationMR").setAttribute("sound",snd);
+ }
+
+ if(soundNumToPlay2 ===0){
+   console.log("AND CHANGING BACK");
+
+let snd = document.getElementById("conversationMR").getAttribute("sound");
+snd.src = "url(dyeconversation2nd_2.mp3)";
+document.getElementById("conversationMR").setAttribute("sound",snd);
+ }
+
+ document.getElementById("conversationMR").components.sound.playSound();
+})
 
 
 m[3].addEventListener("markerLost", (e)=>{
-  var soundMR = new Howl({
- src: ['dyeconversation2nd_2.mp3'],
- autoplay: true,
-loop: true,
-});
-  soundMR.pause();
-  // let entity = document.getElementById("conversationMR");
-  //  entity.components.sound.pauseSound();
+  let entity = document.getElementById("conversationMR");
+   entity.components.sound.pauseSound();
    el3.emit("myPause3");
    el3.style.display = "none";
 
