@@ -255,7 +255,7 @@
               position="0 0.25 1" rotation="-45 0 0" scale="0.1 0.1 0.1"></a-text></a-image>
 
 
-      <a-entity id="photoAmbient" muted playsinline loop="true" volume="1" sound="src: url(ambientPhotos.mp3)"></a-entity>
+      <a-entity id="photoAmbient" loop="true" volume="1" sound="src: url(ambientPhotos.mp3); on: click"></a-entity>
       <a-text id="clickImg" value="click screen for sound" font="toreadore-msdf.json" font-image="toreadore-msdf.png" color="black" negate="false" position="-1 0 0.7" rotation="-90 0 0" scale="0.75 0.75 0.75"></a-text>
 
  </a-scene>
@@ -431,7 +431,7 @@
       <a-image id="image8" mixin="image" src="entryMessageMK.png" opacity="0" position="0 1 0"></a-image>
 
 
-      <a-entity id="conversationMKK" muted playsinline loop="true" volume="1" sound="src: url(dyeconversation2_2.mp3)"></a-entity>
+      <a-entity id="conversationMKK" loop="true" volume="1" sound="src: url(dyeconversation2_2.mp3); on: click"></a-entity>
       <a-text id="clickConvo1" value="click screen for sound" font="toreadore-msdf.json" font-image="toreadore-msdf.png" color="black" negate="false" position="-1 0 0.7" rotation="-90 0 0" scale="0.75 0.75 0.75"></a-text>
 </a-scene>
 </a-marker>
@@ -781,7 +781,7 @@
         <a-image id="convo19" mixin="convo" src="entryMessageMR.png" opacity="0" position="0 1 0"></a-image>
 
 
-        <a-entity id="conversationMR" muted playsinline loop="true" volume="1" sound="src: url(dyeconversation2nd_2.mp3)"></a-entity>
+        <a-entity id="conversationMR" loop="true" volume="1" sound="src: url(dyeconversation2nd_2.mp3); on: click"></a-entity>
         <a-text id="clickConvo2" value="click screen for sound" font="toreadore-msdf.json" font-image="toreadore-msdf.png" color="black" negate="false" position="-1 0 0.7" rotation="-90 0 0" scale="0.75 0.75 0.75"></a-text>
   </a-scene>
 </a-marker>
@@ -812,9 +812,9 @@ let firstTime3 = false;
 window.onclick = function(){
 console.log("video loaded");
 document.getElementById("videoPlay").muted =false;
-document.getElementById("photoAmbient").muted =false;
-document.getElementById("conversationMKK").muted =false;
-document.getElementById("conversationMR").muted =false;
+// document.getElementById("photoAmbient").muted =false;
+// document.getElementById("conversationMKK").muted =false;
+// document.getElementById("conversationMR").muted =false;
 document.getElementById("clickH").components.text.material.uniforms.opacity.value =0;
 document.getElementById("clickImg").components.text.material.uniforms.opacity.value =0;
 document.getElementById("clickConvo1").components.text.material.uniforms.opacity.value =0;
