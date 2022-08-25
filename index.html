@@ -953,11 +953,13 @@ soundPhotos.play();
      el1.emit("myResume");
    }
 
+   soundPhotos.on('end', function(){
+     soundPhotos.play();
+   });
+
 });
 
-soundPhotos.on('end', function(){
-  soundPhotos.play();
-});
+
 
 // document.getElementById("photoAmbient").addEventListener('sound-ended', function(){
 //
@@ -1020,11 +1022,12 @@ soundMKK.play();
      el2.emit("myResume2");
    }
 
+   soundMKK.on('end', function(){
+     soundMKK.play();
+   });
 });
 
-soundMKK.on('end', function(){
-  soundMKK.play();
-});
+
 
 // document.getElementById("conversationMKK").addEventListener('sound-ended', function(){
 //
@@ -1087,11 +1090,13 @@ loop: true,
      el3.emit("myResume3");
    }
 
+   soundMR.on('end', function(){
+     soundMR.play();
+   });
+
 });
 
-soundMR.on('end', function(){
-  soundMR.play();
-});
+
 
 // document.getElementById("conversationMR").addEventListener('sound-ended', function(){
 //
