@@ -842,12 +842,10 @@ window.onload = function(){
   let soundNumToPlay3 =0;
 
 
-// let el1 = document.getElementById("receiver");
-// let el2 = document.getElementById("receiver2");
-// let el3 = document.getElementById("receiver3");
-let al1 = document.getElementById("myTimeline");
-let al2 = document.getElementById("myTimeline2");
-let al3 = document.getElementById("myTimeline3");
+let el1 = document.getElementById("receiver");
+let el2 = document.getElementById("receiver2");
+let el3 = document.getElementById("receiver3");
+
 let m = document.getElementsByTagName("a-marker");
 
 let firstTime = false;
@@ -860,16 +858,16 @@ document.getElementById("videoPlay").muted =false;
 document.getElementById("clickH").components.text.material.uniforms.opacity.value =0;
 }
 
-al1.style.display = "none";
-al2.style.display = "none";
-al3.style.display = "none";
+el1.style.display = "none";
+el2.style.display = "none";
+el3.style.display = "none";
 
 
 m[0].addEventListener("markerFound", (e)=>{
   // ensure that the animation element is not visible...
-  al1.style.display = "none";
-  al2.style.display = "none";
-  al3.style.display = "none";
+  el1.style.display = "none";
+  el2.style.display = "none";
+  el3.style.display = "none";
 
    //play the video
 
@@ -931,7 +929,7 @@ m[0].addEventListener("markerLost", (e)=>{
 
 
 m[1].addEventListener("markerFound", (e)=>{
-   al1.style.display = "block";
+   el1.style.display = "block";
    //reset currentTime of the video
    document.getElementById("videoPlay").currentTime =0;
 
@@ -941,11 +939,11 @@ m[1].addEventListener("markerFound", (e)=>{
 
    if(firstTime === false){
 
-    al1.emit("myAni");
+    el1.emit("myAni");
       firstTime =true;
     }
    else{
-     al1.emit("myResume");
+     el1.emit("myResume");
    }
 
 });
@@ -981,12 +979,12 @@ document.getElementById("photoAmbient").setAttribute("sound",snd);
 m[1].addEventListener("markerLost", (e)=>{
   let entity = document.getElementById("photoAmbient");
    entity.components.sound.pauseSound();
-   al1.emit("myPause");
-   al1.style.display = "none";
+   el1.emit("myPause");
+   el1.style.display = "none";
 });
 
 m[2].addEventListener("markerFound", (e)=>{
-   al2.style.display = "block";
+   el2.style.display = "block";
    //reset currentTime of the video
    document.getElementById("videoPlay").currentTime =0;
 
@@ -995,11 +993,11 @@ m[2].addEventListener("markerFound", (e)=>{
    entity.components.sound.playSound();
    if(firstTime2 === false){
 
-    al2.emit("myAni2");
+    el2.emit("myAni2");
       firstTime2 =true;
     }
    else{
-     al2.emit("myResume2");
+     el2.emit("myResume2");
    }
 
 });
@@ -1034,14 +1032,14 @@ document.getElementById("conversationMKK").setAttribute("sound",snd);
 m[2].addEventListener("markerLost", (e)=>{
   let entity = document.getElementById("conversationMKK");
    entity.components.sound.pauseSound();
-   al2.emit("myPause2");
-   al2.style.display = "none";
+   el2.emit("myPause2");
+   el2.style.display = "none";
 
 
 });
 
 m[3].addEventListener("markerFound", (e)=>{
-   al3.style.display = "block";
+   el3.style.display = "block";
    //reset currentTime of the video
    document.getElementById("videoPlay").currentTime =0;
 
@@ -1050,11 +1048,11 @@ m[3].addEventListener("markerFound", (e)=>{
    entity.components.sound.playSound();
    if(firstTime3 === false){
 
-    al3.emit("myAni3");
+    el3.emit("myAni3");
       firstTime3 =true;
     }
    else{
-     al3.emit("myResume3");
+     el3.emit("myResume3");
    }
 
 });
@@ -1092,8 +1090,8 @@ document.getElementById("conversationMR").setAttribute("sound",snd);
 m[3].addEventListener("markerLost", (e)=>{
   let entity = document.getElementById("conversationMR");
    entity.components.sound.pauseSound();
-   al3.emit("myPause3");
-   al3.style.display = "none";
+   el3.emit("myPause3");
+   el3.style.display = "none";
 
 
 });
