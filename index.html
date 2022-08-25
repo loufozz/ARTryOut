@@ -990,6 +990,11 @@ soundPhotos.play();
 
 
 m[1].addEventListener("markerLost", (e)=>{
+  var soundPhotos = new Howl({
+ src: ['ambientPhotos.mp3'],
+ autoplay: true,
+loop: true,
+});
     soundPhotos.pause();
   // let entity = document.getElementById("photoAmbient");
   //  entity.components.sound.pauseSound();
@@ -1057,7 +1062,11 @@ soundMKK.play();
 
 
 m[2].addEventListener("markerLost", (e)=>{
-
+  var soundMKK = new Howl({
+ src: ['dyeconversation2_2.mp3'],
+ autoplay: true,
+loop: true,
+});
   soundMKK.pause();
   // let entity = document.getElementById("conversationMKK");
   //  entity.components.sound.pauseSound();
@@ -1129,7 +1138,11 @@ loop: true,
 
 
 m[3].addEventListener("markerLost", (e)=>{
-
+  var soundMR = new Howl({
+ src: ['dyeconversation2nd_2.mp3'],
+ autoplay: true,
+loop: true,
+});
   soundMR.pause();
   // let entity = document.getElementById("conversationMR");
   //  entity.components.sound.pauseSound();
