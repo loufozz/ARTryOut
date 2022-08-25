@@ -842,9 +842,9 @@ window.onload = function(){
   let soundNumToPlay3 =0;
 
 
-let el1 = document.getElementById("receiver");
-let el2 = document.getElementById("receiver2");
-let el3 = document.getElementById("receiver3");
+// let el1 = document.getElementById("receiver");
+// let el2 = document.getElementById("receiver2");
+// let el3 = document.getElementById("receiver3");
 let al1 = document.getElementById("myTimeline");
 let al2 = document.getElementById("myTimeline2");
 let al3 = document.getElementById("myTimeline3");
@@ -860,16 +860,16 @@ document.getElementById("videoPlay").muted =false;
 document.getElementById("clickH").components.text.material.uniforms.opacity.value =0;
 }
 
-el1.style.display = "none";
-el2.style.display = "none";
-el3.style.display = "none";
+al1.style.display = "none";
+al2.style.display = "none";
+al3.style.display = "none";
 
 
 m[0].addEventListener("markerFound", (e)=>{
   // ensure that the animation element is not visible...
-  el1.style.display = "none";
-  el2.style.display = "none";
-  el3.style.display = "none";
+  al1.style.display = "none";
+  al2.style.display = "none";
+  al3.style.display = "none";
 
    //play the video
 
@@ -931,7 +931,7 @@ m[0].addEventListener("markerLost", (e)=>{
 
 
 m[1].addEventListener("markerFound", (e)=>{
-   el1.style.display = "block";
+   al1.style.display = "block";
    //reset currentTime of the video
    document.getElementById("videoPlay").currentTime =0;
 
@@ -982,11 +982,11 @@ m[1].addEventListener("markerLost", (e)=>{
   let entity = document.getElementById("photoAmbient");
    entity.components.sound.pauseSound();
    al1.emit("myPause");
-   el1.style.display = "none";
+   al1.style.display = "none";
 });
 
 m[2].addEventListener("markerFound", (e)=>{
-   el2.style.display = "block";
+   al2.style.display = "block";
    //reset currentTime of the video
    document.getElementById("videoPlay").currentTime =0;
 
@@ -1035,13 +1035,13 @@ m[2].addEventListener("markerLost", (e)=>{
   let entity = document.getElementById("conversationMKK");
    entity.components.sound.pauseSound();
    al2.emit("myPause2");
-   el2.style.display = "none";
+   al2.style.display = "none";
 
 
 });
 
 m[3].addEventListener("markerFound", (e)=>{
-   el3.style.display = "block";
+   al3.style.display = "block";
    //reset currentTime of the video
    document.getElementById("videoPlay").currentTime =0;
 
@@ -1093,7 +1093,7 @@ m[3].addEventListener("markerLost", (e)=>{
   let entity = document.getElementById("conversationMR");
    entity.components.sound.pauseSound();
    al3.emit("myPause3");
-   el3.style.display = "none";
+   al3.style.display = "none";
 
 
 });
