@@ -448,7 +448,7 @@
       <a-image id="image8" mixin="image" src="entryMessageMK.png" opacity="0" position="0 1 0"></a-image>
 
 
-      <a-entity id="conversationMKK" loop="true" volume="1" sound="src: url(dyeconversation2_2.mp3)"></a-entity>
+      <!-- <a-entity id="conversationMKK" loop="true" volume="1" sound="src: url(dyeconversation2_2.mp3)"></a-entity> -->
       <!-- <a-entity id="text5" mixin="text" text="value: walks 35 km in 2 days"></a-entity>
 
       <a-entity position="0 -0.5 -10">
@@ -1000,9 +1000,17 @@ m[2].addEventListener("markerFound", (e)=>{
    //reset currentTime of the video
    document.getElementById("videoPlay").currentTime =0;
 
-   let entity = document.getElementById("conversationMKK");
-   //console.log(entity);
-   entity.components.sound.playSound();
+   var soundMKK = new Howl({
+  src: ['dyeconversation2_2.mp3'],
+  autoplay: true,
+loop: true,
+});
+
+soundMKK.play();
+
+   // let entity = document.getElementById("conversationMKK");
+   // entity.components.sound.playSound();
+
    if(firstTime2 === false){
 
     el2.emit("myAni2");
@@ -1014,36 +1022,42 @@ m[2].addEventListener("markerFound", (e)=>{
 
 });
 
-document.getElementById("conversationMKK").addEventListener('sound-ended', function(){
+soundMKK.on('end', function(){
+  soundMKK.play();
+});
 
-if(soundNumToPlay <1){
-  soundNumToPlay +=1;
-}
-//reset
-  else{
-      soundNumToPlay =0;
-   }
- if(soundNumToPlay ===1){
-
-let snd = document.getElementById("conversationMKK").getAttribute("sound");
-snd.src = "url(dyeconversation2_2.mp3)";
-document.getElementById("conversationMKK").setAttribute("sound",snd);
- }
-
- if(soundNumToPlay ===0){
-
-let snd = document.getElementById("conversationMKK").getAttribute("sound");
-snd.src = "url(dyeconversations2_2.mp3)";
-document.getElementById("conversationMKK").setAttribute("sound",snd);
- }
-
- document.getElementById("conversationMKK").components.sound.playSound();
-})
+// document.getElementById("conversationMKK").addEventListener('sound-ended', function(){
+//
+// if(soundNumToPlay <1){
+//   soundNumToPlay +=1;
+// }
+// //reset
+//   else{
+//       soundNumToPlay =0;
+//    }
+//  if(soundNumToPlay ===1){
+//
+// let snd = document.getElementById("conversationMKK").getAttribute("sound");
+// snd.src = "url(dyeconversation2_2.mp3)";
+// document.getElementById("conversationMKK").setAttribute("sound",snd);
+//  }
+//
+//  if(soundNumToPlay ===0){
+//
+// let snd = document.getElementById("conversationMKK").getAttribute("sound");
+// snd.src = "url(dyeconversations2_2.mp3)";
+// document.getElementById("conversationMKK").setAttribute("sound",snd);
+//  }
+//
+//  document.getElementById("conversationMKK").components.sound.playSound();
+// })
 
 
 m[2].addEventListener("markerLost", (e)=>{
-  let entity = document.getElementById("conversationMKK");
-   entity.components.sound.pauseSound();
+
+  soundMKK.pause();
+  // let entity = document.getElementById("conversationMKK");
+  //  entity.components.sound.pauseSound();
    el2.emit("myPause2");
    el2.style.display = "none";
 
@@ -1055,9 +1069,15 @@ m[3].addEventListener("markerFound", (e)=>{
    //reset currentTime of the video
    document.getElementById("videoPlay").currentTime =0;
 
-   let entity = document.getElementById("conversationMR");
-   //console.log(entity);
-   entity.components.sound.playSound();
+   var soundMR = new Howl({
+  src: ['dyeconversation2nd_2.mp3'],
+  autoplay: true,
+loop: true,
+});
+
+   // let entity = document.getElementById("conversationMR");
+   // entity.components.sound.playSound();
+
    if(firstTime3 === false){
 
     el3.emit("myAni3");
@@ -1069,39 +1089,45 @@ m[3].addEventListener("markerFound", (e)=>{
 
 });
 
-document.getElementById("conversationMR").addEventListener('sound-ended', function(){
+soundMR.on('end', function(){
+  soundMR.play();
+});
 
-if(soundNumToPlay2 <1){
-  soundNumToPlay2 +=1;
-  console.log("HERE");
-
-}
-//reset
-  else{
-      soundNumToPlay2 =0;
-   }
- if(soundNumToPlay2 ===1){
-
-let snd = document.getElementById("conversationMR").getAttribute("sound");
-snd.src = "url(dyeconversation2nd_2.mp3)";
-document.getElementById("conversationMR").setAttribute("sound",snd);
- }
-
- if(soundNumToPlay2 ===0){
-   console.log("AND CHANGING BACK");
-
-let snd = document.getElementById("conversationMR").getAttribute("sound");
-snd.src = "url(dyeconversation2nd_2.mp3)";
-document.getElementById("conversationMR").setAttribute("sound",snd);
- }
-
- document.getElementById("conversationMR").components.sound.playSound();
-})
+// document.getElementById("conversationMR").addEventListener('sound-ended', function(){
+//
+// if(soundNumToPlay2 <1){
+//   soundNumToPlay2 +=1;
+//   console.log("HERE");
+//
+// }
+// //reset
+//   else{
+//       soundNumToPlay2 =0;
+//    }
+//  if(soundNumToPlay2 ===1){
+//
+// let snd = document.getElementById("conversationMR").getAttribute("sound");
+// snd.src = "url(dyeconversation2nd_2.mp3)";
+// document.getElementById("conversationMR").setAttribute("sound",snd);
+//  }
+//
+//  if(soundNumToPlay2 ===0){
+//    console.log("AND CHANGING BACK");
+//
+// let snd = document.getElementById("conversationMR").getAttribute("sound");
+// snd.src = "url(dyeconversation2nd_2.mp3)";
+// document.getElementById("conversationMR").setAttribute("sound",snd);
+//  }
+//
+//  document.getElementById("conversationMR").components.sound.playSound();
+// })
 
 
 m[3].addEventListener("markerLost", (e)=>{
-  let entity = document.getElementById("conversationMR");
-   entity.components.sound.pauseSound();
+
+  soundMR.pause();
+  // let entity = document.getElementById("conversationMR");
+  //  entity.components.sound.pauseSound();
    el3.emit("myPause3");
    el3.style.display = "none";
 
